@@ -3,7 +3,7 @@
 ###### A short incremental game where a fisherman, sitting at the end of the world, tries to catch enough food to appease the beast that lives inside of him.
 <hr>
 
-## The team
+## The Team
 
 **Ricardo Fonseca** ([@rilifon](https://github.com/rilifon)) - Programmer & Game Designer
 
