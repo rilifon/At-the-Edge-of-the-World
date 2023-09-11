@@ -1,0 +1,124 @@
+[gd_scene load_steps=8 format=2]
+
+[ext_resource path="res://Button.gd" type="Script" id=1]
+[ext_resource path="res://general_theme.tres" type="Theme" id=2]
+[ext_resource path="res://assets/images/buttons/button_disabled.png" type="Texture" id=3]
+[ext_resource path="res://assets/fonts/Itim-Regular.ttf" type="DynamicFontData" id=4]
+
+[sub_resource type="DynamicFont" id=1]
+size = 20
+use_mipmaps = true
+use_filter = true
+font_data = ExtResource( 4 )
+
+[sub_resource type="Animation" id=2]
+tracks/0/type = "value"
+tracks/0/path = NodePath("..:rect_size")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.2, 1 ),
+"transitions": PoolRealArray( 1, 1, 1 ),
+"update": 0,
+"values": [ Vector2( 171, 65 ), Vector2( 171, 65 ), Vector2( 0, 65 ) ]
+}
+
+[sub_resource type="Animation" id=3]
+length = 0.1
+tracks/0/type = "value"
+tracks/0/path = NodePath("..:rect_size")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ Vector2( 0, 65 ) ]
+}
+
+[node name="Button" type="Control"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_right = -1110.0
+margin_bottom = -720.0
+rect_min_size = Vector2( 170, 50 )
+mouse_filter = 2
+theme = ExtResource( 2 )
+script = ExtResource( 1 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+reward_resource = {
+"active": false,
+"amount": 0,
+"engine": {
+"active": false,
+"amount": 0.0,
+"type": ""
+},
+"type": ""
+}
+cost = {
+"active": false,
+"base_cost": 100,
+"exponential_progression": 1.2,
+"incremental_cost": 20,
+"times_used": 0,
+"type": ""
+}
+
+[node name="Button" type="Button" parent="."]
+margin_right = 170.0
+margin_bottom = 50.0
+rect_min_size = Vector2( 170, 50 )
+rect_pivot_offset = Vector2( 85, 25 )
+focus_mode = 0
+shortcut_in_tooltip = false
+enabled_focus_mode = 0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Cost" type="Label" parent="."]
+margin_left = -30.0
+margin_top = 55.0
+margin_right = 210.0
+margin_bottom = 85.0
+custom_fonts/font = SubResource( 1 )
+custom_colors/font_color = Color( 0, 0, 0, 1 )
+align = 1
+valign = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Cooldown" type="ColorRect" parent="."]
+margin_right = 171.0
+margin_bottom = 50.0
+rect_clip_content = true
+mouse_filter = 2
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="TextureRect" type="TextureRect" parent="Cooldown"]
+margin_right = 171.0
+margin_bottom = 50.0
+mouse_filter = 2
+texture = ExtResource( 3 )
+expand = true
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="Cooldown/TextureRect"]
+autoplay = "Idle"
+anims/Cooldown = SubResource( 2 )
+anims/Idle = SubResource( 3 )
+[connection signal="mouse_entered" from="Button" to="." method="_on_Button_mouse_entered"]
+[connection signal="mouse_exited" from="Button" to="." method="_on_Button_mouse_exited"]
+[connection signal="pressed" from="Button" to="." method="_on_Button_pressed"]

@@ -1,0 +1,21 @@
+[remap]
+
+importer="wav"
+type="AudioStreamSample"
+path="res://.import/buying.wav-bb3f0e4d0c1de8719e866dd79f3a7419.sample"
+
+[deps]
+
+source_file="res://assets/audio/sfxs/buying.wav"
+dest_files=[ "res://.import/buying.wav-bb3f0e4d0c1de8719e866dd79f3a7419.sample" ]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop=false
+compress/mode=0

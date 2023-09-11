@@ -1,0 +1,15 @@
+[gd_scene load_steps=3 format=2]
+
+[ext_resource path="res://ui/SmallFont.tres" type="DynamicFont" id=1]
+[ext_resource path="res://ui/ResourceLabel.gd" type="Script" id=2]
+
+[node name="ResourceLabel" type="Label"]
+margin_right = 40.0
+margin_bottom = 14.0
+custom_fonts/font = ExtResource( 1 )
+custom_colors/font_color = Color( 0, 0, 0, 1 )
+text = "resource 100 unidades (+10/s)"
+script = ExtResource( 2 )
+__meta__ = {
+"_edit_use_anchors_": false
+}

@@ -1,0 +1,330 @@
+[gd_scene load_steps=9 format=2]
+
+[ext_resource path="res://MainScene.gd" type="Script" id=1]
+[ext_resource path="res://Button.tscn" type="PackedScene" id=2]
+[ext_resource path="res://Fera.tscn" type="PackedScene" id=3]
+[ext_resource path="res://general_theme.tres" type="Theme" id=4]
+[ext_resource path="res://ui/ResourceList.tscn" type="PackedScene" id=5]
+[ext_resource path="res://assets/fonts/Itim-Regular.ttf" type="DynamicFontData" id=6]
+[ext_resource path="res://assets/audio/bgm/main.ogg" type="AudioStream" id=7]
+
+[sub_resource type="DynamicFont" id=1]
+size = 40
+use_mipmaps = true
+use_filter = true
+font_data = ExtResource( 6 )
+
+[node name="MainScene" type="Node2D"]
+script = ExtResource( 1 )
+
+[node name="Interface" type="HBoxContainer" parent="."]
+anchor_right = 200.0
+margin_left = 44.8731
+margin_top = 207.522
+margin_right = 394.873
+margin_bottom = 707.522
+custom_constants/separation = 15
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="ScrollContainer" type="ScrollContainer" parent="Interface"]
+margin_right = 250.0
+margin_bottom = 500.0
+rect_min_size = Vector2( 250, 500 )
+
+[node name="Buttons" type="VBoxContainer" parent="Interface/ScrollContainer"]
+margin_right = 170.0
+margin_bottom = 715.0
+theme = ExtResource( 4 )
+custom_constants/separation = 20
+alignment = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Final" parent="Interface/ScrollContainer/Buttons" instance=ExtResource( 2 )]
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_right = 170.0
+margin_bottom = 50.0
+text = "     Comprar Liberdade   "
+id = "buy_ending"
+level_unlocked = 4
+reward_resource = {
+"active": false,
+"amount": 1,
+"engine": {
+"active": false,
+"amount": 0.0,
+"type": ""
+},
+"type": "auto_fish"
+}
+cost = {
+"active": true,
+"base_cost": 10000,
+"exponential_progression": 1.2,
+"incremental_cost": 0,
+"times_used": 0,
+"type": "money"
+}
+
+[node name="Fishing" parent="Interface/ScrollContainer/Buttons" instance=ExtResource( 2 )]
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_top = 70.0
+margin_right = 170.0
+margin_bottom = 155.0
+rect_min_size = Vector2( 170, 85 )
+cooldown = 5.0
+text = "Pescar!"
+id = "fishing"
+reward_resource = {
+"active": false,
+"amount": 0,
+"type": ""
+}
+cost = {
+"active": true,
+"base_cost": 1,
+"exponential_progression": 1.0,
+"incremental_cost": 0,
+"times_used": 0,
+"type": "bait"
+}
+fake_cost = "1 Isca"
+
+[node name="Rope" parent="Interface/ScrollContainer/Buttons" instance=ExtResource( 2 )]
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_top = 175.0
+margin_right = 170.0
+margin_bottom = 225.0
+text = "   Comprar Linha   "
+id = "buy_rope"
+level_unlocked = 1
+reward_resource = {
+"active": true,
+"amount": 1,
+"type": "line_length"
+}
+cost = {
+"active": true,
+"base_cost": 50,
+"exponential_progression": 1.35,
+"incremental_cost": 30,
+"times_used": 0,
+"type": "money"
+}
+
+[node name="Rod Quality" parent="Interface/ScrollContainer/Buttons" instance=ExtResource( 2 )]
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_top = 245.0
+margin_right = 170.0
+margin_bottom = 295.0
+text = "   Melhorar Vara   "
+id = "improve_rod"
+reward_resource = {
+"active": true,
+"amount": 1,
+"engine": {
+"active": false,
+"amount": 0.0,
+"type": ""
+},
+"type": "rod_quality"
+}
+cost = {
+"active": true,
+"base_cost": 100,
+"exponential_progression": 1.1,
+"incremental_cost": 150,
+"times_used": 0,
+"type": "money"
+}
+
+[node name="MoneyEngine" parent="Interface/ScrollContainer/Buttons" instance=ExtResource( 2 )]
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_top = 315.0
+margin_right = 170.0
+margin_bottom = 365.0
+text = "     Contratar Lacaio   "
+id = "buy_money_engine"
+level_unlocked = 1
+reward_resource = {
+"active": true,
+"amount": 1,
+"engine": {
+"active": true,
+"amount": 0.1,
+"type": "money"
+},
+"type": "money_engine"
+}
+cost = {
+"active": true,
+"base_cost": 10,
+"exponential_progression": 1.01,
+"incremental_cost": 2,
+"times_used": 0,
+"type": "money"
+}
+
+[node name="AutoFish" parent="Interface/ScrollContainer/Buttons" instance=ExtResource( 2 )]
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_top = 385.0
+margin_right = 170.0
+margin_bottom = 435.0
+text = "     Comprar Molinete   "
+id = "buy_autofish"
+level_unlocked = 3
+reward_resource = {
+"active": true,
+"amount": 1,
+"engine": {
+"active": false,
+"amount": 0.0,
+"type": ""
+},
+"type": "auto_fish"
+}
+cost = {
+"active": true,
+"base_cost": 1000,
+"exponential_progression": 1.2,
+"incremental_cost": 0,
+"times_used": 0,
+"type": "money"
+}
+
+[node name="Bait1" parent="Interface/ScrollContainer/Buttons" instance=ExtResource( 2 )]
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_top = 455.0
+margin_right = 170.0
+margin_bottom = 505.0
+text = "   Comprar Minhocas   "
+id = "buy_bait1"
+reward_resource = {
+"active": true,
+"amount": 1,
+"type": "bait_1"
+}
+cost = {
+"active": true,
+"base_cost": 10,
+"exponential_progression": 1.2,
+"incremental_cost": 0,
+"times_used": 0,
+"type": "money"
+}
+
+[node name="Bait2" parent="Interface/ScrollContainer/Buttons" instance=ExtResource( 2 )]
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_top = 525.0
+margin_right = 170.0
+margin_bottom = 575.0
+text = "   Comprar Hot Dog   "
+id = "buy_bait1"
+level_unlocked = 2
+reward_resource = {
+"active": true,
+"amount": 1,
+"type": "bait_2"
+}
+cost = {
+"active": true,
+"base_cost": 100,
+"exponential_progression": 1.2,
+"incremental_cost": 0,
+"times_used": 0,
+"type": "money"
+}
+
+[node name="Bait3" parent="Interface/ScrollContainer/Buttons" instance=ExtResource( 2 )]
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_top = 595.0
+margin_right = 170.0
+margin_bottom = 645.0
+text = "   Comprar Gorgonzola   "
+id = "buy_bait1"
+level_unlocked = 3
+reward_resource = {
+"active": true,
+"amount": 1,
+"type": "bait_3"
+}
+cost = {
+"active": true,
+"base_cost": 300,
+"exponential_progression": 1.2,
+"incremental_cost": 0,
+"times_used": 0,
+"type": "money"
+}
+
+[node name="Beg" parent="Interface/ScrollContainer/Buttons" instance=ExtResource( 2 )]
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_top = 665.0
+margin_right = 170.0
+margin_bottom = 715.0
+cooldown = 0.2
+text = "Mendigar"
+id = "fishing"
+reward_resource = {
+"active": true,
+"amount": 1,
+"type": "money"
+}
+cost = {
+"active": false,
+"base_cost": 100,
+"exponential_progression": 1.2,
+"incremental_cost": 20,
+"times_used": 0,
+"type": ""
+}
+fake_cost = "dignidade"
+
+[node name="ResourceList" parent="Interface" instance=ExtResource( 5 )]
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_left = 265.0
+margin_right = 265.0
+margin_bottom = 500.0
+mouse_filter = 1
+
+[node name="NoBaitSelected" type="Label" parent="."]
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+margin_left = 392.724
+margin_top = 643.184
+margin_right = 1018.72
+margin_bottom = 691.184
+custom_fonts/font = SubResource( 1 )
+custom_colors/font_color = Color( 0, 0, 0, 1 )
+text = "Selecione alguma isca para pescar!"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Fera" parent="." instance=ExtResource( 3 )]
+margin_left = 15.1361
+margin_top = -11.7726
+margin_right = 15.1361
+margin_bottom = -11.7726
+
+[node name="BGM" type="AudioStreamPlayer" parent="."]
+stream = ExtResource( 7 )
+autoplay = true
+bus = "BGM"
+[connection signal="no_bait_selected" from="Interface/ScrollContainer/Buttons/Fishing" to="." method="_on_Fishing_no_bait_selected"]

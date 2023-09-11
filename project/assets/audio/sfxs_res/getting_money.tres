@@ -1,0 +1,12 @@
+[gd_resource type="Resource" load_steps=3 format=2]
+
+[ext_resource path="res://assets/audio/sfxs/get_coins.wav" type="AudioStream" id=1]
+[ext_resource path="res://assets/audio/SFX.gd" type="Script" id=2]
+
+[resource]
+script = ExtResource( 2 )
+asset = ExtResource( 1 )
+base_db = 4.0
+random_db_var = 1.0
+base_pitch = 1.0
+random_pitch_var = 0.2

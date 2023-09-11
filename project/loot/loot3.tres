@@ -1,0 +1,14 @@
+[gd_resource type="Resource" load_steps=3 format=2]
+
+[ext_resource path="res://loot/loot.gd" type="Script" id=1]
+[ext_resource path="res://assets/images/loot/shark-jaws.png" type="Texture" id=2]
+
+[resource]
+script = ExtResource( 1 )
+id = "loot_3"
+loot_name = "Tubarão"
+image = ExtResource( 2 )
+fishing_chance = 3
+minimum_length = 3
+base_cost = 100
+feed_value = 20

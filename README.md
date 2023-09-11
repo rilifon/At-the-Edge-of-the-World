@@ -1,2 +1,10 @@
-# At-the-Edge-of-the-World
-A lone fisherman sits at the edge of the world. Something stirs inside of him. It wants to be fed. 
+# At the Edge of the World
+
+###### A short incremental game where a fisherman, sitting at the end of the world, tries to catch enough food to appease the beast that lives inside of him.
+<hr>
+
+## The team
+
+**Ricardo Fonseca** ([@rilifon](https://github.com/rilifon)) - Programmer & Game Designer
+
+**Arthur Vieira** ([@arthurtui](https://github.com/arthurtui)) - Programmer & Artist & Game Designer 

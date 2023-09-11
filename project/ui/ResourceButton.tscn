@@ -1,0 +1,20 @@
+[gd_scene load_steps=4 format=2]
+
+[ext_resource path="res://resource_button.tres" type="Theme" id=1]
+[ext_resource path="res://ui/ResourceButton.gd" type="Script" id=2]
+
+[sub_resource type="ButtonGroup" id=1]
+resource_name = "Bait"
+
+[node name="ResourceButton" type="Button"]
+margin_right = 211.0
+margin_bottom = 27.0
+theme = ExtResource( 1 )
+toggle_mode = true
+group = SubResource( 1 )
+text = "    banana: 15 unidades"
+align = 0
+script = ExtResource( 2 )
+__meta__ = {
+"_edit_use_anchors_": false
+}

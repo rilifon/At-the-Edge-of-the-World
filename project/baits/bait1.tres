@@ -1,0 +1,9 @@
+[gd_resource type="Resource" load_steps=2 format=2]
+
+[ext_resource path="res://baits/bait.gd" type="Script" id=1]
+
+[resource]
+script = ExtResource( 1 )
+id = "bait_1"
+bait_name = "Minhocas"
+loot_table = [ "loot_1", "loot_2", "loot_3" ]

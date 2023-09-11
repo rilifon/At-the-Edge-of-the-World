@@ -1,0 +1,16 @@
+[remap]
+
+importer="csv_translation"
+type="Translation"
+
+[deps]
+
+files=[ "res://assets/translation/edge_translation - UI.en.translation", "res://assets/translation/edge_translation - UI.pt_BR.translation" ]
+
+source_file="res://assets/translation/edge_translation - UI.csv"
+dest_files=[ "res://assets/translation/edge_translation - UI.en.translation", "res://assets/translation/edge_translation - UI.pt_BR.translation" ]
+
+[params]
+
+compress=true
+delimiter=0

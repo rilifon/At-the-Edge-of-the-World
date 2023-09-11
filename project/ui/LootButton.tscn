@@ -1,0 +1,185 @@
+[gd_scene load_steps=9 format=2]
+
+[ext_resource path="res://icon.png" type="Texture" id=1]
+[ext_resource path="res://general_theme.tres" type="Theme" id=2]
+[ext_resource path="res://assets/fonts/Itim-Regular.ttf" type="DynamicFontData" id=3]
+[ext_resource path="res://ui/LootButton.gd" type="Script" id=4]
+[ext_resource path="res://ui/LootSideButton.gd" type="Script" id=5]
+
+[sub_resource type="DynamicFont" id=1]
+size = 30
+use_mipmaps = true
+use_filter = true
+font_data = ExtResource( 3 )
+
+[sub_resource type="DynamicFont" id=2]
+size = 22
+use_mipmaps = true
+use_filter = true
+font_data = ExtResource( 3 )
+
+[sub_resource type="DynamicFont" id=3]
+size = 20
+use_mipmaps = true
+use_filter = true
+font_data = ExtResource( 3 )
+
+[node name="LootButton" type="Control"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+theme = ExtResource( 2 )
+script = ExtResource( 4 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="MainContainer" type="VBoxContainer" parent="."]
+margin_right = 40.0
+margin_bottom = 40.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Name" type="Label" parent="MainContainer"]
+margin_right = 451.0
+margin_bottom = 37.0
+custom_fonts/font = SubResource( 1 )
+custom_colors/font_color = Color( 0, 0, 0, 1 )
+text = "Nome Legal"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="ContentContainer" type="HBoxContainer" parent="MainContainer"]
+margin_top = 41.0
+margin_right = 451.0
+margin_bottom = 164.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="ImageContainer" type="VBoxContainer" parent="MainContainer/ContentContainer"]
+margin_right = 64.0
+margin_bottom = 123.0
+alignment = 1
+
+[node name="Image" type="TextureRect" parent="MainContainer/ContentContainer/ImageContainer"]
+margin_right = 64.0
+margin_bottom = 64.0
+rect_min_size = Vector2( 64, 64 )
+texture = ExtResource( 1 )
+expand = true
+
+[node name="Amount" type="Label" parent="MainContainer/ContentContainer/ImageContainer"]
+margin_top = 68.0
+margin_right = 64.0
+margin_bottom = 95.0
+custom_fonts/font = SubResource( 2 )
+custom_colors/font_color = Color( 0, 0, 0, 1 )
+text = "x10"
+
+[node name="Price" type="Label" parent="MainContainer/ContentContainer/ImageContainer"]
+margin_top = 99.0
+margin_right = 64.0
+margin_bottom = 123.0
+custom_fonts/font = SubResource( 3 )
+custom_colors/font_color = Color( 0, 0, 0, 1 )
+text = "$ 20 $"
+
+[node name="Buttons" type="VBoxContainer" parent="MainContainer/ContentContainer"]
+margin_left = 68.0
+margin_right = 451.0
+margin_bottom = 123.0
+alignment = 1
+
+[node name="FeedButtons" type="HBoxContainer" parent="MainContainer/ContentContainer/Buttons"]
+margin_top = 32.0
+margin_right = 383.0
+margin_bottom = 59.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Feed1" type="Button" parent="MainContainer/ContentContainer/Buttons/FeedButtons"]
+margin_right = 102.0
+margin_bottom = 27.0
+focus_mode = 0
+shortcut_in_tooltip = false
+enabled_focus_mode = 0
+text = "  nutrir x1  "
+script = ExtResource( 5 )
+
+[node name="Feed10" type="Button" parent="MainContainer/ContentContainer/Buttons/FeedButtons"]
+margin_left = 106.0
+margin_right = 222.0
+margin_bottom = 27.0
+focus_mode = 0
+shortcut_in_tooltip = false
+enabled_focus_mode = 0
+text = "  nutrir x10  "
+script = ExtResource( 5 )
+
+[node name="Feed100" type="Button" parent="MainContainer/ContentContainer/Buttons/FeedButtons"]
+margin_left = 226.0
+margin_right = 356.0
+margin_bottom = 27.0
+focus_mode = 0
+shortcut_in_tooltip = false
+enabled_focus_mode = 0
+text = "  nutrir x100  "
+script = ExtResource( 5 )
+
+[node name="SellButtons" type="HBoxContainer" parent="MainContainer/ContentContainer/Buttons"]
+margin_top = 63.0
+margin_right = 383.0
+margin_bottom = 90.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Sell1" type="Button" parent="MainContainer/ContentContainer/Buttons/SellButtons"]
+margin_right = 111.0
+margin_bottom = 27.0
+focus_mode = 0
+shortcut_in_tooltip = false
+enabled_focus_mode = 0
+text = "  vender x1  "
+script = ExtResource( 5 )
+
+[node name="Sell10" type="Button" parent="MainContainer/ContentContainer/Buttons/SellButtons"]
+margin_left = 115.0
+margin_right = 240.0
+margin_bottom = 27.0
+focus_mode = 0
+shortcut_in_tooltip = false
+enabled_focus_mode = 0
+text = "  vender x10  "
+script = ExtResource( 5 )
+
+[node name="Sell100" type="Button" parent="MainContainer/ContentContainer/Buttons/SellButtons"]
+margin_left = 244.0
+margin_right = 383.0
+margin_bottom = 27.0
+focus_mode = 0
+shortcut_in_tooltip = false
+enabled_focus_mode = 0
+text = "  vender x100  "
+script = ExtResource( 5 )
+[connection signal="mouse_entered" from="MainContainer/ContentContainer/Buttons/FeedButtons/Feed1" to="." method="_on_button_mouse_entered" binds= [ "feed", 0 ]]
+[connection signal="mouse_exited" from="MainContainer/ContentContainer/Buttons/FeedButtons/Feed1" to="." method="_on_button_mouse_exited" binds= [ "feed", 0 ]]
+[connection signal="pressed" from="MainContainer/ContentContainer/Buttons/FeedButtons/Feed1" to="." method="_on_feed_pressed" binds= [ 1 ]]
+[connection signal="mouse_entered" from="MainContainer/ContentContainer/Buttons/FeedButtons/Feed10" to="." method="_on_button_mouse_entered" binds= [ "feed", 1 ]]
+[connection signal="mouse_exited" from="MainContainer/ContentContainer/Buttons/FeedButtons/Feed10" to="." method="_on_button_mouse_exited" binds= [ "feed", 1 ]]
+[connection signal="pressed" from="MainContainer/ContentContainer/Buttons/FeedButtons/Feed10" to="." method="_on_feed_pressed" binds= [ 10 ]]
+[connection signal="mouse_entered" from="MainContainer/ContentContainer/Buttons/FeedButtons/Feed100" to="." method="_on_button_mouse_entered" binds= [ "feed", 2 ]]
+[connection signal="mouse_exited" from="MainContainer/ContentContainer/Buttons/FeedButtons/Feed100" to="." method="_on_button_mouse_exited" binds= [ "feed", 2 ]]
+[connection signal="pressed" from="MainContainer/ContentContainer/Buttons/FeedButtons/Feed100" to="." method="_on_feed_pressed" binds= [ 100 ]]
+[connection signal="mouse_entered" from="MainContainer/ContentContainer/Buttons/SellButtons/Sell1" to="." method="_on_button_mouse_entered" binds= [ "sell", 0 ]]
+[connection signal="mouse_exited" from="MainContainer/ContentContainer/Buttons/SellButtons/Sell1" to="." method="_on_button_mouse_exited" binds= [ "sell", 0 ]]
+[connection signal="pressed" from="MainContainer/ContentContainer/Buttons/SellButtons/Sell1" to="." method="_on_sell_pressed" binds= [ 1 ]]
+[connection signal="mouse_entered" from="MainContainer/ContentContainer/Buttons/SellButtons/Sell10" to="." method="_on_button_mouse_entered" binds= [ "sell", 1 ]]
+[connection signal="mouse_exited" from="MainContainer/ContentContainer/Buttons/SellButtons/Sell10" to="." method="_on_button_mouse_exited" binds= [ "sell", 1 ]]
+[connection signal="pressed" from="MainContainer/ContentContainer/Buttons/SellButtons/Sell10" to="." method="_on_sell_pressed" binds= [ 10 ]]
+[connection signal="mouse_entered" from="MainContainer/ContentContainer/Buttons/SellButtons/Sell100" to="." method="_on_button_mouse_entered" binds= [ "sell", 2 ]]
+[connection signal="mouse_exited" from="MainContainer/ContentContainer/Buttons/SellButtons/Sell100" to="." method="_on_button_mouse_exited" binds= [ "sell", 2 ]]
+[connection signal="pressed" from="MainContainer/ContentContainer/Buttons/SellButtons/Sell100" to="." method="_on_sell_pressed" binds= [ 100 ]]

@@ -1,0 +1,14 @@
+[gd_resource type="Resource" load_steps=3 format=2]
+
+[ext_resource path="res://loot/loot.gd" type="Script" id=1]
+[ext_resource path="res://assets/images/loot/sad-crab.png" type="Texture" id=2]
+
+[resource]
+script = ExtResource( 1 )
+id = "loot_2"
+loot_name = "Carangueijo"
+image = ExtResource( 2 )
+fishing_chance = 5
+minimum_length = 1
+base_cost = 50
+feed_value = 10
