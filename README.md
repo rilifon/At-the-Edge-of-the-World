@@ -8,3 +8,9 @@
 **Ricardo Fonseca** ([@rilifon](https://github.com/rilifon)) - Programmer & Game Designer
 
 **Arthur Vieira** ([@arthurtui](https://github.com/arthurtui)) - Programmer & Artist & Game Designer 
+
+## Original Project
+
+This project was build upon a gamejam entry made in 2020 in two days. You can check the original game here:
+
+https://github.com/rilifon/A-Fera-Que-Habita-Em-Mim
