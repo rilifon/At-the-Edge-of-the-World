@@ -1,3 +1,3 @@
 extends Node
 
-var USE_STEAM = false
+var USE_STEAM = true

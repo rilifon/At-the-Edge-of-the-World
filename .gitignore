@@ -13,3 +13,5 @@ data_*/
 project/addons/steam_api/libsteam_api.so
 project/addons/steam_api/steam_api64.dll
 project/addons/steam_api/libsteam_api.dylib
+
+*.TMP
