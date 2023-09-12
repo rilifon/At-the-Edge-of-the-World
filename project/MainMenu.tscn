@@ -208,6 +208,7 @@ playing = true
 [node name="Waterfall" type="AnimatedSprite" parent="Intro"]
 position = Vector2( 640, 644.359 )
 frames = SubResource( 2 )
+frame = 4
 playing = true
 
 [node name="Menu" type="Control" parent="."]
@@ -257,24 +258,6 @@ anchor_bottom = 0.0
 margin_right = 200.0
 margin_bottom = 50.0
 text = "NEW_GAME"
-reward_resource = {
-"active": false,
-"amount": 0,
-"engine": {
-"active": false,
-"amount": 0.0,
-"type": ""
-},
-"type": ""
-}
-cost = {
-"active": false,
-"base_cost": 100,
-"exponential_progression": 1.2,
-"incremental_cost": 20,
-"times_used": 0,
-"type": ""
-}
 
 [node name="Camera2D" type="Camera2D" parent="."]
 position = Vector2( 640, 360 )
@@ -287,7 +270,6 @@ anims/intro = SubResource( 5 )
 [node name="TextLayer" type="CanvasLayer" parent="."]
 
 [node name="Story" type="Label" parent="TextLayer"]
-visible = false
 anchor_right = 1.0
 margin_bottom = 77.0
 rect_min_size = Vector2( 1280, 100 )
