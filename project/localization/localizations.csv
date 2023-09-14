@@ -1,3 +1,10 @@
 keys,en,pt_BR
-KEY_NAME,English,
-NEW_GAME,New Game,
+KEY_NAME,English,Português
+NEW_GAME,New Game,Novo Jogo
+INTRO_1,My story begins at the edge of the world,Minha história começa no fim do mundo
+INTRO_2,Global warming has melted the ice walls,O aquecimento global derreteu os muros de gelo
+INTRO_3,Nothing else could hold the oceans at the edges of Earth,Nada mais segurava os oceanos nas bordas da Terra
+INTRO_4,Life became difficult for a mere fisherman,A vida ficou difícil para um mero pescador
+INTRO_5,"My family was gone, I couldn't support them anymore","Minha família se foi, não conseguia mais sustentá-los"
+INTRO_6,But that doesn't mean I'm alone,Mas isso não significa que eu esteja sozinho
+INTRO_7,And I need to feed her...,E eu preciso alimentá-la...

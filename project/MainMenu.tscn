@@ -81,7 +81,7 @@ tracks/2/keys = {
 "times": PoolRealArray( 0, 6, 12, 18, 24, 30, 36 ),
 "transitions": PoolRealArray( 1, 1, 1, 1, 1, 1, 1 ),
 "update": 1,
-"values": [ "Minha história começa no fim do mundo", "O aquecimento global derreteu os muros de gelo", "Nada mais segurava os oceanos nas bordas da Terra", "A vida ficou difícil para um mero pescador", "Minha família se foi, não conseguia mais sustentá-los", "Mas isso não significa que eu esteja sozinho", "E eu preciso alimentá-la..." ]
+"values": [ "INTRO_1", "INTRO_2", "INTRO_3", "INTRO_4", "INTRO_5", "INTRO_6", "INTRO_7" ]
 }
 tracks/3/type = "value"
 tracks/3/path = NodePath("Intro:visible")
@@ -102,10 +102,10 @@ tracks/4/loop_wrap = true
 tracks/4/imported = false
 tracks/4/enabled = true
 tracks/4/keys = {
-"times": PoolRealArray( 0, 43, 43.5 ),
-"transitions": PoolRealArray( 1, 1, 1 ),
+"times": PoolRealArray( 0, 0.5, 5.5, 6, 6.5, 11.5, 12, 12.5, 17.5, 18, 18.5, 23.5, 24, 24.5, 29.5, 30, 30.5, 35.5, 36, 36.5, 43, 43.5 ),
+"transitions": PoolRealArray( 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1 ),
 "update": 0,
-"values": [ Color( 1, 1, 1, 1 ), Color( 1, 1, 1, 1 ), Color( 1, 1, 1, 0 ) ]
+"values": [ Color( 1, 1, 1, 0 ), Color( 1, 1, 1, 1 ), Color( 1, 1, 1, 1 ), Color( 1, 1, 1, 0 ), Color( 1, 1, 1, 1 ), Color( 1, 1, 1, 1 ), Color( 1, 1, 1, 0 ), Color( 1, 1, 1, 1 ), Color( 1, 1, 1, 1 ), Color( 1, 1, 1, 0 ), Color( 1, 1, 1, 1 ), Color( 1, 1, 1, 1 ), Color( 1, 1, 1, 0 ), Color( 1, 1, 1, 1 ), Color( 1, 1, 1, 1 ), Color( 1, 1, 1, 0 ), Color( 1, 1, 1, 1 ), Color( 1, 1, 1, 1 ), Color( 1, 1, 1, 0 ), Color( 1, 1, 1, 1 ), Color( 1, 1, 1, 1 ), Color( 1, 1, 1, 0 ) ]
 }
 tracks/5/type = "value"
 tracks/5/path = NodePath("Menu/Title:modulate")
@@ -208,6 +208,7 @@ playing = true
 [node name="Waterfall" type="AnimatedSprite" parent="Intro"]
 position = Vector2( 640, 644.359 )
 frames = SubResource( 2 )
+frame = 1
 playing = true
 
 [node name="Menu" type="Control" parent="."]
@@ -269,18 +270,16 @@ anims/intro = SubResource( 5 )
 [node name="TextLayer" type="CanvasLayer" parent="."]
 
 [node name="Story" type="Label" parent="TextLayer"]
+modulate = Color( 1, 1, 1, 0 )
 anchor_right = 1.0
 margin_bottom = 77.0
 rect_min_size = Vector2( 1280, 100 )
 custom_colors/font_color = Color( 0, 0, 0, 1 )
 custom_fonts/font = SubResource( 6 )
-text = "Minha história começa no fim do mundo"
+text = "INTRO_1"
 align = 1
 valign = 1
 clip_text = true
-__meta__ = {
-"_edit_use_anchors_": false
-}
 
 [node name="Skip" type="HBoxContainer" parent="TextLayer"]
 modulate = Color( 1, 1, 1, 0 )

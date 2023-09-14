@@ -175,12 +175,12 @@ skip={
 [locale]
 
 test="en"
-translations=PoolStringArray( "res://assets/localization/localizations.en.translation", "res://assets/localization/localizations.pt_BR.translation" )
+translations=PoolStringArray( "res://localization/localizations.en.translation", "res://localization/localizations.pt_BR.translation" )
 locale_filter=[ 1, [ "en", "pt_BR" ] ]
 
 [localization_editor]
 
-locales_path_to_file="res://assets/localization/localizations.csv"
+locales_path_to_file="res://localization/localizations.csv"
 
 [rendering]
 
