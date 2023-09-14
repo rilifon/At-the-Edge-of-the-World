@@ -57,7 +57,14 @@ func setup(player_ref, main_ref):
 	player = player_ref
 	main = main_ref
 	update_cost_text()
-	
+
+
+func enable_button():
+	$Button.disabled = false
+
+
+func disable_button():
+	$Button.disabled = true
 
 
 func get_cost_amount():
@@ -110,6 +117,9 @@ func maxed_out():
 	disable = true
 
 func activate_button(auto_use:= false):
+	if $Button.disabled:
+		return
+	
 	if disable:
 		error()
 		return
