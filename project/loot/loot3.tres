@@ -6,7 +6,7 @@
 [resource]
 script = ExtResource( 1 )
 id = "loot_3"
-loot_name = "Tubarão"
+loot_name = "LOOT3"
 image = ExtResource( 2 )
 fishing_chance = 3
 minimum_length = 3

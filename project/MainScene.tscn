@@ -24,9 +24,6 @@ margin_top = 207.522
 margin_right = 394.873
 margin_bottom = 707.522
 custom_constants/separation = 15
-__meta__ = {
-"_edit_use_anchors_": false
-}
 
 [node name="ScrollContainer" type="ScrollContainer" parent="Interface"]
 margin_right = 250.0
@@ -48,7 +45,7 @@ anchor_right = 0.0
 anchor_bottom = 0.0
 margin_right = 170.0
 margin_bottom = 50.0
-text = "     Comprar Liberdade   "
+text = "BUY_FREEDOM"
 id = "buy_ending"
 level_unlocked = 4
 reward_resource = {
@@ -78,7 +75,7 @@ margin_right = 170.0
 margin_bottom = 155.0
 rect_min_size = Vector2( 170, 85 )
 cooldown = 5.0
-text = "Pescar!"
+text = "FISH"
 id = "fishing"
 reward_resource = {
 "active": false,
@@ -101,7 +98,7 @@ anchor_bottom = 0.0
 margin_top = 175.0
 margin_right = 170.0
 margin_bottom = 225.0
-text = "   Comprar Linha   "
+text = "BUY_ROPE"
 id = "buy_rope"
 level_unlocked = 1
 reward_resource = {
@@ -124,7 +121,7 @@ anchor_bottom = 0.0
 margin_top = 245.0
 margin_right = 170.0
 margin_bottom = 295.0
-text = "   Melhorar Vara   "
+text = "BUY_ROD"
 id = "improve_rod"
 reward_resource = {
 "active": true,
@@ -151,7 +148,7 @@ anchor_bottom = 0.0
 margin_top = 315.0
 margin_right = 170.0
 margin_bottom = 365.0
-text = "     Contratar Lacaio   "
+text = "BUY_MONEYENGINE"
 id = "buy_money_engine"
 level_unlocked = 1
 reward_resource = {
@@ -179,7 +176,7 @@ anchor_bottom = 0.0
 margin_top = 385.0
 margin_right = 170.0
 margin_bottom = 435.0
-text = "     Comprar Molinete   "
+text = "BUY_AUTOFISH"
 id = "buy_autofish"
 level_unlocked = 3
 reward_resource = {
@@ -207,7 +204,7 @@ anchor_bottom = 0.0
 margin_top = 455.0
 margin_right = 170.0
 margin_bottom = 505.0
-text = "   Comprar Minhocas   "
+text = "BUY_BAIT1"
 id = "buy_bait1"
 reward_resource = {
 "active": true,
@@ -229,7 +226,7 @@ anchor_bottom = 0.0
 margin_top = 525.0
 margin_right = 170.0
 margin_bottom = 575.0
-text = "   Comprar Hot Dog   "
+text = "BUY_BAIT2"
 id = "buy_bait1"
 level_unlocked = 2
 reward_resource = {
@@ -252,7 +249,7 @@ anchor_bottom = 0.0
 margin_top = 595.0
 margin_right = 170.0
 margin_bottom = 645.0
-text = "   Comprar Gorgonzola   "
+text = "BUY_BAIT3"
 id = "buy_bait1"
 level_unlocked = 3
 reward_resource = {
@@ -276,20 +273,12 @@ margin_top = 665.0
 margin_right = 170.0
 margin_bottom = 715.0
 cooldown = 0.2
-text = "Mendigar"
+text = "BEG"
 id = "fishing"
 reward_resource = {
 "active": true,
 "amount": 1,
 "type": "money"
-}
-cost = {
-"active": false,
-"base_cost": 100,
-"exponential_progression": 1.2,
-"incremental_cost": 20,
-"times_used": 0,
-"type": ""
 }
 fake_cost = "dignidade"
 
@@ -310,9 +299,9 @@ margin_left = 392.724
 margin_top = 643.184
 margin_right = 1018.72
 margin_bottom = 691.184
-custom_fonts/font = SubResource( 1 )
 custom_colors/font_color = Color( 0, 0, 0, 1 )
-text = "Selecione alguma isca para pescar!"
+custom_fonts/font = SubResource( 1 )
+text = "NO_BAIT"
 __meta__ = {
 "_edit_use_anchors_": false
 }
@@ -327,4 +316,5 @@ margin_bottom = -11.7726
 stream = ExtResource( 7 )
 autoplay = true
 bus = "BGM"
+
 [connection signal="no_bait_selected" from="Interface/ScrollContainer/Buttons/Fishing" to="." method="_on_Fishing_no_bait_selected"]

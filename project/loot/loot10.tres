@@ -6,7 +6,7 @@
 [resource]
 script = ExtResource( 1 )
 id = "loot_10"
-loot_name = "Satélite metereológico"
+loot_name = "LOOT10"
 image = ExtResource( 2 )
 fishing_chance = 2
 minimum_length = 19

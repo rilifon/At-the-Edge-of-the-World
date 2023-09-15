@@ -3,47 +3,53 @@ extends Node
 signal update_resources
 
 const ENUMS = {
-	"rod_quality": ["Insalúbre", "Rubicunda", "Taciturna", "Kafkaesca", "Agnóstica", "Contatória", "Deletéria", "Idiossincrática", "Belicosa", "Iconoclasta"],
-	"line_length": ["2 metros", "13 pés", "1968,5 polegadas", ".03 milhas", "varios decâmetros", "60 FPS", "duas mil 7belos alinhadas", "250 ampères", "7 gorilas pequenos", "7 gorilas medianos", "mais de um hectômetro", "200 megabytes", "uma porrada de espaguete", "2 maracanãs", "intestino grosso extendido", "amor de mãe", "semana útil-luz", "2 parsecs", "1 siriômetro", "grandão, tipo, pra caramba"]
+	"rod_quality": ["RQ1", "RQ2", "RQ3", "RQ4", "RQ5", "RQ6", "RQ7", "RQ8", "RQ9", "RQ10"],
+	"line_length": ["LL1", "LL2", "LL3", "LL4", "LL5", "LL6", "LL7", "LL8", "LL9", "LL10", "LL11",\
+	 "LL12", "LL13", "LL14", "LL15", "LL16", "LL17", "LL18", "LL19", "LL20"]
 }
 
 var resources = {
 	"money":{
-		"name": "Grana",
+		"name": "MONEY",
 		"amount": 0,
 		"gain_per_second": 0,
-		"suffix": "doleta",
+		"suffix": "MONEY_SUFFIX",
+		"suffix_plural": "MONEY_SUFFIX_PLURAL",
 		"showing": true
 	},
 	"money_engine":{
-		"name": "Lacaios",
+		"name": "MONEY_ENGINE",
 		"amount": 0,
 		"gain_per_second": 0,
-		"suffix": "ostra",
+		"suffix": "MONEY_ENGINE_SUFFIX",
+		"suffix_plural": "MONEY_ENGINE_SUFFIX_PLURAL",
 		"showing": false
 	},
 	"line_length":{
-		"name": "Tamanho da Linha",
+		"name": "LINE_LENGTH",
 		"amount": 0,
 		"max": 19,
 		"gain_per_second": 0,
 		"suffix": "enum",
+		"suffix_plural": "enum",
 		"showing": true
 	},
 	"rod_quality":{
-		"name": "Qualidade da Vara",
+		"name": "ROD_QUALITY",
 		"amount": 0,
 		"max": ENUMS.rod_quality.size() - 1,
 		"gain_per_second": 0,
 		"suffix": "enum",
+		"suffix_plural": "enum",
 		"showing": true
 	},
 	"auto_fish":{
-		"name": "Molinete de Fusão a Frio",
+		"name": "AUTO_FISH",
 		"amount": 0,
 		"max": 1,
 		"gain_per_second": 0,
 		"suffix": "naco",
+		"suffix_plural": "",
 		"showing": false
 	},
 }

@@ -14,7 +14,7 @@ func setup(player_data):
 	player = player_data
 	
 	var label = LABEL.instance()
-	label.text = "--MUAMBAS--"
+	label.text = "STUFF"
 	label.add_font_override("font", BIG_FONT)
 	label.type = false
 	$HBoxContainer/FirstList.add_child(label)
@@ -25,7 +25,7 @@ func setup(player_data):
 			if resource_id == "loot":
 				loot_mode = true
 				var new_label = LABEL.instance()
-				new_label.text = "--PESCADOS--"
+				new_label.text = "FISH_LOOT"
 				new_label.add_font_override("font", BIG_FONT)
 				new_label.type = false
 				$HBoxContainer/ScrollContainer/LootList.add_child(new_label)
@@ -51,7 +51,7 @@ func setup(player_data):
 			else:
 				bait_mode = true
 				var new_label = LABEL.instance()
-				new_label.text = "--ISCAS--"
+				new_label.text = "BAITS"
 				new_label.add_font_override("font", BIG_FONT)
 				new_label.type = false
 				$HBoxContainer/FirstList.add_child(new_label)
@@ -88,16 +88,18 @@ func set_resource_text(resource_object):
 	if resource.amount > 0:
 		resource_object.show()
 	if resource_object is Button:
-		resource_object.text = "                 %s: %d %s" % [resource.name, resource.amount, resource.suffix]
 		if resource.amount != 1:
-			resource_object.text += "s"
+			resource_object.text = "                 %s: %d %s" % [tr(resource.name), resource.amount, tr(resource.suffix_plural)]
+		else:
+			resource_object.text = "                 %s: %d %s" % [tr(resource.name), resource.amount, tr(resource.suffix)]
 	elif resource_object is Label:
 		if resource.suffix == "enum":
-			resource_object.text = "%s: %s" % [resource.name, player.ENUMS[resource_object.type][resource.amount]]
+			resource_object.text = "%s: %s" % [tr(resource.name), tr(player.ENUMS[resource_object.type][resource.amount])]
 		else:
-			resource_object.text = "%s: %d %s" % [resource.name, resource.amount, resource.suffix]
 			if resource.amount != 1:
-				resource_object.text += "s"
+				resource_object.text = "%s: %d %s" % [tr(resource.name), resource.amount, tr(resource.suffix_plural)]
+			else:
+				resource_object.text = "%s: %d %s" % [tr(resource.name), resource.amount, tr(resource.suffix)]
 	if resource.gain_per_second > 0:
 		resource_object.text += " (+%.2f/s)" % resource.gain_per_second
 

@@ -4,7 +4,7 @@ onready var animation = $AnimationPlayer
 onready var progress_bar = $TextLayer/Skip/ProgressBar
 onready var skip_box = $TextLayer/Skip
 onready var NewGame = $Menu/VBoxContainer/NewGame
-onready var Exit = $Menu/VBoxContainer/NewGame
+onready var Exit = $Menu/VBoxContainer/Exit
 
 const SKIP_TOTAL_TIME = 1.0
 const SKIP_REDUCTION_SPEED = 1
@@ -53,6 +53,7 @@ func skip():
 	set_process(false)
 	skip_box.hide()
 	animation.seek(45.5, true)
+	enable()
 
 
 func _on_NewGame_acted(_self):

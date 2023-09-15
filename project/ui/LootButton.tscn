@@ -43,8 +43,8 @@ __meta__ = {
 [node name="Name" type="Label" parent="MainContainer"]
 margin_right = 451.0
 margin_bottom = 37.0
-custom_fonts/font = SubResource( 1 )
 custom_colors/font_color = Color( 0, 0, 0, 1 )
+custom_fonts/font = SubResource( 1 )
 text = "Nome Legal"
 __meta__ = {
 "_edit_use_anchors_": false
@@ -74,16 +74,16 @@ expand = true
 margin_top = 68.0
 margin_right = 64.0
 margin_bottom = 95.0
-custom_fonts/font = SubResource( 2 )
 custom_colors/font_color = Color( 0, 0, 0, 1 )
+custom_fonts/font = SubResource( 2 )
 text = "x10"
 
 [node name="Price" type="Label" parent="MainContainer/ContentContainer/ImageContainer"]
 margin_top = 99.0
 margin_right = 64.0
 margin_bottom = 123.0
-custom_fonts/font = SubResource( 3 )
 custom_colors/font_color = Color( 0, 0, 0, 1 )
+custom_fonts/font = SubResource( 3 )
 text = "$ 20 $"
 
 [node name="Buttons" type="VBoxContainer" parent="MainContainer/ContentContainer"]
@@ -165,6 +165,7 @@ shortcut_in_tooltip = false
 enabled_focus_mode = 0
 text = "  vender x100  "
 script = ExtResource( 5 )
+
 [connection signal="mouse_entered" from="MainContainer/ContentContainer/Buttons/FeedButtons/Feed1" to="." method="_on_button_mouse_entered" binds= [ "feed", 0 ]]
 [connection signal="mouse_exited" from="MainContainer/ContentContainer/Buttons/FeedButtons/Feed1" to="." method="_on_button_mouse_exited" binds= [ "feed", 0 ]]
 [connection signal="pressed" from="MainContainer/ContentContainer/Buttons/FeedButtons/Feed1" to="." method="_on_feed_pressed" binds= [ 1 ]]
