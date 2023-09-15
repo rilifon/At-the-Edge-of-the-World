@@ -215,7 +215,7 @@ playing = true
 [node name="Waterfall" type="AnimatedSprite" parent="Intro"]
 position = Vector2( 640, 644.359 )
 frames = SubResource( 2 )
-frame = 4
+frame = 2
 playing = true
 
 [node name="ColorRect" type="ColorRect" parent="Intro"]
@@ -302,8 +302,10 @@ clip_text = true
 modulate = Color( 1, 1, 1, 0 )
 anchor_top = 1.0
 anchor_bottom = 1.0
-margin_top = -120.0
-margin_right = 385.0
+margin_left = 19.0
+margin_top = -137.0
+margin_right = 404.0
+margin_bottom = -17.0
 custom_constants/separation = 20
 __meta__ = {
 "_edit_use_anchors_": false
