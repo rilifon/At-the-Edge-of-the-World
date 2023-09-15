@@ -26,9 +26,6 @@ font_data = ExtResource( 2 )
 anchor_right = 1.0
 anchor_bottom = 1.0
 script = ExtResource( 5 )
-__meta__ = {
-"_edit_use_anchors_": false
-}
 
 [node name="AnimatedSprite" type="AnimatedSprite" parent="."]
 position = Vector2( 640, 420 )
@@ -39,26 +36,20 @@ playing = true
 [node name="Label" type="Label" parent="."]
 anchor_right = 1.0
 margin_bottom = 147.0
-custom_fonts/font = SubResource( 2 )
 custom_colors/font_color = Color( 0, 0, 0, 1 )
-text = "Finalmente saciada, a fera se despede
-de seu derreado hospedeiro..."
+custom_fonts/font = SubResource( 2 )
+text = "END1_TEXT"
 align = 1
-__meta__ = {
-"_edit_use_anchors_": false
-}
 
 [node name="Label2" type="Label" parent="."]
-anchor_left = 1.0
 anchor_top = 1.0
 anchor_right = 1.0
 anchor_bottom = 1.0
-margin_left = -200.0
 margin_top = -120.0
-custom_fonts/font = SubResource( 3 )
 custom_colors/font_color = Color( 0, 0, 0, 1 )
-text = "Fim"
-align = 1
+custom_fonts/font = SubResource( 3 )
+text = "END1"
+align = 2
 __meta__ = {
 "_edit_use_anchors_": false
 }

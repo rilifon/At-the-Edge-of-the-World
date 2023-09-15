@@ -12,6 +12,8 @@ func _input(event):
 	#TODO: Remove this DEBUG
 	if event.is_action_pressed("ui_home"):
 		player_data.gain("money", 9999999)
+	if event.is_action_pressed("ui_end"):
+		player_data.gain("money", 100)
 
 func _ready():
 	$NoBaitSelected.modulate.a = 0.0

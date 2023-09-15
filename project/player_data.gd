@@ -48,8 +48,8 @@ var resources = {
 		"amount": 0,
 		"max": 1,
 		"gain_per_second": 0,
-		"suffix": "naco",
-		"suffix_plural": "",
+		"suffix": "AUTO_FISH_SUFFIX",
+		"suffix_plural": "AUTO_FISH_SUFFIX_PLURAL",
 		"showing": false
 	},
 }
@@ -58,7 +58,7 @@ func init():
 	var first = true
 	resources["bait"] = {}
 	for bait in BaitManager.get_all_baits():
-		resources[bait.id] = {"name": bait.bait_name, "amount": 0, "showing": false, "suffix": "unidade", "gain_per_second": 0}
+		resources[bait.id] = {"name": bait.bait_name, "amount": 0, "showing": false, "suffix": "BAIT_SUFFIX", "suffix_plural": "BAIT_SUFFIX_PLURAL", "gain_per_second": 0}
 		if first:
 			first = false
 			resources[bait.id].showing = true

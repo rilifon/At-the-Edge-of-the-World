@@ -60,7 +60,7 @@ reward_resource = {
 }
 cost = {
 "active": true,
-"base_cost": 10000,
+"base_cost": 666666,
 "exponential_progression": 1.2,
 "incremental_cost": 0,
 "times_used": 0,
@@ -90,7 +90,7 @@ cost = {
 "times_used": 0,
 "type": "bait"
 }
-fake_cost = "1 Isca"
+fake_cost = "ONE_BAIT"
 
 [node name="Rope" parent="Interface/ScrollContainer/Buttons" instance=ExtResource( 2 )]
 anchor_right = 0.0
@@ -156,16 +156,16 @@ reward_resource = {
 "amount": 1,
 "engine": {
 "active": true,
-"amount": 0.1,
+"amount": 0.2,
 "type": "money"
 },
 "type": "money_engine"
 }
 cost = {
 "active": true,
-"base_cost": 10,
+"base_cost": 1,
 "exponential_progression": 1.01,
-"incremental_cost": 2,
+"incremental_cost": 1,
 "times_used": 0,
 "type": "money"
 }
@@ -280,7 +280,7 @@ reward_resource = {
 "amount": 1,
 "type": "money"
 }
-fake_cost = "dignidade"
+fake_cost = "DIGNITY"
 
 [node name="ResourceList" parent="Interface" instance=ExtResource( 5 )]
 anchor_right = 0.0

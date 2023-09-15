@@ -73,7 +73,7 @@ func get_cost_amount():
 
 func update_cost_text():
 	if fake_cost != "":
-		$Cost.text = "custo: %s" % [fake_cost]
+		$Cost.text = tr("COST") + ": %s" % [tr(fake_cost)]
 		rect_min_size.y = $Cost.rect_position.y + $Cost.rect_size.y
 	elif cost.active:
 		var type_name
@@ -81,7 +81,7 @@ func update_cost_text():
 			type_name = player.get_resource_name(cost.type)
 		else:
 			type_name = "bait"
-		$Cost.text = "custo: %d %s" % [get_cost_amount(), type_name]
+		$Cost.text = tr("COST") + ": %d %s" % [get_cost_amount(), tr(type_name)]
 		rect_min_size.y = $Cost.rect_position.y + $Cost.rect_size.y
 	else:
 		$Cost.text = ""
@@ -111,7 +111,7 @@ func start_cooldown():
 
 
 func maxed_out():
-	$Button.text = "   FORA DE ESTOQUE   "
+	$Button.text = "OUT_OF_STOCK"
 	$Cost.text = ""
 	rect_min_size.y = $Button.rect_position.y + $Button.rect_size.y
 	disable = true

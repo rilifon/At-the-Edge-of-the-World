@@ -153,6 +153,8 @@ LocalizationManager="*res://addons/localization_editor/LocalizationManager.gd"
 
 window/size/width=1280
 window/size/height=720
+window/stretch/mode="2d"
+window/stretch/aspect="keep"
 
 [editor_plugins]
 
