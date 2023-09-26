@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/xylophone.png-6c9266aa90e45d660d49dc62952d6bd9.stex"
+path="res://.import/icon.png-c2491edcc2983d06084369a92201d027.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/images/loot/xylophone.png"
-dest_files=[ "res://.import/xylophone.png-6c9266aa90e45d660d49dc62952d6bd9.stex" ]
+source_file="res://assets/images/icon/icon.png"
+dest_files=[ "res://.import/icon.png-c2491edcc2983d06084369a92201d027.stex" ]
 
 [params]
 
@@ -21,8 +21,8 @@ compress/bptc_ldr=0
 compress/normal_map=0
 flags/repeat=0
 flags/filter=true
-flags/mipmaps=true
-flags/anisotropic=true
+flags/mipmaps=false
+flags/anisotropic=false
 flags/srgb=2
 process/fix_alpha_border=true
 process/premult_alpha=false

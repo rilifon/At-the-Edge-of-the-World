@@ -5,6 +5,7 @@ onready var progress_bar = $TextLayer/Skip/ProgressBar
 onready var skip_box = $TextLayer/Skip
 onready var NewGame = $Menu/VBoxContainer/NewGame
 onready var Exit = $Menu/VBoxContainer/Exit
+onready var Particle = $Menu/ParticlesEmitter
 
 const SKIP_TOTAL_TIME = 1.0
 const SKIP_REDUCTION_SPEED = 1
@@ -53,6 +54,7 @@ func skip():
 	set_process(false)
 	skip_box.hide()
 	animation.seek(45.5, true)
+	Particle.emitting = true
 	enable()
 
 
