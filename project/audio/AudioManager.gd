@@ -29,13 +29,16 @@ func setup_sfxs():
 		push_error("An error occurred when trying to access sfxs path.")
 		assert(false)
 
+
 func get_sfx_player():
 	var player = $SFXS.get_node("SFXPlayer"+str(cur_sfx_player))
 	cur_sfx_player = (cur_sfx_player%MAX_SFXS) + 1
 	return player
 
+
 func has_sfx(name: String):
 	return SFXS.has(name)
+
 
 func play_sfx(name: String, override_pitch = false):
 	if not SFXS.has(name):

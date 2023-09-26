@@ -150,6 +150,7 @@ PaletteLayer="*res://PaletteLayer.tscn"
 FishingManager="*res://FishingManager.gd"
 Steam="*res://addons/steam_api/steam.gd"
 LocalizationManager="*res://addons/localization_editor/LocalizationManager.gd"
+NarrationManager="*res://NarrationManager.tscn"
 
 [display]
 
