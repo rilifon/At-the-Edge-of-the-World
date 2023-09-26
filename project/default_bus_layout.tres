@@ -2,8 +2,9 @@
 
 [sub_resource type="AudioEffectFilter" id=3]
 resource_name = "Filter"
+cutoff_hz = 3000.0
 resonance = 0.3
-db = 3
+db = 2
 
 [sub_resource type="AudioEffectReverb" id=4]
 resource_name = "Reverb"
