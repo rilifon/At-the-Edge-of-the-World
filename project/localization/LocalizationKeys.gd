@@ -5,6 +5,11 @@ class_name LocalizationKeys
 
 const KEY_NAME = "KEY_NAME"
 const NEW_GAME = "NEW_GAME"
+const OPTIONS = "OPTIONS"
+const MASTER_VOLUME = "MASTER_VOLUME"
+const BGM_VOLUME = "BGM_VOLUME"
+const SFX_VOLUME = "SFX_VOLUME"
+const NARRATION_VOLUME = "NARRATION_VOLUME"
 const EXIT = "EXIT"
 const INTRO_1 = "INTRO_1"
 const INTRO_2 = "INTRO_2"
@@ -101,6 +106,11 @@ const END1 = "END1"
 const KEYS = [
  "KEY_NAME",
  "NEW_GAME",
+ "OPTIONS",
+ "MASTER_VOLUME",
+ "BGM_VOLUME",
+ "SFX_VOLUME",
+ "NARRATION_VOLUME",
  "EXIT",
  "INTRO_1",
  "INTRO_2",

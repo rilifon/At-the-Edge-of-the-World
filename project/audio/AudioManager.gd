@@ -1,18 +1,34 @@
 extends Node
 
-#Bus
-enum {MASTER_BUS, BGM_BUS, SFX_BUS}
+#Buses
+enum {MASTER_BUS, BGM_BUS, SFX_BUS, NARRATION_BUS}
+
+#Volume
+const MUTE_DB = -80 #Muted volume
+const CONTROL_MULTIPLIER = 2.5
 
 #SFX
-const MAX_SFXS = 10
+const MAX_SFXS = 50
 const SFX_PATH = "res://assets/audio/sfxs_res/"
 onready var SFXS = {}
 onready var CUR_IDLE_SFX = {}
 
 var cur_sfx_player := 1
 
+
 func _ready():
+	setup_nodes()
 	setup_sfxs()
+
+
+func setup_nodes():
+	for _i in range(MAX_SFXS + 1):
+		var node = AudioStreamPlayer.new()
+		node.stream = AudioStreamRandomPitch.new()
+		node.stream.random_pitch = 1.0
+		node.bus = "SFX"
+		$SFXS.add_child(node)
+
 
 func setup_sfxs():
 	var dir = Directory.new()
@@ -31,7 +47,7 @@ func setup_sfxs():
 
 
 func get_sfx_player():
-	var player = $SFXS.get_node("SFXPlayer"+str(cur_sfx_player))
+	var player = $SFXS.get_child(cur_sfx_player)
 	cur_sfx_player = (cur_sfx_player%MAX_SFXS) + 1
 	return player
 
@@ -69,3 +85,26 @@ func get_sfx_duration(name: String):
 		push_error("Not a valid sfx name: " + name)
 		assert(false)
 	return SFXS[name].asset.get_length()
+
+
+# Bus Methods
+
+#Expects a value between 0 and 1
+func set_bus_volume(which_bus: int, value: float):
+	var db
+	if value <= 0.0:
+		db = MUTE_DB
+	else:
+		db = (1-value)*MUTE_DB/CONTROL_MULTIPLIER
+	
+	if which_bus in [MASTER_BUS, BGM_BUS, SFX_BUS]:
+		AudioServer.set_bus_volume_db(which_bus, db)
+	else:
+		assert(false, "Not a valid bus to set volume: " + str(which_bus))
+
+
+func get_bus_volume(which_bus: int):
+	if which_bus in [MASTER_BUS, BGM_BUS, SFX_BUS, NARRATION_BUS]:
+		return clamp(1.0 - AudioServer.get_bus_volume_db(which_bus)/float(MUTE_DB/CONTROL_MULTIPLIER), 0.0, 1.0)
+	else:
+		assert(false, "Not a valid bus to set volume: " + str(which_bus))

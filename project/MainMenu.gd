@@ -10,11 +10,13 @@ onready var Particle = $Menu/ParticlesEmitter
 const SKIP_TOTAL_TIME = 1.0
 const SKIP_REDUCTION_SPEED = 1
 
+onready var Settings = $Settings
 
 var skip_timer := 0.0
 
 
 func _ready():
+	Settings.hide()
 	disable()
 	if Global.USE_STEAM:
 		print(Steam.is_init())
@@ -65,3 +67,7 @@ func _on_NewGame_acted(_self):
 
 func _on_Exit_acted(_self):
 	get_tree().quit()
+
+
+func _on_Settings_acted(_self):
+	Settings.enable()
