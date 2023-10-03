@@ -55,4 +55,6 @@ custom_fonts/font = SubResource( 2 )
 text = "100"
 align = 1
 
+[node name="TestSFX" type="AudioStreamPlayer" parent="."]
+
 [connection signal="value_changed" from="VBoxContainer/HBoxContainer/HSlider" to="." method="_on_HSlider_value_changed"]

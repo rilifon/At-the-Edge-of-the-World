@@ -1,9 +1,14 @@
-[gd_scene load_steps=5 format=2]
+[gd_scene load_steps=10 format=2]
 
 [ext_resource path="res://general_theme.tres" type="Theme" id=1]
 [ext_resource path="res://settings/Settings.gd" type="Script" id=2]
 [ext_resource path="res://SoundSetting.tscn" type="PackedScene" id=3]
 [ext_resource path="res://Button.tscn" type="PackedScene" id=4]
+[ext_resource path="res://assets/audio/sfxs/crunch1.wav" type="AudioStream" id=5]
+[ext_resource path="res://assets/audio/sfxs/crunch2.wav" type="AudioStream" id=6]
+[ext_resource path="res://assets/audio/sfxs/settings/bw_01_ahab_Settings.wav" type="AudioStream" id=7]
+[ext_resource path="res://assets/audio/sfxs/settings/bw_02_ahab_Settings.wav" type="AudioStream" id=8]
+[ext_resource path="res://assets/audio/sfxs/settings/bw_03_ahab_Settings.wav" type="AudioStream" id=9]
 
 [node name="Settings" type="Control"]
 anchor_right = 1.0
@@ -54,18 +59,26 @@ margin_top = 168.0
 margin_right = 350.0
 margin_bottom = 248.0
 bus = 2
+test_sfxs = [ ExtResource( 5 ), ExtResource( 6 ) ]
 
 [node name="Label" parent="VB/SFXSound/VBoxContainer" index="0"]
 text = "SFX_VOLUME"
+
+[node name="TestSFX" parent="VB/SFXSound" index="1"]
+bus = "SFX"
 
 [node name="NarrationSound" parent="VB" instance=ExtResource( 3 )]
 margin_top = 252.0
 margin_right = 350.0
 margin_bottom = 332.0
 bus = 3
+test_sfxs = [ ExtResource( 7 ), ExtResource( 8 ), ExtResource( 9 ) ]
 
 [node name="Label" parent="VB/NarrationSound/VBoxContainer" index="0"]
 text = "NARRATION_VOLUME"
+
+[node name="TestSFX" parent="VB/NarrationSound" index="1"]
+bus = "Narration"
 
 [node name="Back" parent="." instance=ExtResource( 4 )]
 anchor_right = 0.0
@@ -79,6 +92,7 @@ text = "BACK"
 [connection signal="change_value" from="VB/MasterSound" to="." method="_on_Sound_change_value"]
 [connection signal="change_value" from="VB/BGMSound" to="." method="_on_Sound_change_value"]
 [connection signal="change_value" from="VB/SFXSound" to="." method="_on_Sound_change_value"]
+[connection signal="change_value" from="VB/NarrationSound" to="." method="_on_Sound_change_value"]
 [connection signal="acted" from="Back" to="." method="_on_Back_acted"]
 
 [editable path="VB/BGMSound"]

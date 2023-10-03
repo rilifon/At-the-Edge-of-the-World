@@ -97,7 +97,7 @@ func set_bus_volume(which_bus: int, value: float):
 	else:
 		db = (1-value)*MUTE_DB/CONTROL_MULTIPLIER
 	
-	if which_bus in [MASTER_BUS, BGM_BUS, SFX_BUS]:
+	if which_bus in [MASTER_BUS, BGM_BUS, SFX_BUS, NARRATION_BUS]:
 		AudioServer.set_bus_volume_db(which_bus, db)
 	else:
 		assert(false, "Not a valid bus to set volume: " + str(which_bus))

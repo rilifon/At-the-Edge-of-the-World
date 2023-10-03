@@ -16,6 +16,7 @@ var skip_timer := 0.0
 
 
 func _ready():
+	randomize()
 	Settings.hide()
 	disable()
 	if Global.USE_STEAM:

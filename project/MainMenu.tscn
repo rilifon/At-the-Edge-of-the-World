@@ -223,13 +223,11 @@ script = ExtResource( 9 )
 [node name="Ahab" type="AnimatedSprite" parent="Intro"]
 position = Vector2( 635.213, 391.257 )
 frames = SubResource( 1 )
-frame = 1
 playing = true
 
 [node name="Waterfall" type="AnimatedSprite" parent="Intro"]
 position = Vector2( 640, 644.359 )
 frames = SubResource( 2 )
-frame = 2
 playing = true
 
 [node name="ColorRect" type="ColorRect" parent="Intro"]
@@ -265,10 +263,9 @@ modulate = Color( 1, 1, 1, 0 )
 position = Vector2( 1000, 363 )
 scale = Vector2( 0.7, 0.7 )
 frames = SubResource( 4 )
-frame = 1
 playing = true
 
-[node name="VBoxContainer" type="VBoxContainer" parent="Menu"]
+[node name="VBoxContainer" type="Control" parent="Menu"]
 modulate = Color( 1, 1, 1, 0 )
 margin_left = 134.0
 margin_top = 219.0
@@ -276,8 +273,6 @@ margin_right = 434.0
 margin_bottom = 719.0
 rect_min_size = Vector2( 300, 500 )
 theme = ExtResource( 12 )
-custom_constants/separation = 5
-alignment = 1
 
 [node name="NewGame" parent="Menu/VBoxContainer" instance=ExtResource( 15 )]
 anchor_right = 0.0
