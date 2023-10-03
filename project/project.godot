@@ -135,7 +135,7 @@ _global_script_class_icons={
 [application]
 
 config/name="At the Edge of the World"
-run/main_scene="res://MainMenu.tscn"
+run/main_scene="res://Splash.tscn"
 config/icon="res://assets/images/icon/icon.png"
 config/macos_native_icon="res://assets/images/icon/icon.icns"
 config/windows_native_icon="res://assets/images/icon/icon.ico"
@@ -151,6 +151,8 @@ FishingManager="*res://FishingManager.gd"
 Steam="*res://addons/steam_api/steam.gd"
 LocalizationManager="*res://addons/localization_editor/LocalizationManager.gd"
 NarrationManager="*res://NarrationManager.tscn"
+FileManager="*res://FileManager.gd"
+Profile="*res://Profile.gd"
 
 [display]
 

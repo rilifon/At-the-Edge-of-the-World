@@ -10,11 +10,12 @@ var player_data
 var cur_level = 0
 
 func _input(event):
-	#TODO: Remove this DEBUG
+	#TODO: Remove DEBUG options or make them harder to access
 	if event.is_action_pressed("ui_home"):
 		player_data.gain("money", 9999999)
 	if event.is_action_pressed("ui_end"):
 		player_data.gain("money", 100)
+	
 	if event.is_action_pressed("pause"):
 		AudioManager.play_sfx("click_button")
 		if Settings.active:

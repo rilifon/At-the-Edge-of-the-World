@@ -17,6 +17,11 @@ var delay = 0.0
 func _physics_process(delta):
 	delay = max(delay - delta, 0.0)
 
+
+func get_value():
+	return ValueSlider.value/float(100)
+
+
 func set_value(value):
 	var was_dummy = dummy
 	dummy = true
