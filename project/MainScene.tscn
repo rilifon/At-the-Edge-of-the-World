@@ -1,4 +1,4 @@
-[gd_scene load_steps=10 format=2]
+[gd_scene load_steps=15 format=2]
 
 [ext_resource path="res://MainScene.gd" type="Script" id=1]
 [ext_resource path="res://Button.tscn" type="PackedScene" id=2]
@@ -8,12 +8,26 @@
 [ext_resource path="res://assets/fonts/Itim-Regular.ttf" type="DynamicFontData" id=6]
 [ext_resource path="res://assets/audio/bgm/main.ogg" type="AudioStream" id=7]
 [ext_resource path="res://ParticleEmitter.tscn" type="PackedScene" id=8]
+[ext_resource path="res://assets/images/buttons/settings_icon.png" type="Texture" id=9]
+[ext_resource path="res://settings/Settings.tscn" type="PackedScene" id=10]
 
 [sub_resource type="DynamicFont" id=1]
 size = 40
 use_mipmaps = true
 use_filter = true
 font_data = ExtResource( 6 )
+
+[sub_resource type="StyleBoxTexture" id=2]
+texture = ExtResource( 9 )
+region_rect = Rect2( 0, 0, 512, 512 )
+
+[sub_resource type="StyleBoxTexture" id=3]
+texture = ExtResource( 9 )
+region_rect = Rect2( 0, 0, 512, 512 )
+
+[sub_resource type="StyleBoxTexture" id=4]
+texture = ExtResource( 9 )
+region_rect = Rect2( 0, 0, 512, 512 )
 
 [node name="MainScene" type="Node2D"]
 script = ExtResource( 1 )
@@ -320,4 +334,28 @@ stream = ExtResource( 7 )
 autoplay = true
 bus = "BGM"
 
+[node name="SettingsButton" type="Button" parent="."]
+margin_left = 1219.0
+margin_top = 8.0
+margin_right = 1269.0
+margin_bottom = 58.0
+focus_mode = 0
+custom_styles/hover = SubResource( 2 )
+custom_styles/pressed = SubResource( 3 )
+custom_styles/normal = SubResource( 4 )
+enabled_focus_mode = 0
+
+[node name="Settings" parent="." instance=ExtResource( 10 )]
+visible = false
+margin_right = 1280.0
+margin_bottom = 720.0
+
 [connection signal="no_bait_selected" from="Interface/ScrollContainer/Buttons/Fishing" to="." method="_on_Fishing_no_bait_selected"]
+[connection signal="mouse_entered" from="SettingsButton" to="." method="_on_SettingsButton_mouse_entered"]
+[connection signal="pressed" from="SettingsButton" to="." method="_on_SettingsButton_pressed"]
+
+[editable path="Settings"]
+[editable path="Settings/VB/BGMSound"]
+[editable path="Settings/VB/SFXSound"]
+[editable path="Settings/VB/NarrationSound"]
+[editable path="Settings/VB/Dummy"]

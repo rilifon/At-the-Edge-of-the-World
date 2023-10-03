@@ -3,8 +3,9 @@ extends Control
 onready var animation = $AnimationPlayer
 onready var progress_bar = $TextLayer/Skip/ProgressBar
 onready var skip_box = $TextLayer/Skip
-onready var NewGame = $Menu/VBoxContainer/NewGame
-onready var Exit = $Menu/VBoxContainer/Exit
+onready var NewGame = $Menu/Buttons/NewGame
+onready var SettingsButton = $Menu/Buttons/Settings
+onready var Exit = $Menu/Buttons/Exit
 onready var Particle = $Menu/ParticlesEmitter
 
 const SKIP_TOTAL_TIME = 1.0
@@ -46,11 +47,13 @@ func _process(delta):
 func enable():
 	NewGame.enable_button()
 	Exit.enable_button()
+	SettingsButton.enable_button()
 
 
 func disable():
 	NewGame.disable_button()
 	Exit.disable_button()
+	SettingsButton.disable_button()
 
 
 func skip():

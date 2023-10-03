@@ -6,17 +6,24 @@ onready var SoundSettings = [
 	$VB/SFXSound,
 	$VB/NarrationSound,
 ]
+onready var Dummy = $VB/Dummy
+onready var Fullscreen = $VB/Fullscreen
+onready var AnimPlayer = $AnimationPlayer
+
+export var active = false
 
 func _ready():
 	setup_volumes()
-
+	Dummy.set_value(100)
+	Fullscreen.pressed = OS.window_fullscreen
+	
 
 func enable():
-	show()
+	AnimPlayer.play("enable")
 
 
 func disable():
-	hide()
+	AnimPlayer.play("disable")
 
 
 func setup_volumes():
@@ -30,3 +37,7 @@ func _on_Sound_change_value(value, bus):
 
 func _on_Back_acted(_self):
 	disable()
+
+
+func _on_FullScreen_toggled(button_pressed):
+	OS.window_fullscreen = button_pressed

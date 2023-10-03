@@ -3,6 +3,7 @@ extends Node2D
 onready var buttons = $Interface/ScrollContainer/Buttons
 onready var resource_list = $Interface/ResourceList
 onready var fera = $Fera
+onready var Settings = $Settings
 
 var player_data
 
@@ -14,6 +15,12 @@ func _input(event):
 		player_data.gain("money", 9999999)
 	if event.is_action_pressed("ui_end"):
 		player_data.gain("money", 100)
+	if event.is_action_pressed("pause"):
+		AudioManager.play_sfx("click_button")
+		if Settings.active:
+			Settings.disable()
+		else:
+			Settings.enable()
 
 func _ready():
 	$NoBaitSelected.modulate.a = 0.0
@@ -86,3 +93,12 @@ func _on_level_up(level):
 		if button.level_unlocked <= cur_level:
 			button.show()
 	PaletteLayer.change_to(cur_level)
+
+
+func _on_SettingsButton_pressed():
+	Settings.enable()
+	AudioManager.play_sfx("click_button")
+
+
+func _on_SettingsButton_mouse_entered():
+	AudioManager.play_sfx("hover_button")

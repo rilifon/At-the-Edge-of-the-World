@@ -146,7 +146,7 @@ tracks/7/keys = {
 "values": [ Vector2( 0.7, 0.7 ), Vector2( 0.7, 0.7 ), Vector2( 1, 1 ) ]
 }
 tracks/8/type = "value"
-tracks/8/path = NodePath("Menu/VBoxContainer:modulate")
+tracks/8/path = NodePath("Menu/Buttons:modulate")
 tracks/8/interp = 1
 tracks/8/loop_wrap = true
 tracks/8/imported = false
@@ -223,6 +223,7 @@ script = ExtResource( 9 )
 [node name="Ahab" type="AnimatedSprite" parent="Intro"]
 position = Vector2( 635.213, 391.257 )
 frames = SubResource( 1 )
+frame = 1
 playing = true
 
 [node name="Waterfall" type="AnimatedSprite" parent="Intro"]
@@ -243,6 +244,7 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 
 [node name="ParticlesEmitter" parent="Menu" instance=ExtResource( 16 )]
+emitting = false
 local_coords = false
 
 [node name="Title" type="Label" parent="Menu"]
@@ -263,9 +265,10 @@ modulate = Color( 1, 1, 1, 0 )
 position = Vector2( 1000, 363 )
 scale = Vector2( 0.7, 0.7 )
 frames = SubResource( 4 )
+frame = 1
 playing = true
 
-[node name="VBoxContainer" type="Control" parent="Menu"]
+[node name="Buttons" type="Control" parent="Menu"]
 modulate = Color( 1, 1, 1, 0 )
 margin_left = 134.0
 margin_top = 219.0
@@ -274,7 +277,7 @@ margin_bottom = 719.0
 rect_min_size = Vector2( 300, 500 )
 theme = ExtResource( 12 )
 
-[node name="NewGame" parent="Menu/VBoxContainer" instance=ExtResource( 15 )]
+[node name="NewGame" parent="Menu/Buttons" instance=ExtResource( 15 )]
 anchor_right = 0.0
 anchor_bottom = 0.0
 margin_top = 125.0
@@ -283,7 +286,7 @@ margin_bottom = 205.0
 rect_min_size = Vector2( 300, 80 )
 text = "NEW_GAME"
 
-[node name="Settings" parent="Menu/VBoxContainer" instance=ExtResource( 15 )]
+[node name="Settings" parent="Menu/Buttons" instance=ExtResource( 15 )]
 anchor_right = 0.0
 anchor_bottom = 0.0
 margin_top = 210.0
@@ -292,7 +295,7 @@ margin_bottom = 290.0
 rect_min_size = Vector2( 300, 80 )
 text = "OPTIONS"
 
-[node name="Exit" parent="Menu/VBoxContainer" instance=ExtResource( 15 )]
+[node name="Exit" parent="Menu/Buttons" instance=ExtResource( 15 )]
 anchor_right = 0.0
 anchor_bottom = 0.0
 margin_top = 295.0
@@ -302,9 +305,8 @@ rect_min_size = Vector2( 300, 80 )
 text = "EXIT"
 
 [node name="Camera2D" type="Camera2D" parent="."]
-position = Vector2( 577, 372 )
+position = Vector2( 640, 360 )
 current = true
-zoom = Vector2( 0.03, 0.03 )
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
 autoplay = "intro"
@@ -313,18 +315,18 @@ anims/intro = SubResource( 5 )
 [node name="TextLayer" type="CanvasLayer" parent="."]
 
 [node name="Story" type="Label" parent="TextLayer"]
+modulate = Color( 1, 1, 1, 0 )
 anchor_right = 1.0
 margin_bottom = 77.0
 rect_min_size = Vector2( 1280, 100 )
 custom_colors/font_color = Color( 0, 0, 0, 1 )
 custom_fonts/font = SubResource( 6 )
-text = "INTRO_7"
+text = "INTRO_1"
 align = 1
 valign = 1
 clip_text = true
 
 [node name="Skip" type="HBoxContainer" parent="TextLayer"]
-visible = false
 modulate = Color( 1, 1, 1, 0 )
 anchor_top = 1.0
 anchor_bottom = 1.0
@@ -353,13 +355,12 @@ custom_fonts/font = SubResource( 7 )
 text = "SKIP_INTRO"
 
 [node name="Settings" parent="." instance=ExtResource( 17 )]
-visible = false
 
 [node name="BGM" type="AudioStreamPlayer" parent="."]
 stream = ExtResource( 14 )
 autoplay = true
 bus = "BGM"
 
-[connection signal="acted" from="Menu/VBoxContainer/NewGame" to="." method="_on_NewGame_acted"]
-[connection signal="acted" from="Menu/VBoxContainer/Settings" to="." method="_on_Settings_acted"]
-[connection signal="acted" from="Menu/VBoxContainer/Exit" to="." method="_on_Exit_acted"]
+[connection signal="acted" from="Menu/Buttons/NewGame" to="." method="_on_NewGame_acted"]
+[connection signal="acted" from="Menu/Buttons/Settings" to="." method="_on_Settings_acted"]
+[connection signal="acted" from="Menu/Buttons/Exit" to="." method="_on_Exit_acted"]
