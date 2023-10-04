@@ -10,7 +10,7 @@ var player_data
 var cur_level = 0
 
 
-func _ready():	
+func _ready():
 	$NoBaitSelected.modulate.a = 0.0
 	
 	player_data = load("res://player_data.gd").new()
@@ -37,6 +37,7 @@ func _ready():
 	
 	resource_list.update_resources()
 	
+	NarrationManager.set_cur_stage(cur_level)
 	NarrationManager.is_running = true
 
 
@@ -71,14 +72,15 @@ func get_save_data():
 	var data = {
 		"cur_level": cur_level,
 		"player_data": player_data.get_save_data(),
+		"narration_data": NarrationManager.get_data(),
 	}
-
 	return data
 
 
 func set_save_data(data):
 	cur_level = data.cur_level
 	player_data.set_save_data(data.player_data)
+	NarrationManager.set_data(data.narration_data)
 
 
 func _on_button_acted(button):
@@ -114,6 +116,7 @@ func _on_player_sell(loot, value):
 
 func _on_level_up(level):
 	cur_level = level
+	NarrationManager.set_cur_stage(cur_level)
 	for button in buttons.get_children():
 		if button.level_unlocked <= cur_level:
 			button.show()

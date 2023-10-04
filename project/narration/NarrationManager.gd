@@ -33,6 +33,14 @@ func _process(dt):
 				trigger_narration()
 
 
+func get_data():
+	return seen_narrations
+
+
+func set_data(data):
+	seen_narrations = data
+
+
 func enable_effect():
 	AudioServer.set_bus_effect_enabled(NARRATION_BUS, 0, true)
 	AudioServer.set_bus_effect_enabled(NARRATION_BUS, 1, true)
