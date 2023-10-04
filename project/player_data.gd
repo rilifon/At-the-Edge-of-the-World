@@ -67,25 +67,40 @@ func init():
 	for loot in LootManager.get_all_loots():
 		resources[loot.id] = {"name": loot.loot_name, "amount": 0, "showing": false, "image": loot.image, "gain_per_second": 0}
 
+
+func get_save_data():
+	var data = resources.duplicate(true)
+	return data
+
+
+func set_save_data(data):
+	resources = data
+
+
 func update_resources():
 	emit_signal("update_resources")
+
 
 func get_resource_name(name):
 	assert(resources.has(name), "Resource doesn't exist: " + str(name))
 	return resources[name].name
 
+
 func get_resource_amount(name):
 	assert(resources.has(name), "Resource doesn't exist: " + str(name))
 	return resources[name].amount
+
 
 func get_resource_data(name):
 	assert(resources.has(name), "Resource doesn't exist: " + str(name))
 	return resources[name]
 
+
 func spend(name, amount):
 	assert(resources.has(name), "Resource doesn't exist: " + str(name))
 	resources[name].amount = max(resources[name].amount - amount, 0)
 	update_resources()
+
 
 func gain(name, amount, play_sfx := true):
 	assert(resources.has(name), "Resource doesn't exist: " + str(name))
@@ -93,6 +108,7 @@ func gain(name, amount, play_sfx := true):
 	if play_sfx and name == "money":
 		AudioManager.play_sfx("getting_money")
 	update_resources()
+
 
 func increase_gain_per_second(name, amount):
 	assert(resources.has(name), "Resource doesn't exist: " + str(name))

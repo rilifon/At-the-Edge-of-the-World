@@ -15,6 +15,11 @@ var options = {
 	"dummy_slider": 1.0,
 }
 
+var stats = {
+	"times_completed": 0,
+	"end1_done": false,
+	"end2_done": false,
+}
 
 func get_locale_idx(locale):
 	var idx = 0
@@ -34,6 +39,7 @@ func get_save_data():
 		"time": OS.get_datetime(),
 		"version": Global.VERSION,
 		"options": options,
+		"stats": stats,
 	}
 	
 	return data
@@ -45,7 +51,9 @@ func set_save_data(data):
 		push_warning("Different save version for profile. Its version: " + str(data.version) + " Current version: " + str(Global.VERSION)) 
 		push_warning("Properly updating to new save version")
 		push_warning("Profile updated!")#ヽ(*￣▽￣*)ノミ
+	
 	set_data(data, "options", options)
+	set_data(data, "stats", stats)
 	
 	AudioManager.set_bus_volume(AudioManager.MASTER_BUS, options.master_volume)
 	AudioManager.set_bus_volume(AudioManager.BGM_BUS, options.bgm_volume)
@@ -84,5 +92,17 @@ func get_option(name):
 func set_option(name: String, value, should_save := false):
 	assert(options.has(name), "Not a valid option: " + str(name))
 	options[name] = value
+	if should_save:
+		FileManager.save_profile()
+
+
+func get_stat(name):
+	assert(stats.has(name), "Not a valid stat: " + str(name))
+	return stats[name]
+
+
+func set_stat(name: String, value, should_save := false):
+	assert(stats.has(name), "Not a valid stat: " + str(name))
+	stats[name] = value
 	if should_save:
 		FileManager.save_profile()

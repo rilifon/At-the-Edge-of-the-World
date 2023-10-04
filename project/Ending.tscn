@@ -31,6 +31,7 @@ script = ExtResource( 5 )
 position = Vector2( 640, 420 )
 scale = Vector2( 0.85, 0.85 )
 frames = SubResource( 1 )
+frame = 1
 playing = true
 
 [node name="Label" type="Label" parent="."]

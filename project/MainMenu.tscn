@@ -264,6 +264,7 @@ mouse_filter = 2
 script = ExtResource( 9 )
 
 [node name="Intro" type="Node2D" parent="."]
+visible = false
 
 [node name="Ahab" type="AnimatedSprite" parent="Intro"]
 position = Vector2( 635.213, 391.257 )
@@ -273,7 +274,7 @@ playing = true
 [node name="Waterfall" type="AnimatedSprite" parent="Intro"]
 position = Vector2( 640, 644.359 )
 frames = SubResource( 2 )
-frame = 4
+frame = 3
 playing = true
 
 [node name="ColorRect" type="ColorRect" parent="Intro"]
@@ -314,19 +315,29 @@ playing = true
 
 [node name="Buttons" type="Control" parent="Menu"]
 modulate = Color( 1, 1, 1, 0 )
-margin_left = 301.0
-margin_top = 238.0
-margin_right = 601.0
-margin_bottom = 738.0
+margin_left = 293.0
+margin_top = 263.0
+margin_right = 593.0
+margin_bottom = 763.0
 rect_min_size = Vector2( 300, 500 )
 theme = ExtResource( 12 )
+
+[node name="ContinueGame" parent="Menu/Buttons" instance=ExtResource( 15 )]
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_left = -2.0
+margin_top = 51.0
+margin_right = 298.0
+margin_bottom = 131.0
+rect_min_size = Vector2( 300, 80 )
+text = "CONTINUE_GAME"
 
 [node name="NewGame" parent="Menu/Buttons" instance=ExtResource( 15 )]
 anchor_right = 0.0
 anchor_bottom = 0.0
-margin_top = 125.0
+margin_top = 129.0
 margin_right = 300.0
-margin_bottom = 205.0
+margin_bottom = 209.0
 rect_min_size = Vector2( 300, 80 )
 text = "NEW_GAME"
 
@@ -410,6 +421,7 @@ bus = "BGM"
 stream = ExtResource( 23 )
 bus = "Narration"
 
+[connection signal="acted" from="Menu/Buttons/ContinueGame" to="." method="_on_ContinueGame_acted"]
 [connection signal="acted" from="Menu/Buttons/NewGame" to="." method="_on_NewGame_acted"]
 [connection signal="acted" from="Menu/Buttons/Settings" to="." method="_on_Settings_acted"]
 [connection signal="acted" from="Menu/Buttons/Exit" to="." method="_on_Exit_acted"]

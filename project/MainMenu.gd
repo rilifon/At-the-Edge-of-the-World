@@ -6,6 +6,7 @@ onready var skip_box = $TextLayer/Skip
 onready var NewGame = $Menu/Buttons/NewGame
 onready var SettingsButton = $Menu/Buttons/Settings
 onready var Exit = $Menu/Buttons/Exit
+onready var ContinueGame = $Menu/Buttons/ContinueGame
 onready var Particle = $Menu/ParticlesEmitter
 
 const SKIP_TOTAL_TIME = 1.0
@@ -20,6 +21,7 @@ func _ready():
 	randomize()
 	Settings.hide()
 	disable()
+	ContinueGame.visible = FileManager.run_file_exists()
 	if Global.USE_STEAM:
 		print(Steam.is_init())
 
@@ -65,6 +67,8 @@ func skip():
 
 
 func _on_NewGame_acted(_self):
+	FileManager.continue_game = false
+	FileManager.delete_run_file()
 	# warning-ignore:return_value_discarded
 	get_tree().change_scene("res://MainScene.tscn")
 
@@ -75,3 +79,9 @@ func _on_Exit_acted(_self):
 
 func _on_Settings_acted(_self):
 	Settings.enable()
+
+
+func _on_ContinueGame_acted(_self):
+	FileManager.continue_game = true
+	# warning-ignore:return_value_discarded
+	get_tree().change_scene("res://MainScene.tscn")

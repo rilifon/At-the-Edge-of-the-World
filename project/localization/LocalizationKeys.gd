@@ -5,6 +5,7 @@ class_name LocalizationKeys
 
 const KEY_NAME = "KEY_NAME"
 const NEW_GAME = "NEW_GAME"
+const CONTINUE_GAME = "CONTINUE_GAME"
 const OPTIONS = "OPTIONS"
 const MASTER_VOLUME = "MASTER_VOLUME"
 const BGM_VOLUME = "BGM_VOLUME"
@@ -124,6 +125,7 @@ const D6_3 = "D6_3"
 const KEYS = [
  "KEY_NAME",
  "NEW_GAME",
+ "CONTINUE_GAME",
  "OPTIONS",
  "MASTER_VOLUME",
  "BGM_VOLUME",

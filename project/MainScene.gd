@@ -9,27 +9,19 @@ var player_data
 
 var cur_level = 0
 
-func _input(event):
-	#TODO: Remove DEBUG options or make them harder to access
-	if event.is_action_pressed("ui_home"):
-		player_data.gain("money", 9999999)
-	if event.is_action_pressed("ui_end"):
-		player_data.gain("money", 100)
-	
-	if event.is_action_pressed("pause"):
-		AudioManager.play_sfx("click_button")
-		if Settings.active:
-			Settings.disable()
-		else:
-			Settings.enable()
 
-func _ready():
+func _ready():	
 	$NoBaitSelected.modulate.a = 0.0
 	
 	player_data = load("res://player_data.gd").new()
 	player_data.init()
 	
 	player_data.connect("update_resources", resource_list , "update_resources")
+	
+	FileManager.set_current_run(self)
+	if FileManager.continue_game:
+		FileManager.continue_game = false
+		FileManager.load_run()
 	
 	for button in buttons.get_children():
 		button.setup(player_data, self)
@@ -46,6 +38,21 @@ func _ready():
 	NarrationManager.is_running = true
 
 
+func _input(event):
+	#TODO: Remove DEBUG options or make them harder to access
+	if event.is_action_pressed("ui_home"):
+		player_data.gain("money", 9999999)
+	if event.is_action_pressed("ui_end"):
+		player_data.gain("money", 100)
+	
+	if event.is_action_pressed("pause"):
+		AudioManager.play_sfx("click_button")
+		if Settings.active:
+			Settings.disable()
+		else:
+			Settings.enable()
+
+
 func _process(dt):
 	for resource_id in player_data.resources:
 		var resource = player_data.resources[resource_id]
@@ -55,8 +62,23 @@ func _process(dt):
 	if player_data.get_resource_amount("auto_fish") and not $Interface/ScrollContainer/Buttons/Fishing.on_cooldown:
 		$Interface/ScrollContainer/Buttons/Fishing.activate_button(true)
 
+
 func get_selected_bait():
 	return resource_list.get_selected_bait()
+
+
+func get_save_data():
+	var data = {
+		"cur_level": cur_level,
+		"player_data": player_data.get_save_data(),
+	}
+
+	return data
+
+
+func set_save_data(data):
+	cur_level = data.cur_level
+	player_data.set_save_data(data.player_data)
 
 
 func _on_button_acted(button):
