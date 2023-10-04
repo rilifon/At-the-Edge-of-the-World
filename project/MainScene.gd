@@ -53,10 +53,9 @@ func _input(event):
 
 
 func _process(dt):
-	for resource_id in player_data.resources:
-		var resource = player_data.resources[resource_id]
+	for resource in player_data.resources:
 		if resource.has("gain_per_second") and resource.gain_per_second > 0:
-			player_data.gain(resource_id, resource.gain_per_second*dt, false)
+			player_data.gain(resource.id, resource.gain_per_second*dt, false)
 	
 	if player_data.get_resource_amount("auto_fish") and not $Interface/ScrollContainer/Buttons/Fishing.on_cooldown:
 		$Interface/ScrollContainer/Buttons/Fishing.activate_button(true)

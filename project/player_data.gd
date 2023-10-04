@@ -8,8 +8,9 @@ const ENUMS = {
 	 "LL12", "LL13", "LL14", "LL15", "LL16", "LL17", "LL18", "LL19", "LL20"]
 }
 
-var resources = {
-	"money":{
+var resources = [
+	{
+		"id": "money",
 		"name": "MONEY",
 		"amount": 0,
 		"gain_per_second": 0,
@@ -17,7 +18,8 @@ var resources = {
 		"suffix_plural": "MONEY_SUFFIX_PLURAL",
 		"showing": true
 	},
-	"money_engine":{
+	{
+		"id": "money_engine",
 		"name": "MONEY_ENGINE",
 		"amount": 0,
 		"gain_per_second": 0,
@@ -25,7 +27,8 @@ var resources = {
 		"suffix_plural": "MONEY_ENGINE_SUFFIX_PLURAL",
 		"showing": false
 	},
-	"line_length":{
+	{
+		"id": "line_length",
 		"name": "LINE_LENGTH",
 		"amount": 0,
 		"max": 19,
@@ -34,7 +37,8 @@ var resources = {
 		"suffix_plural": "enum",
 		"showing": true
 	},
-	"rod_quality":{
+	{
+		"id": "rod_quality",
 		"name": "ROD_QUALITY",
 		"amount": 0,
 		"max": ENUMS.rod_quality.size() - 1,
@@ -43,7 +47,8 @@ var resources = {
 		"suffix_plural": "enum",
 		"showing": true
 	},
-	"auto_fish":{
+	{
+		"id": "auto_fish",
 		"name": "AUTO_FISH",
 		"amount": 0,
 		"max": 1,
@@ -52,20 +57,23 @@ var resources = {
 		"suffix_plural": "AUTO_FISH_SUFFIX_PLURAL",
 		"showing": false
 	},
-}
+]
 
 func init():
 	var first = true
-	resources["bait"] = {}
+	#This is disgusting and I hate it
+	resources.append({"id": "bait"})
 	for bait in BaitManager.get_all_baits():
-		resources[bait.id] = {"name": bait.bait_name, "amount": 0, "showing": false, "suffix": "BAIT_SUFFIX", "suffix_plural": "BAIT_SUFFIX_PLURAL", "gain_per_second": 0}
+		var data = {"id": bait.id, "name": bait.bait_name, "amount": 0, "showing": false, "suffix": "BAIT_SUFFIX", "suffix_plural": "BAIT_SUFFIX_PLURAL", "gain_per_second": 0}
+		resources.append(data)
 		if first:
 			first = false
-			resources[bait.id].showing = true
-	
-	resources["loot"] = {}
+			data.showing = true
+	#aaaaa why did we do this
+	resources.append({"id": "loot"})
 	for loot in LootManager.get_all_loots():
-		resources[loot.id] = {"name": loot.loot_name, "amount": 0, "showing": false, "image": loot.image, "gain_per_second": 0}
+		var data = {"id":loot.id, "name": loot.loot_name, "amount": 0, "showing": false, "image": loot.image, "gain_per_second": 0}
+		resources.append(data)
 
 
 func get_save_data():
@@ -80,37 +88,36 @@ func set_save_data(data):
 func update_resources():
 	emit_signal("update_resources")
 
-
-func get_resource_name(name):
-	assert(resources.has(name), "Resource doesn't exist: " + str(name))
-	return resources[name].name
-
-
-func get_resource_amount(name):
-	assert(resources.has(name), "Resource doesn't exist: " + str(name))
-	return resources[name].amount
+func get_resource(id):
+	for resource in resources:
+		if resource.id == id:
+			return resource
+	push_error("Couldn't find this resource: " + str(id))
 
 
-func get_resource_data(name):
-	assert(resources.has(name), "Resource doesn't exist: " + str(name))
-	return resources[name]
+func get_resource_name(id):
+	return get_resource(id).name
 
 
-func spend(name, amount):
-	assert(resources.has(name), "Resource doesn't exist: " + str(name))
-	resources[name].amount = max(resources[name].amount - amount, 0)
+func get_resource_amount(id):
+	return get_resource(id).amount
+
+
+func spend(id, amount):
+	var res = get_resource(id)
+	res.amount = max(res.amount - amount, 0)
 	update_resources()
 
 
-func gain(name, amount, play_sfx := true):
-	assert(resources.has(name), "Resource doesn't exist: " + str(name))
-	resources[name].amount = resources[name].amount + amount
+func gain(id, amount, play_sfx := true):
+	var res = get_resource(id)
+	res.amount = res.amount + amount
 	if play_sfx and name == "money":
 		AudioManager.play_sfx("getting_money")
 	update_resources()
 
 
-func increase_gain_per_second(name, amount):
-	assert(resources.has(name), "Resource doesn't exist: " + str(name))
-	resources[name].gain_per_second = resources[name].gain_per_second + amount
+func increase_gain_per_second(id, amount):
+	var res = get_resource(id)
+	res.gain_per_second = res.gain_per_second + amount
 	update_resources()

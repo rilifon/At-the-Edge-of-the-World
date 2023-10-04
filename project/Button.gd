@@ -161,7 +161,7 @@ func activate_button(auto_use:= false):
 		if reward_resource.has("engine") and reward_resource.engine.active:
 			player.increase_gain_per_second(reward_resource.engine.type, reward_resource.engine.amount)
 		
-		var data = player.get_resource_data(reward_resource.type)
+		var data = player.get_resource(reward_resource.type)
 		if data.has("max") and data.max <= data.amount:
 			maxed_out()
 	else:

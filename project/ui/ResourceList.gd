@@ -20,7 +20,8 @@ func setup(player_data):
 	$HBoxContainer/FirstList.add_child(label)
 	var bait_mode = false
 	var loot_mode = false
-	for resource_id in player.resources:
+	for resource in player.resources:
+		var resource_id = resource.id
 		if not loot_mode:
 			if resource_id == "loot":
 				loot_mode = true
@@ -29,9 +30,7 @@ func setup(player_data):
 				new_label.add_font_override("font", BIG_FONT)
 				new_label.type = false
 				$HBoxContainer/ScrollContainer/LootList.add_child(new_label)
-				
 			elif resource_id != "bait":
-				var resource = player.resources[resource_id]
 				if not bait_mode:
 					var new_label = LABEL.instance()
 					new_label.type = resource_id
@@ -56,7 +55,6 @@ func setup(player_data):
 				new_label.type = false
 				$HBoxContainer/FirstList.add_child(new_label)
 		else:
-			var resource = player.resources[resource_id]
 			var new_loot = LOOT.instance()
 			$HBoxContainer/ScrollContainer/LootList.add_child(new_loot)
 			new_loot.setup(resource_id)
@@ -64,6 +62,7 @@ func setup(player_data):
 			new_loot.connect("sell", self, "_on_loot_sell")
 			if not resource.showing:
 				new_loot.hide()
+
 
 func get_selected_bait():
 	for button in $HBoxContainer/FirstList.get_children():
@@ -79,12 +78,14 @@ func update_resources():
 		if resource.type:
 			update_loot_amount(resource)
 
+
 func update_loot_amount(resource_object):
-	var resource = player.resources[resource_object.type]
+	var resource = player.get_resource(resource_object.type)
 	resource_object.set_amount(resource.amount)
 
+
 func set_resource_text(resource_object):
-	var resource = player.resources[resource_object.type]
+	var resource = player.get_resource(resource_object.type)
 	if resource.amount > 0:
 		resource_object.show()
 	if resource_object is Button:
