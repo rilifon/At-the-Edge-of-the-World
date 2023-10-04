@@ -1,10 +1,10 @@
 extends Control
 
 const NARRATION_BUS = 3
-const MIN_TIMER_RANGE = 3
-const MAX_TIMER_RANGE = 6
+const MIN_TIMER_RANGE = 1
+const MAX_TIMER_RANGE = 2
 const AHAB_DELAY = .75
-const YOG_CUTOFF = 3.0
+const YOG_CUTOFF = 2.5
 const NARRATIONS_PATH = "res://assets/audio/narration/dialogues/"
 const NarrationDB = preload("res://narration/NarrationDB.gd")
 
@@ -37,12 +37,14 @@ func enable_effect():
 	AudioServer.set_bus_effect_enabled(NARRATION_BUS, 0, true)
 	AudioServer.set_bus_effect_enabled(NARRATION_BUS, 1, true)
 	AudioServer.set_bus_effect_enabled(NARRATION_BUS, 2, true)
+	AudioServer.set_bus_effect_enabled(NARRATION_BUS, 3, true)
 
 
 func disable_effect():
 	AudioServer.set_bus_effect_enabled(NARRATION_BUS, 0, false)
 	AudioServer.set_bus_effect_enabled(NARRATION_BUS, 1, false)
 	AudioServer.set_bus_effect_enabled(NARRATION_BUS, 2, false)
+	AudioServer.set_bus_effect_enabled(NARRATION_BUS, 3, false)
 
 
 func new_timer():
@@ -78,10 +80,16 @@ func start_narration(narration):
 	for dialogue in narration:
 		add_subtitle(tr(dialogue.text))
 		Player.stream = load(NARRATIONS_PATH + dialogue.voice)
-		Player.play()
 		
 		var dur = Player.stream.get_length()
-		dur = dur + AHAB_DELAY if dialogue.cha == "ahab" else dur - YOG_CUTOFF
+		if dialogue.cha == "ahab":
+			disable_effect()
+			dur = dur + AHAB_DELAY
+		elif dialogue.cha == "yog":
+			dur = dur - YOG_CUTOFF
+			enable_effect()
+		
+		Player.play()
 		yield(get_tree().create_timer(dur), "timeout")
 		
 	remove_subtitle()
