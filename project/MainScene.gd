@@ -42,6 +42,8 @@ func _ready():
 	resource_list.connect("sell", self, "_on_player_sell")
 	
 	fera.connect("leveled_up", self, "_on_level_up")
+	
+	NarrationManager.is_running = true
 
 
 func _process(dt):

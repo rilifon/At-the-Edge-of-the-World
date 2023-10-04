@@ -22,6 +22,8 @@ const INTRO_5 = "INTRO_5"
 const INTRO_6 = "INTRO_6"
 const INTRO_7 = "INTRO_7"
 const SKIP_INTRO = "SKIP_INTRO"
+const END1_TEXT = "END1_TEXT"
+const END1 = "END1"
 const APPEASEMENT = "APPEASEMENT"
 const NO_BAIT = "NO_BAIT"
 const COST = "COST"
@@ -103,8 +105,21 @@ const LL17 = "LL17"
 const LL18 = "LL18"
 const LL19 = "LL19"
 const LL20 = "LL20"
-const END1_TEXT = "END1_TEXT"
-const END1 = "END1"
+const D1_1 = "D1_1"
+const D1_2 = "D1_2"
+const D1_3 = "D1_3"
+const D2_1 = "D2_1"
+const D3_1 = "D3_1"
+const D3_2 = "D3_2"
+const D4_1 = "D4_1"
+const D4_2 = "D4_2"
+const D4_3 = "D4_3"
+const D5_1 = "D5_1"
+const D5_2 = "D5_2"
+const D5_3 = "D5_3"
+const D6_1 = "D6_1"
+const D6_2 = "D6_2"
+const D6_3 = "D6_3"
 
 const KEYS = [
  "KEY_NAME",
@@ -126,6 +141,8 @@ const KEYS = [
  "INTRO_6",
  "INTRO_7",
  "SKIP_INTRO",
+ "END1_TEXT",
+ "END1",
  "APPEASEMENT",
  "NO_BAIT",
  "COST",
@@ -207,6 +224,19 @@ const KEYS = [
  "LL18",
  "LL19",
  "LL20",
- "END1_TEXT",
- "END1"
+ "D1_1",
+ "D1_2",
+ "D1_3",
+ "D2_1",
+ "D3_1",
+ "D3_2",
+ "D4_1",
+ "D4_2",
+ "D4_3",
+ "D5_1",
+ "D5_2",
+ "D5_3",
+ "D6_1",
+ "D6_2",
+ "D6_3"
 ]

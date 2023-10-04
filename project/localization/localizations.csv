@@ -1,7 +1,7 @@
 keys,en,pt_BR
 KEY_NAME,English,Português
-NEW_GAME,   New Beginnings   ,   Novos Começos   
-OPTIONS,  Choices  ,  Escolhas  
+NEW_GAME,   New Beginnings   ,   Novos Começos
+OPTIONS,  Choices  ,  Escolhas
 MASTER_VOLUME,Source of All Sound,Fonte de Todo Som
 BGM_VOLUME,Background Melodies,Melodia de Fundo
 SFX_VOLUME,Sound Chirps,Barulhinhos
@@ -18,12 +18,14 @@ INTRO_5,"My family was gone, I couldn't support them anymore","Minha família se
 INTRO_6,But that doesn't mean I'm alone,Mas isso não significa que eu esteja sozinho
 INTRO_7,And I need to feed her...,E eu preciso alimentá-la...
 SKIP_INTRO,Hold to skip intro,Segure para pular introdução
+END1_TEXT,"Finally sated, the beast bids farewell to its wearied host...","Finalmente saciada, a fera se despede de seu derreado hospedeiro..."
+END1,The End?,O Fim?
 APPEASEMENT,Appeasement,Apaziguamento
 NO_BAIT,Select a bait to fish!,Selecione alguma isca para pescar!
 COST,cost,custo
 ONE_BAIT,1 Bait,1 Isca
 DIGNITY,dignity,dignidade
-OUT_OF_STOCK,   OUT OF STOCK   ,   FORA DE ESTOQUE   
+OUT_OF_STOCK,   OUT OF STOCK   ,   FORA DE ESTOQUE
 MONEY,Cash,Grana
 MONEY_SUFFIX,jimbo,doleta
 MONEY_SUFFIX_PLURAL,jimbos,doletas
@@ -38,27 +40,27 @@ AUTO_FISH,Cold Fusion Windlass,Molinete de Fusão a Frio
 AUTO_FISH_SUFFIX,chunk,naco
 AUTO_FISH_SUFFIX_PLURAL,chunks,nacos
 BEG,Beg,Mendigar
-BUY_BAIT1,   Buy Worms   ,   Comprar Minhocas   
+BUY_BAIT1,   Buy Worms   ,   Comprar Minhocas
 BAIT1,Worms,Minhocas
-BUY_BAIT2,   Buy Hot Dog   ,   Comprar Hot Dog   
+BUY_BAIT2,   Buy Hot Dog   ,   Comprar Hot Dog
 BAIT2,Hot Dog,Hot Dog
-BUY_BAIT3,   Buy Gorgonzola   ,   Comprar Gorgonzola   
+BUY_BAIT3,   Buy Gorgonzola   ,   Comprar Gorgonzola
 BAIT3,Gorgonzola,Gorgonzola
-BUY_AUTOFISH,     Buy Windlass   ,     Comprar Molinete   
-BUY_MONEYENGINE,     Hire Lackey   ,     Contratar Lacaio   
-BUY_ROD,   Improve Rod   ,   Melhorar Vara   
-BUY_ROPE,   Buy Rope   ,   Comprar Linha   
+BUY_AUTOFISH,     Buy Windlass   ,     Comprar Molinete
+BUY_MONEYENGINE,     Hire Lackey   ,     Contratar Lacaio
+BUY_ROD,   Improve Rod   ,   Melhorar Vara
+BUY_ROPE,   Buy Rope   ,   Comprar Linha
 FISH,Fish!,Pescar!
-BUY_FREEDOM,     Buy Freedom   ,     Comprar Liberdade   
+BUY_FREEDOM,     Buy Freedom   ,     Comprar Liberdade
 STUFF,--STUFF--,--MUAMBAS--
 FISH_LOOT,--HAUL--,--PESCADOS--
 BAITS,--BAITS--,--ISCAS--
-NOURISH_1,  nourish x1  ,  nutrir x1  
-NOURISH_10,  nourish x10  ,  nutrir x10  
-NOURISH_100,  nourish x100  ,  nutrir x100  
-SELL_1,  sell x1  ,  vender x1  
-SELL_10,  sell x10  ,  vender x10  
-SELL_100,  sell x100  ,  vender x100  
+NOURISH_1,  nourish x1  ,  nutrir x1
+NOURISH_10,  nourish x10  ,  nutrir x10
+NOURISH_100,  nourish x100  ,  nutrir x100
+SELL_1,  sell x1  ,  vender x1
+SELL_10,  sell x10  ,  vender x10
+SELL_100,  sell x100  ,  vender x100
 LOOT1,Lambari,Lambari
 LOOT2,Crab,Carangueijo
 LOOT3,Shark,Tubarão
@@ -99,5 +101,18 @@ LL17,light-working week,semana útil-luz
 LL18,2 parsecs,2 parsecs
 LL19,1 siriometer,1 siriômetro
 LL20,"really big, like, the biggest","grandão, tipo, pra caramba"
-END1_TEXT,"Finally sated, the beast bids farewell to its wearied host...","Finalmente saciada, a fera se despede de seu derreado hospedeiro..."
-END1,The End?,O Fim?
+D1_1,Do you think these worms are tasty?,
+D1_2,Flavor is not of importance to my being. I care only for nourishment.,
+D1_3,(Laughs) Yeah I guess.,
+D2_1,"Like my aunt always said: If you love fish, you better love getting wet.",
+D3_1,"I crave sustenance, human.",
+D3_2,"Don't worry pal, we'll get you something soon enough.",
+D4_1,Slow day today huh?,
+D4_2,Time is a concept my species have conquered eons ago.,
+D4_3,We have clocks too you know,
+D5_1,"Hey, what do you think is bigger, the ocean or the whole sky?",
+D5_2,Nigh-Infinite galaxies exist far beyond your tiny solar system human.,
+D5_3,Hmm I think it's the ocean.,
+D6_1,Ouch! I think a crab bit me!,
+D6_2,Pain and suffering are what brings us closer to a higher meaning.,
+D6_3,"Still hurts, though...",

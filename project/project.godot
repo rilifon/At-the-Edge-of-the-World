@@ -150,7 +150,7 @@ PaletteLayer="*res://PaletteLayer.tscn"
 FishingManager="*res://FishingManager.gd"
 Steam="*res://addons/steam_api/steam.gd"
 LocalizationManager="*res://addons/localization_editor/LocalizationManager.gd"
-NarrationManager="*res://NarrationManager.tscn"
+NarrationManager="*res://narration/NarrationManager.tscn"
 FileManager="*res://FileManager.gd"
 Profile="*res://Profile.gd"
 
@@ -193,6 +193,7 @@ locale_filter=[ 1, [ "en", "pt_BR" ] ]
 [localization_editor]
 
 locales_path_to_file="res://localization/localizations.csv"
+translations_split_offset=240
 
 [rendering]
 

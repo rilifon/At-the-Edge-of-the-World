@@ -1,0 +1,23 @@
+[remap]
+
+importer="wav"
+type="AudioStreamSample"
+path="res://.import/bw_01_ahab_Ending01.wav-cc4d22a16fc82f6ac4a0e0aebba26184.sample"
+
+[deps]
+
+source_file="res://assets/audio/narration/end_1/bw_01_ahab_Ending01.wav"
+dest_files=[ "res://.import/bw_01_ahab_Ending01.wav-cc4d22a16fc82f6ac4a0e0aebba26184.sample" ]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop_mode=0
+edit/loop_begin=0
+edit/loop_end=-1
+compress/mode=0
