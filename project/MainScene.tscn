@@ -46,6 +46,7 @@ custom_constants/separation = 15
 margin_right = 250.0
 margin_bottom = 500.0
 rect_min_size = Vector2( 250, 500 )
+rect_clip_content = false
 
 [node name="Buttons" type="VBoxContainer" parent="Interface/ScrollContainer"]
 margin_right = 170.0

@@ -35,6 +35,8 @@ func _ready():
 	
 	fera.connect("leveled_up", self, "_on_level_up")
 	
+	resource_list.update_resources()
+	
 	NarrationManager.is_running = true
 
 
