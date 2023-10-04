@@ -39,13 +39,12 @@ func _ready():
 
 
 func _input(event):
-	#TODO: Remove DEBUG options or make them harder to access
-	if event.is_action_pressed("ui_home"):
+	if event.is_action_pressed("debug1"):
 		player_data.gain("money", 9999999)
-	if event.is_action_pressed("ui_end"):
+	elif event.is_action_pressed("debug2"):
 		player_data.gain("money", 100)
 	
-	if event.is_action_pressed("pause"):
+	elif event.is_action_pressed("pause"):
 		AudioManager.play_sfx("click_button")
 		if Settings.active:
 			Settings.disable()
