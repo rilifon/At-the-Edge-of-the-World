@@ -1,4 +1,4 @@
-[gd_scene load_steps=25 format=2]
+[gd_scene load_steps=32 format=2]
 
 [ext_resource path="res://assets/images/intro/waterfall_1.png" type="Texture" id=1]
 [ext_resource path="res://assets/images/intro/waterfall_5.png" type="Texture" id=2]
@@ -17,6 +17,13 @@
 [ext_resource path="res://Button.tscn" type="PackedScene" id=15]
 [ext_resource path="res://ParticleEmitter.tscn" type="PackedScene" id=16]
 [ext_resource path="res://settings/Settings.tscn" type="PackedScene" id=17]
+[ext_resource path="res://assets/audio/narration/intro_scene/bw_ahab_06_intro.wav" type="AudioStream" id=18]
+[ext_resource path="res://assets/audio/narration/intro_scene/bw_ahab_02_intro.wav" type="AudioStream" id=19]
+[ext_resource path="res://assets/audio/narration/intro_scene/bw_ahab_03_intro.wav" type="AudioStream" id=20]
+[ext_resource path="res://assets/audio/narration/intro_scene/bw_ahab_05_intro.wav" type="AudioStream" id=21]
+[ext_resource path="res://assets/audio/narration/intro_scene/bw_ahab_04_intro.wav" type="AudioStream" id=22]
+[ext_resource path="res://assets/audio/narration/intro_scene/bw_ahab_07_intro.wav" type="AudioStream" id=23]
+[ext_resource path="res://assets/audio/narration/intro_scene/bw_ahab_01_intro.wav" type="AudioStream" id=24]
 
 [sub_resource type="SpriteFrames" id=1]
 animations = [ {
@@ -56,10 +63,10 @@ tracks/0/loop_wrap = true
 tracks/0/imported = false
 tracks/0/enabled = true
 tracks/0/keys = {
-"times": PoolRealArray( 0, 36, 40, 42 ),
-"transitions": PoolRealArray( 1, 1, 1, 1 ),
+"times": PoolRealArray( 0, 36, 40, 40.5, 41 ),
+"transitions": PoolRealArray( 1, 1, 1, 1, 1 ),
 "update": 0,
-"values": [ Vector2( 640, 360 ), Vector2( 614.8, 364.8 ), Vector2( 577, 372 ), Vector2( 640, 360 ) ]
+"values": [ Vector2( 640, 360 ), Vector2( 614.8, 364.8 ), Vector2( 577, 372 ), Vector2( 577, 372 ), Vector2( 640, 360 ) ]
 }
 tracks/1/type = "value"
 tracks/1/path = NodePath("Camera2D:zoom")
@@ -68,10 +75,10 @@ tracks/1/loop_wrap = true
 tracks/1/imported = false
 tracks/1/enabled = true
 tracks/1/keys = {
-"times": PoolRealArray( 0, 36, 40, 42 ),
-"transitions": PoolRealArray( 1, 1, 1, 1 ),
+"times": PoolRealArray( 0, 36, 40, 40.5, 41 ),
+"transitions": PoolRealArray( 1, 1, 1, 1, 1 ),
 "update": 0,
-"values": [ Vector2( 1, 1 ), Vector2( 0.612, 0.612 ), Vector2( 0.03, 0.03 ), Vector2( 1, 1 ) ]
+"values": [ Vector2( 1, 1 ), Vector2( 0.612, 0.612 ), Vector2( 0.2, 0.2 ), Vector2( 0.2, 0.2 ), Vector2( 1, 1 ) ]
 }
 tracks/2/type = "value"
 tracks/2/path = NodePath("TextLayer/Story:text")
@@ -104,7 +111,7 @@ tracks/4/loop_wrap = true
 tracks/4/imported = false
 tracks/4/enabled = true
 tracks/4/keys = {
-"times": PoolRealArray( 0, 0.5, 5.5, 6, 6.5, 11.5, 12, 12.5, 17.5, 18, 18.5, 23.5, 24, 24.5, 29.5, 30, 30.5, 35.5, 36, 36.5, 43, 43.5 ),
+"times": PoolRealArray( 0, 0.5, 5.5, 6, 6.5, 11.5, 12, 12.5, 17.5, 18, 18.5, 23.5, 24, 24.5, 29.5, 30, 30.5, 35.5, 36, 36.5, 39.5, 40.5 ),
 "transitions": PoolRealArray( 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1 ),
 "update": 0,
 "values": [ Color( 1, 1, 1, 0 ), Color( 1, 1, 1, 1 ), Color( 1, 1, 1, 1 ), Color( 1, 1, 1, 0 ), Color( 1, 1, 1, 1 ), Color( 1, 1, 1, 1 ), Color( 1, 1, 1, 0 ), Color( 1, 1, 1, 1 ), Color( 1, 1, 1, 1 ), Color( 1, 1, 1, 0 ), Color( 1, 1, 1, 1 ), Color( 1, 1, 1, 1 ), Color( 1, 1, 1, 0 ), Color( 1, 1, 1, 1 ), Color( 1, 1, 1, 1 ), Color( 1, 1, 1, 0 ), Color( 1, 1, 1, 1 ), Color( 1, 1, 1, 1 ), Color( 1, 1, 1, 0 ), Color( 1, 1, 1, 1 ), Color( 1, 1, 1, 1 ), Color( 1, 1, 1, 0 ) ]
@@ -196,10 +203,48 @@ tracks/11/loop_wrap = true
 tracks/11/imported = false
 tracks/11/enabled = true
 tracks/11/keys = {
-"times": PoolRealArray( 0, 40 ),
+"times": PoolRealArray( 0, 42 ),
 "transitions": PoolRealArray( 1, 1 ),
 "update": 1,
 "values": [ false, true ]
+}
+tracks/12/type = "audio"
+tracks/12/path = NodePath("IntroNarration")
+tracks/12/interp = 1
+tracks/12/loop_wrap = true
+tracks/12/imported = false
+tracks/12/enabled = true
+tracks/12/keys = {
+"clips": [ {
+"end_offset": 0.0,
+"start_offset": 0.0,
+"stream": ExtResource( 24 )
+}, {
+"end_offset": 0.0,
+"start_offset": 0.0,
+"stream": ExtResource( 19 )
+}, {
+"end_offset": 0.0,
+"start_offset": 0.0,
+"stream": ExtResource( 20 )
+}, {
+"end_offset": 0.0,
+"start_offset": 0.0,
+"stream": ExtResource( 22 )
+}, {
+"end_offset": 0.0,
+"start_offset": 0.0,
+"stream": ExtResource( 21 )
+}, {
+"end_offset": 0.0,
+"start_offset": 0.0,
+"stream": ExtResource( 18 )
+}, {
+"end_offset": 0.0,
+"start_offset": 0.0,
+"stream": ExtResource( 23 )
+} ],
+"times": PoolRealArray( 0, 6.5, 12.5, 18.5, 24.5, 30.5, 36.5 )
 }
 
 [sub_resource type="DynamicFont" id=6]
@@ -223,7 +268,6 @@ script = ExtResource( 9 )
 [node name="Ahab" type="AnimatedSprite" parent="Intro"]
 position = Vector2( 635.213, 391.257 )
 frames = SubResource( 1 )
-frame = 1
 playing = true
 
 [node name="Waterfall" type="AnimatedSprite" parent="Intro"]
@@ -266,15 +310,14 @@ modulate = Color( 1, 1, 1, 0 )
 position = Vector2( 1000, 363 )
 scale = Vector2( 0.7, 0.7 )
 frames = SubResource( 4 )
-frame = 1
 playing = true
 
 [node name="Buttons" type="Control" parent="Menu"]
 modulate = Color( 1, 1, 1, 0 )
-margin_left = 134.0
-margin_top = 219.0
-margin_right = 434.0
-margin_bottom = 719.0
+margin_left = 301.0
+margin_top = 238.0
+margin_right = 601.0
+margin_bottom = 738.0
 rect_min_size = Vector2( 300, 500 )
 theme = ExtResource( 12 )
 
@@ -356,11 +399,16 @@ custom_fonts/font = SubResource( 7 )
 text = "SKIP_INTRO"
 
 [node name="Settings" parent="." instance=ExtResource( 17 )]
+visible = false
 
 [node name="BGM" type="AudioStreamPlayer" parent="."]
 stream = ExtResource( 14 )
 autoplay = true
 bus = "BGM"
+
+[node name="IntroNarration" type="AudioStreamPlayer" parent="."]
+stream = ExtResource( 23 )
+bus = "Narration"
 
 [connection signal="acted" from="Menu/Buttons/NewGame" to="." method="_on_NewGame_acted"]
 [connection signal="acted" from="Menu/Buttons/Settings" to="." method="_on_Settings_acted"]
