@@ -18,24 +18,24 @@ const DB = [
 			{"cha": "yog", "text": "D3_1", "voice": "03/01.wav"},
 			{"cha": "ahab", "text": "D3_2", "voice": "03/02.wav"},
 		],
-		#Dialogue 4
-		[
-			{"cha": "ahab", "text": "D4_1", "voice": "04/01.wav"},
-			{"cha": "yog", "text": "D4_2", "voice": "04/02.wav"},
-			{"cha": "ahab", "text": "D4_3", "voice": "04/03.wav"},
-		],
-		#Dialogue 5
-		[
-			{"cha": "ahab", "text": "D5_1", "voice": "05/01.wav"},
-			{"cha": "yog", "text": "D5_2", "voice": "05/02.wav"},
-			{"cha": "ahab", "text": "D5_3", "voice": "05/03.wav"},
-		],
-		#Dialogue 6
-		[
-			{"cha": "ahab", "text": "D6_1", "voice": "06/01.wav"},
-			{"cha": "yog", "text": "D6_2", "voice": "06/02.wav"},
-			{"cha": "ahab", "text": "D6_3", "voice": "06/03.wav"},
-		],
+#		#Dialogue 4
+#		[
+#			{"cha": "ahab", "text": "D4_1", "voice": "04/01.wav"},
+#			{"cha": "yog", "text": "D4_2", "voice": "04/02.wav"},
+#			{"cha": "ahab", "text": "D4_3", "voice": "04/03.wav"},
+#		],
+#		#Dialogue 5
+#		[
+#			{"cha": "ahab", "text": "D5_1", "voice": "05/01.wav"},
+#			{"cha": "yog", "text": "D5_2", "voice": "05/02.wav"},
+#			{"cha": "ahab", "text": "D5_3", "voice": "05/03.wav"},
+#		],
+#		#Dialogue 6
+#		[
+#			{"cha": "ahab", "text": "D6_1", "voice": "06/01.wav"},
+#			{"cha": "yog", "text": "D6_2", "voice": "06/02.wav"},
+#			{"cha": "ahab", "text": "D6_3", "voice": "06/03.wav"},
+#		],
 	],
 	#Level 1
 	[

@@ -37,6 +37,7 @@ func _ready():
 	
 	resource_list.update_resources()
 	
+	PaletteLayer.change_to(cur_level)
 	NarrationManager.set_cur_stage(cur_level)
 	NarrationManager.is_running = true
 
@@ -73,6 +74,7 @@ func get_save_data():
 		"cur_level": cur_level,
 		"player_data": player_data.get_save_data(),
 		"narration_data": NarrationManager.get_data(),
+		"beast_data": fera.get_data()
 	}
 	return data
 
@@ -81,6 +83,7 @@ func set_save_data(data):
 	cur_level = data.cur_level
 	player_data.set_save_data(data.player_data)
 	NarrationManager.set_data(data.narration_data)
+	fera.set_data(cur_level, data.beast_data)
 
 
 func _on_button_acted(button):

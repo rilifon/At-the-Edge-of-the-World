@@ -1,8 +1,8 @@
 extends Control
 
 const NARRATION_BUS = 3
-const MIN_TIMER_RANGE = 1
-const MAX_TIMER_RANGE = 2
+const MIN_TIMER_RANGE = 60
+const MAX_TIMER_RANGE = 180
 const AHAB_DELAY = .75
 const YOG_CUTOFF = 2.5
 const NARRATIONS_PATH = "res://assets/audio/narration/dialogues/"

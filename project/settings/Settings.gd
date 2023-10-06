@@ -62,5 +62,6 @@ func _on_FullScreen_toggled(button_pressed):
 
 
 func _on_SaveQuit_acted(_self):
+	AudioManager.play_sfx("click_button")
 	save_values()
 	FileManager.save_and_quit()

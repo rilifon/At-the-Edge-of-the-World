@@ -21,6 +21,18 @@ func _ready():
 		bar.max_value = MAX_VALUES[level]
 
 
+func get_data():
+	return bar.value
+
+
+func set_data(new_level, value):
+	level = new_level
+	bar.max_value = MAX_VALUES[level]
+	bar.value = value
+	if level == MAX_LEVEL:
+		max_label.show()
+	
+
 func feed(loot, amount):
 	randomize()
 	if randf() <= .5:
