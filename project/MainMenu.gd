@@ -19,6 +19,7 @@ var skip_timer := 0.0
 
 func _ready():
 	randomize()
+	PaletteLayer.change_to(0)
 	Settings.hide()
 	disable()
 	ContinueGame.visible = FileManager.run_file_exists()
