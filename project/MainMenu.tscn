@@ -273,7 +273,7 @@ playing = true
 [node name="Waterfall" type="AnimatedSprite" parent="Intro"]
 position = Vector2( 640, 644.359 )
 frames = SubResource( 2 )
-frame = 3
+frame = 4
 playing = true
 
 [node name="ColorRect" type="ColorRect" parent="Intro"]

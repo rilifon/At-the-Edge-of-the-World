@@ -23,6 +23,7 @@ func _ready():
 	disable()
 	ContinueGame.visible = FileManager.run_file_exists()
 	if Global.USE_STEAM:
+		Global.USE_STEAM = Steam.is_init()
 		print(Steam.is_init())
 
 		print(Steam.utils.get_app_id())
