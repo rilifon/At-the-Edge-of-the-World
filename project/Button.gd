@@ -59,6 +59,14 @@ func setup(player_ref, main_ref):
 	update_cost_text()
 
 
+func get_times_used():
+	return cost.times_used
+
+#Remember to update_cost_text() later
+func set_times_used(value):
+	cost.times_used = value
+
+
 func enable_button():
 	$Button.disabled = false
 
@@ -115,6 +123,7 @@ func maxed_out():
 	$Cost.text = ""
 	rect_min_size.y = $Button.rect_position.y + $Button.rect_size.y
 	disable = true
+
 
 func activate_button(auto_use:= false):
 	if $Button.disabled:

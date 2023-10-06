@@ -264,18 +264,16 @@ mouse_filter = 2
 script = ExtResource( 9 )
 
 [node name="Intro" type="Node2D" parent="."]
-visible = false
 
 [node name="Ahab" type="AnimatedSprite" parent="Intro"]
 position = Vector2( 635.213, 391.257 )
 frames = SubResource( 1 )
-frame = 1
 playing = true
 
 [node name="Waterfall" type="AnimatedSprite" parent="Intro"]
 position = Vector2( 640, 644.359 )
 frames = SubResource( 2 )
-frame = 4
+frame = 3
 playing = true
 
 [node name="ColorRect" type="ColorRect" parent="Intro"]
@@ -312,7 +310,6 @@ modulate = Color( 1, 1, 1, 0 )
 position = Vector2( 1000, 363 )
 scale = Vector2( 0.7, 0.7 )
 frames = SubResource( 4 )
-frame = 1
 playing = true
 
 [node name="Buttons" type="Control" parent="Menu"]
@@ -362,8 +359,9 @@ rect_min_size = Vector2( 300, 80 )
 text = "EXIT"
 
 [node name="Camera2D" type="Camera2D" parent="."]
-position = Vector2( 640, 360 )
+position = Vector2( 635.177, 360.919 )
 current = true
+zoom = Vector2( 0.921, 0.921 )
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
 autoplay = "intro"
@@ -372,13 +370,12 @@ anims/intro = SubResource( 5 )
 [node name="TextLayer" type="CanvasLayer" parent="."]
 
 [node name="Story" type="Label" parent="TextLayer"]
-modulate = Color( 1, 1, 1, 0 )
 anchor_right = 1.0
 margin_bottom = 77.0
 rect_min_size = Vector2( 1280, 100 )
 custom_colors/font_color = Color( 0, 0, 0, 1 )
 custom_fonts/font = SubResource( 6 )
-text = "INTRO_1"
+text = "INTRO_2"
 align = 1
 valign = 1
 clip_text = true
@@ -412,7 +409,6 @@ custom_fonts/font = SubResource( 7 )
 text = "SKIP_INTRO"
 
 [node name="Settings" parent="." instance=ExtResource( 17 )]
-visible = false
 
 [node name="BGM" type="AudioStreamPlayer" parent="."]
 stream = ExtResource( 14 )

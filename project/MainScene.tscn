@@ -321,7 +321,7 @@ mouse_filter = 1
 
 [node name="Hidder" type="ColorRect" parent="."]
 material = SubResource( 6 )
-margin_right = 495.0
+margin_right = 1280.0
 margin_bottom = 192.0
 
 [node name="NoBaitSelected" type="Label" parent="."]

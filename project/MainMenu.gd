@@ -50,12 +50,14 @@ func enable():
 	NewGame.enable_button()
 	Exit.enable_button()
 	SettingsButton.enable_button()
+	ContinueGame.enable_button()
 
 
 func disable():
 	NewGame.disable_button()
 	Exit.disable_button()
 	SettingsButton.disable_button()
+	ContinueGame.disable_button()
 
 
 func skip():

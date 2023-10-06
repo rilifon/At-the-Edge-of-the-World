@@ -88,6 +88,7 @@ func set_save_data(data):
 func update_resources():
 	emit_signal("update_resources")
 
+
 func get_resource(id):
 	for resource in resources:
 		if resource.id == id:
