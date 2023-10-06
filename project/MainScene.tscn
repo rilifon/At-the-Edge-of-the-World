@@ -1,4 +1,4 @@
-[gd_scene load_steps=15 format=2]
+[gd_scene load_steps=17 format=2]
 
 [ext_resource path="res://MainScene.gd" type="Script" id=1]
 [ext_resource path="res://Button.tscn" type="PackedScene" id=2]
@@ -10,6 +10,17 @@
 [ext_resource path="res://ParticleEmitter.tscn" type="PackedScene" id=8]
 [ext_resource path="res://assets/images/buttons/settings_icon.png" type="Texture" id=9]
 [ext_resource path="res://settings/Settings.tscn" type="PackedScene" id=10]
+
+[sub_resource type="Shader" id=5]
+code = "shader_type canvas_item;
+
+void fragment(){
+	COLOR.a = smoothstep(0.0, 0.15, 1.0 - UV.y);
+}"
+
+[sub_resource type="ShaderMaterial" id=6]
+render_priority = 2
+shader = SubResource( 5 )
 
 [sub_resource type="DynamicFont" id=1]
 size = 40
@@ -308,6 +319,11 @@ margin_right = 265.0
 margin_bottom = 500.0
 mouse_filter = 1
 
+[node name="Hidder" type="ColorRect" parent="."]
+material = SubResource( 6 )
+margin_right = 495.0
+margin_bottom = 192.0
+
 [node name="NoBaitSelected" type="Label" parent="."]
 anchor_left = 0.5
 anchor_top = 1.0
@@ -347,7 +363,6 @@ custom_styles/normal = SubResource( 4 )
 enabled_focus_mode = 0
 
 [node name="Settings" parent="." instance=ExtResource( 10 )]
-visible = false
 margin_right = 1280.0
 margin_bottom = 720.0
 enable_quit = true
