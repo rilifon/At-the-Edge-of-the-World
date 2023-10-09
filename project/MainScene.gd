@@ -81,6 +81,7 @@ func get_save_data():
 		"narration_data": NarrationManager.get_data(),
 		"beast_data": fera.get_data(),
 		"buttons_data": get_buttons_data(),
+		"remove_distortion": Global.remove_distortion,
 	}
 	return data
 
@@ -96,6 +97,7 @@ func set_save_data(data):
 	cur_level = data.cur_level
 	player_data.set_save_data(data.player_data)
 	NarrationManager.set_data(data.narration_data)
+	Global.remove_distortion = data.remove_distortion
 	fera.set_data(cur_level, data.beast_data)
 	for button in buttons.get_children():
 		button.set_times_used(data.buttons_data[button.id])

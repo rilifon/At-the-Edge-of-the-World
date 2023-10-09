@@ -42,17 +42,14 @@ func set_data(data):
 
 
 func enable_effect():
-	AudioServer.set_bus_effect_enabled(NARRATION_BUS, 0, true)
-	AudioServer.set_bus_effect_enabled(NARRATION_BUS, 1, true)
-	AudioServer.set_bus_effect_enabled(NARRATION_BUS, 2, true)
-	AudioServer.set_bus_effect_enabled(NARRATION_BUS, 3, true)
+	pass
+#	AudioServer.set_bus_effect_enabled(NARRATION_BUS, 0, true)
+
 
 
 func disable_effect():
-	AudioServer.set_bus_effect_enabled(NARRATION_BUS, 0, false)
-	AudioServer.set_bus_effect_enabled(NARRATION_BUS, 1, false)
-	AudioServer.set_bus_effect_enabled(NARRATION_BUS, 2, false)
-	AudioServer.set_bus_effect_enabled(NARRATION_BUS, 3, false)
+	pass
+#	AudioServer.set_bus_effect_enabled(NARRATION_BUS, 0, false)
 
 
 func new_timer():
@@ -87,7 +84,7 @@ func trigger_narration():
 func start_narration(narration):
 	for dialogue in narration:
 		add_subtitle(tr(dialogue.text))
-		Player.stream = load(NARRATIONS_PATH + dialogue.voice)
+		var path = NARRATIONS_PATH + dialogue.voice
 		
 		var dur = Player.stream.get_length()
 		if dialogue.cha == "ahab":
@@ -96,7 +93,10 @@ func start_narration(narration):
 		elif dialogue.cha == "yog":
 			dur = dur - YOG_CUTOFF
 			enable_effect()
+			if not Global.remove_distortion:
+				path = path.replace(".wav", "_dist.wav")
 		
+		Player.stream = load(path)
 		Player.play()
 		yield(get_tree().create_timer(dur), "timeout")
 		

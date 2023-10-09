@@ -3,6 +3,7 @@ extends Node
 const VERSION = "1.0.0"
 
 var USE_STEAM = false
+var remove_distortion = false
 
 
 func _ready():

@@ -7,12 +7,13 @@ onready var NewGame = $Menu/Buttons/NewGame
 onready var SettingsButton = $Menu/Buttons/Settings
 onready var Exit = $Menu/Buttons/Exit
 onready var ContinueGame = $Menu/Buttons/ContinueGame
+onready var ToggleDistorion = $Menu/Buttons/NewGame/ToggleDistortion
 onready var Particle = $Menu/ParticlesEmitter
+onready var Settings = $Settings
 
 const SKIP_TOTAL_TIME = 1.0
 const SKIP_REDUCTION_SPEED = 1
 
-onready var Settings = $Settings
 
 var skip_timer := 0.0
 
@@ -22,6 +23,8 @@ func _ready():
 	PaletteLayer.change_to(0)
 	Settings.hide()
 	disable()
+	ToggleDistorion.pressed = false
+	ToggleDistorion.visible = Profile.get_stat("times_completed") > 0
 	ContinueGame.visible = FileManager.run_file_exists()
 	if Global.USE_STEAM:
 		Global.USE_STEAM = Steam.is_init()
@@ -73,6 +76,7 @@ func skip():
 func _on_NewGame_acted(_self):
 	FileManager.continue_game = false
 	FileManager.delete_run_file()
+	Global.remove_distortion = ToggleDistorion.pressed
 	# warning-ignore:return_value_discarded
 	get_tree().change_scene("res://MainScene.tscn")
 
