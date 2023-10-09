@@ -1,4 +1,4 @@
-[gd_scene load_steps=32 format=2]
+[gd_scene load_steps=33 format=2]
 
 [ext_resource path="res://assets/images/intro/waterfall_1.png" type="Texture" id=1]
 [ext_resource path="res://assets/images/intro/waterfall_5.png" type="Texture" id=2]
@@ -52,6 +52,21 @@ animations = [ {
 "name": "default",
 "speed": 5.0
 } ]
+
+[sub_resource type="Animation" id=8]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/path = NodePath("Intro:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ Color( 1, 1, 1, 1 ) ]
+}
 
 [sub_resource type="Animation" id=5]
 length = 45.5
@@ -111,7 +126,7 @@ tracks/4/loop_wrap = true
 tracks/4/imported = false
 tracks/4/enabled = true
 tracks/4/keys = {
-"times": PoolRealArray( 0, 0.5, 5.5, 6, 6.5, 11.5, 12, 12.5, 17.5, 18, 18.5, 23.5, 24, 24.5, 29.5, 30, 30.5, 35.5, 36, 36.5, 39.5, 40.5 ),
+"times": PoolRealArray( 0, 0.5, 5.5, 6, 6.5, 11.5, 12, 12.5, 17.5, 18, 18.5, 23.5, 24, 24.5, 29.5, 30, 30.5, 35.5, 36, 36.5, 40, 42 ),
 "transitions": PoolRealArray( 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1 ),
 "update": 0,
 "values": [ Color( 1, 1, 1, 0 ), Color( 1, 1, 1, 1 ), Color( 1, 1, 1, 1 ), Color( 1, 1, 1, 0 ), Color( 1, 1, 1, 1 ), Color( 1, 1, 1, 1 ), Color( 1, 1, 1, 0 ), Color( 1, 1, 1, 1 ), Color( 1, 1, 1, 1 ), Color( 1, 1, 1, 0 ), Color( 1, 1, 1, 1 ), Color( 1, 1, 1, 1 ), Color( 1, 1, 1, 0 ), Color( 1, 1, 1, 1 ), Color( 1, 1, 1, 1 ), Color( 1, 1, 1, 0 ), Color( 1, 1, 1, 1 ), Color( 1, 1, 1, 1 ), Color( 1, 1, 1, 0 ), Color( 1, 1, 1, 1 ), Color( 1, 1, 1, 1 ), Color( 1, 1, 1, 0 ) ]
@@ -246,6 +261,18 @@ tracks/12/keys = {
 } ],
 "times": PoolRealArray( 0, 6.5, 12.5, 18.5, 24.5, 30.5, 36.5 )
 }
+tracks/13/type = "value"
+tracks/13/path = NodePath("Intro:modulate")
+tracks/13/interp = 1
+tracks/13/loop_wrap = true
+tracks/13/imported = false
+tracks/13/enabled = true
+tracks/13/keys = {
+"times": PoolRealArray( 0, 36.5, 40 ),
+"transitions": PoolRealArray( 1, 1, 1 ),
+"update": 0,
+"values": [ Color( 1, 1, 1, 0.857143 ), Color( 1, 1, 1, 1 ), Color( 1, 1, 1, 0 ) ]
+}
 
 [sub_resource type="DynamicFont" id=6]
 size = 50
@@ -268,12 +295,13 @@ script = ExtResource( 9 )
 [node name="Ahab" type="AnimatedSprite" parent="Intro"]
 position = Vector2( 635.213, 391.257 )
 frames = SubResource( 1 )
+frame = 1
 playing = true
 
 [node name="Waterfall" type="AnimatedSprite" parent="Intro"]
 position = Vector2( 640, 644.359 )
 frames = SubResource( 2 )
-frame = 3
+frame = 1
 playing = true
 
 [node name="ColorRect" type="ColorRect" parent="Intro"]
@@ -310,10 +338,10 @@ modulate = Color( 1, 1, 1, 0 )
 position = Vector2( 1000, 363 )
 scale = Vector2( 0.7, 0.7 )
 frames = SubResource( 4 )
+frame = 1
 playing = true
 
 [node name="Buttons" type="Control" parent="Menu"]
-modulate = Color( 1, 1, 1, 0 )
 margin_left = 293.0
 margin_top = 263.0
 margin_right = 593.0
@@ -340,6 +368,16 @@ margin_bottom = 209.0
 rect_min_size = Vector2( 300, 80 )
 text = "NEW_GAME"
 
+[node name="ToggleDistortion" type="CheckBox" parent="Menu/Buttons/NewGame"]
+margin_left = 190.0
+margin_top = 13.0
+margin_right = 440.0
+margin_bottom = 40.0
+focus_mode = 0
+enabled_focus_mode = 0
+text = "TOGGLE_DISTORTION"
+flat = true
+
 [node name="Settings" parent="Menu/Buttons" instance=ExtResource( 15 )]
 anchor_right = 0.0
 anchor_bottom = 0.0
@@ -359,23 +397,24 @@ rect_min_size = Vector2( 300, 80 )
 text = "EXIT"
 
 [node name="Camera2D" type="Camera2D" parent="."]
-position = Vector2( 635.177, 360.919 )
+position = Vector2( 640, 360 )
 current = true
-zoom = Vector2( 0.921, 0.921 )
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
 autoplay = "intro"
+anims/RESET = SubResource( 8 )
 anims/intro = SubResource( 5 )
 
 [node name="TextLayer" type="CanvasLayer" parent="."]
 
 [node name="Story" type="Label" parent="TextLayer"]
+modulate = Color( 1, 1, 1, 0 )
 anchor_right = 1.0
 margin_bottom = 77.0
 rect_min_size = Vector2( 1280, 100 )
 custom_colors/font_color = Color( 0, 0, 0, 1 )
 custom_fonts/font = SubResource( 6 )
-text = "INTRO_2"
+text = "INTRO_1"
 align = 1
 valign = 1
 clip_text = true
@@ -416,7 +455,7 @@ autoplay = true
 bus = "BGM"
 
 [node name="IntroNarration" type="AudioStreamPlayer" parent="."]
-stream = ExtResource( 23 )
+stream = ExtResource( 19 )
 bus = "Narration"
 
 [connection signal="acted" from="Menu/Buttons/ContinueGame" to="." method="_on_ContinueGame_acted"]

@@ -1,0 +1,23 @@
+[remap]
+
+importer="wav"
+type="AudioStreamSample"
+path="res://.import/01.wav-08b957fbb9d2d13e41d986e012bce5b1.sample"
+
+[deps]
+
+source_file="res://assets/audio/narration/dialogues/27/01.wav"
+dest_files=[ "res://.import/01.wav-08b957fbb9d2d13e41d986e012bce5b1.sample" ]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop_mode=0
+edit/loop_begin=0
+edit/loop_end=-1
+compress/mode=0

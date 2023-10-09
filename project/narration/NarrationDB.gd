@@ -18,24 +18,24 @@ const DB = [
 			{"cha": "yog", "text": "D3_1", "voice": "03/01.wav"},
 			{"cha": "ahab", "text": "D3_2", "voice": "03/02.wav"},
 		],
-#		#Dialogue 4
-#		[
-#			{"cha": "ahab", "text": "D4_1", "voice": "04/01.wav"},
-#			{"cha": "yog", "text": "D4_2", "voice": "04/02.wav"},
-#			{"cha": "ahab", "text": "D4_3", "voice": "04/03.wav"},
-#		],
-#		#Dialogue 5
-#		[
-#			{"cha": "ahab", "text": "D5_1", "voice": "05/01.wav"},
-#			{"cha": "yog", "text": "D5_2", "voice": "05/02.wav"},
-#			{"cha": "ahab", "text": "D5_3", "voice": "05/03.wav"},
-#		],
-#		#Dialogue 6
-#		[
-#			{"cha": "ahab", "text": "D6_1", "voice": "06/01.wav"},
-#			{"cha": "yog", "text": "D6_2", "voice": "06/02.wav"},
-#			{"cha": "ahab", "text": "D6_3", "voice": "06/03.wav"},
-#		],
+		#Dialogue 4
+		[
+			{"cha": "ahab", "text": "D4_1", "voice": "04/01.wav"},
+			{"cha": "yog", "text": "D4_2", "voice": "04/02.wav"},
+			{"cha": "ahab", "text": "D4_3", "voice": "04/03.wav"},
+		],
+		#Dialogue 5
+		[
+			{"cha": "ahab", "text": "D5_1", "voice": "05/01.wav"},
+			{"cha": "yog", "text": "D5_2", "voice": "05/02.wav"},
+			{"cha": "ahab", "text": "D5_3", "voice": "05/03.wav"},
+		],
+		#Dialogue 6
+		[
+			{"cha": "ahab", "text": "D6_1", "voice": "06/01.wav"},
+			{"cha": "yog", "text": "D6_2", "voice": "06/02.wav"},
+			{"cha": "ahab", "text": "D6_3", "voice": "06/03.wav"},
+		],
 	],
 	#Level 1
 	[
@@ -95,62 +95,120 @@ const DB = [
 			{"cha": "ahab", "text": "D15_2", "voice": "15/02.wav"},
 			{"cha": "yog", "text": "D15_3", "voice": "15/03.wav"},
 		],
-#		#Dialogue 16
-#		[
-#		],
-#		#Dialogue 17
-#		[
-#		],
-#		#Dialogue 18
-#		[
-#		],
+		#Dialogue 16
+		[
+			{"cha": "ahab", "text": "D16_1", "voice": "16/01.wav"},
+			{"cha": "yog", "text": "D16_2", "voice": "16/02.wav"},
+			{"cha": "ahab", "text": "D16_3", "voice": "16/03.wav"},
+		],
+		#Dialogue 17
+		[
+			{"cha": "ahab", "text": "D17_1", "voice": "17/01.wav"},
+			{"cha": "ahab", "text": "D17_2", "voice": "17/02.wav"},
+			{"cha": "ahab", "text": "D17_3", "voice": "17/03.wav"},
+		],
+		#Dialogue 18
+		[
+			{"cha": "ahab", "text": "D18_1", "voice": "18/01.wav"},
+			{"cha": "ahab", "text": "D18_2", "voice": "18/02.wav"},
+		],
 	],
 	#Level 3
 	[
-#		#Dialogue 19
-#		[
-#		],
-#		#Dialogue 20
-#		[
-#		],
-#		#Dialogue 21
-#		[
-#		],
-#		#Dialogue 22
-#		[
-#		],
-#		#Dialogue 23
-#		[
-#		],
-#		#Dialogue 24
-#		[
-#		],
+		#Dialogue 19
+		[
+			{"cha": "ahab", "text": "D19_1", "voice": "19/01.wav"},
+			{"cha": "yog", "text": "D19_2", "voice": "19/02.wav"},
+			{"cha": "yog", "text": "D19_3", "voice": "19/03.wav"},
+			{"cha": "ahab", "text": "D19_4", "voice": "19/04.wav"},
+		],
+		#Dialogue 20
+		[
+			{"cha": "yog", "text": "D20_1", "voice": "20/01.wav"},
+			{"cha": "ahab", "text": "D20_2", "voice": "20/02.wav"},
+			{"cha": "yog", "text": "D20_3", "voice": "20/03.wav"},
+		],
+		#Dialogue 21
+		[
+			{"cha": "yog", "text": "D21_1", "voice": "21/01.wav"},
+			{"cha": "ahab", "text": "D21_2", "voice": "21/02.wav"},
+		],
+		#Dialogue 22
+		[
+			{"cha": "ahab", "text": "D22_1", "voice": "22/01.wav"},
+			{"cha": "yog", "text": "D22_2", "voice": "22/02.wav"},
+			{"cha": "ahab", "text": "D22_3", "voice": "22/03.wav"},
+		],
+		#Dialogue 23
+		[
+			{"cha": "yog", "text": "D23_1", "voice": "23/01.wav"},
+			{"cha": "yog", "text": "D23_2", "voice": "23/02.wav"},
+			{"cha": "yog", "text": "D23_3", "voice": "23/03.wav"},
+			{"cha": "ahab", "text": "D23_4", "voice": "23/04.wav"},
+		],
+		#Dialogue 24
+		[
+			{"cha": "yog", "text": "D24_1", "voice": "24/01.wav"},
+			{"cha": "ahab", "text": "D24_2", "voice": "24/02.wav"},
+			{"cha": "yog", "text": "D24_3", "voice": "24/03.wav"},
+			{"cha": "ahab", "text": "D24_4", "voice": "24/04.wav"},
+			{"cha": "yog", "text": "D24_5", "voice": "24/05.wav"},
+			{"cha": "ahab", "text": "D24_6", "voice": "24/06.wav"},
+		],
 	],
 	#Level 4
 	[
-#		#Dialogue 25
-#		[
-#		],
-#		#Dialogue 26
-#		[
-#		],
-#		#Dialogue 27
-#		[
-#		],
-#		#Dialogue 28
-#		[
-#		],
-#		#Dialogue 29
-#		[
-#		],
-#		#Dialogue 30
-#		[
-#		],
-#		#Dialogue 31
-#		[
-#		],
-#		#Dialogue 32
-#		[
-#		],
+		#Dialogue 25
+		[
+			{"cha": "yog", "text": "D25_1", "voice": "25/01.wav"},
+			{"cha": "ahab", "text": "D25_2", "voice": "25/02.wav"},
+			{"cha": "yog", "text": "D25_3", "voice": "25/03.wav"},
+			{"cha": "ahab", "text": "D25_4", "voice": "25/04.wav"},
+		],
+		#Dialogue 26
+		[
+			{"cha": "ahab", "text": "D26_1", "voice": "26/01.wav"},
+			{"cha": "ahab", "text": "D26_2", "voice": "26/02.wav"},
+		],
+		#Dialogue 27
+		[
+			{"cha": "ahab", "text": "D27_1", "voice": "27/01.wav"},
+			{"cha": "ahab", "text": "D27_2", "voice": "27/02.wav"},
+		],
+		#Dialogue 28
+		[
+			{"cha": "ahab", "text": "D28_1", "voice": "28/01.wav"},
+			{"cha": "ahab", "text": "D28_2", "voice": "28/02.wav"},
+			{"cha": "yog", "text": "D28_3", "voice": "28/03.wav"},
+			{"cha": "ahab", "text": "D28_4", "voice": "28/04.wav"},
+		],
+		#Dialogue 29
+		[
+			{"cha": "ahab", "text": "D29_1", "voice": "29/01.wav"},
+			{"cha": "yog", "text": "D29_2", "voice": "29/02.wav"},
+			{"cha": "yog", "text": "D29_3", "voice": "29/03.wav"},
+			{"cha": "ahab", "text": "D29_4", "voice": "29/04.wav"},
+		],
+		#Dialogue 30
+		[
+			{"cha": "ahab", "text": "D30_1", "voice": "30/01.wav"},
+			{"cha": "yog", "text": "D30_2", "voice": "30/02.wav"},
+			{"cha": "ahab", "text": "D30_3", "voice": "30/03.wav"},
+		],
+		#Dialogue 31
+		[
+			{"cha": "ahab", "text": "D31_1", "voice": "31/01.wav"},
+			{"cha": "yog", "text": "D31_2", "voice": "31/02.wav"},
+			{"cha": "ahab", "text": "D31_3", "voice": "31/03.wav"},
+			{"cha": "yog", "text": "D31_4", "voice": "31/04.wav"},
+		],
+		#Dialogue 32
+		[
+			{"cha": "ahab", "text": "D32_1", "voice": "32/01.wav"},
+			{"cha": "yog", "text": "D32_2", "voice": "32/02.wav"},
+			{"cha": "yog", "text": "D32_3", "voice": "32/03.wav"},
+			{"cha": "yog", "text": "D32_4", "voice": "32/04.wav"},
+			{"cha": "ahab", "text": "D32_5", "voice": "32/05.wav"},
+		],
 	],
 ]
