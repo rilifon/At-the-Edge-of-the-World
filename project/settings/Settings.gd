@@ -1,4 +1,4 @@
-extends Control
+extends CanvasLayer
 
 onready var SoundSettings = {
 	"master": $VB/MasterSound,

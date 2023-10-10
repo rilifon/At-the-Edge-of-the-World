@@ -2,12 +2,12 @@
 
 importer="wav"
 type="AudioStreamSample"
-path="res://.import/01_dist.wav-ee5d34184f0fb6feb3249e391748271e.sample"
+path="res://.import/01_dist.wav-8ba8dca636e226acd5c06a1a5bd35446.sample"
 
 [deps]
 
-source_file="res://assets/audio/narration/dialogues/26/01_dist.wav"
-dest_files=[ "res://.import/01_dist.wav-ee5d34184f0fb6feb3249e391748271e.sample" ]
+source_file="res://assets/audio/narration/dialogues/24/01_dist.wav"
+dest_files=[ "res://.import/01_dist.wav-8ba8dca636e226acd5c06a1a5bd35446.sample" ]
 
 [params]
 
