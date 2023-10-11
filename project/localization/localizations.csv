@@ -3,7 +3,7 @@ KEY_NAME,English,Português
 NEW_GAME,   New Beginnings   ,   Novos Começos   
 TOGGLE_DISTORTION,equip Yogsuvian Translator™,equipar Tradutor Yogsuviano®
 CONTINUE_GAME,   Resume your Story   ,   Retome sua História   
-OPTIONS,  Choices  ,  Escolhas
+OPTIONS,  Choices  ,  Escolhas  
 MASTER_VOLUME,Source of All Sound,Fonte de Todo Som
 BGM_VOLUME,Background Melodies,Melodia de Fundo
 SFX_VOLUME,Sound Chirps,Barulhinhos
@@ -29,7 +29,7 @@ NO_BAIT,Select a bait to fish!,Selecione alguma isca para pescar!
 COST,cost,custo
 ONE_BAIT,1 Bait,1 Isca
 DIGNITY,dignity,dignidade
-OUT_OF_STOCK,   OUT OF STOCK   ,   FORA DE ESTOQUE
+OUT_OF_STOCK,   OUT OF STOCK   ,   FORA DE ESTOQUE   
 MONEY,Cash,Grana
 MONEY_SUFFIX,jimbo,doleta
 MONEY_SUFFIX_PLURAL,jimbos,doletas

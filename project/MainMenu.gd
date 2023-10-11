@@ -1,6 +1,7 @@
 extends Control
 
 onready var animation = $AnimationPlayer
+onready var NarrationSFX = $IntroNarration
 onready var progress_bar = $TextLayer/Skip/ProgressBar
 onready var skip_box = $TextLayer/Skip
 onready var NewGame = $Menu/Buttons/NewGame
@@ -73,6 +74,7 @@ func disable():
 
 func skip():
 	set_process(false)
+	NarrationSFX.stop()
 	skip_box.hide()
 	animation.seek(45.5, true)
 	Particle.emitting = true
