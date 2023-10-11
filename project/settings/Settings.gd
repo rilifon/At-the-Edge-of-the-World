@@ -1,5 +1,14 @@
 extends CanvasLayer
 
+const LOCALES = {
+	"en": {
+		"idx": 0,
+	},
+	"pt_BR": {
+		"idx": 1,
+	}
+}
+
 onready var SoundSettings = {
 	"master": $VB/MasterSound,
 	"bgm": $VB/BGMSound,
@@ -10,6 +19,7 @@ onready var Dummy = $VB/Dummy
 onready var Fullscreen = $VB/Fullscreen
 onready var AnimPlayer = $AnimationPlayer
 onready var QuitButton = $ButtonsContainer/SaveQuit
+onready var LanguageOptions = $VB/LanguageContainer/OptionButton
 
 export var active = false
 export var enable_quit := false
@@ -18,6 +28,7 @@ export var enable_quit := false
 func _ready():
 	hide()
 	QuitButton.visible = enable_quit
+	setup_languages()
 	setup_values()
 
 
@@ -36,6 +47,16 @@ func setup_values():
 	SoundSettings.narration.set_value(Profile.get_option("narration_volume")*100)
 	Dummy.set_value(Profile.get_option("dummy_slider")*100)
 	Fullscreen.pressed = OS.window_fullscreen
+
+
+func setup_languages():
+	LanguageOptions.add_item("English", 0)
+	LanguageOptions.add_item("Português", 1)
+	var locale = TranslationServer.get_locale()
+	if LOCALES.has(locale):
+		LanguageOptions.selected = LOCALES[locale].idx
+	else:
+		LanguageOptions.selected = 0
 
 
 func save_values():
@@ -65,3 +86,10 @@ func _on_SaveQuit_acted(_self):
 	AudioManager.play_sfx("click_button")
 	save_values()
 	FileManager.save_and_quit()
+
+
+func _on_OptionButton_item_selected(index):
+	for locale in LOCALES.keys():
+		if LOCALES[locale].idx == index:
+			Profile.set_option("locale", index)
+			Profile.update_translation()

@@ -1,6 +1,6 @@
 keys,en,pt_BR
 KEY_NAME,English,Português
-NEW_GAME,   New Beginnings   ,   Novos Começos
+NEW_GAME,   New Beginnings   ,   Novos Começos   
 TOGGLE_DISTORTION,equip Yogsuvian Translator™,equipar Tradutor Yogsuviano®
 CONTINUE_GAME,   Resume your Story   ,   Retome sua História   
 OPTIONS,  Choices  ,  Escolhas
@@ -9,7 +9,9 @@ BGM_VOLUME,Background Melodies,Melodia de Fundo
 SFX_VOLUME,Sound Chirps,Barulhinhos
 NARRATION_VOLUME,Voice Amplitude,Amplitude Vocal
 FULLSCREEN,Toggle Fullscreen,Habilitar Tela Cheia
+LANGUAGE,Dialect,Dialeto
 DUMMY_SLIDER,Happiness,Felicidade
+BACK,Back,Voltar
 EXIT,Abandon,Abandonar
 SAVE_QUIT,Save and Quit,Salvar e Sair
 INTRO_1,My story begins at the edge of the world,Minha história começa no fim do mundo
@@ -42,27 +44,27 @@ AUTO_FISH,Cold Fusion Windlass,Molinete de Fusão a Frio
 AUTO_FISH_SUFFIX,chunk,naco
 AUTO_FISH_SUFFIX_PLURAL,chunks,nacos
 BEG,Beg,Mendigar
-BUY_BAIT1,   Buy Worms   ,   Comprar Minhocas
+BUY_BAIT1,   Buy Worms   ,   Comprar Minhocas   
 BAIT1,Worms,Minhocas
-BUY_BAIT2,   Buy Hot Dog   ,   Comprar Hot Dog
+BUY_BAIT2,   Buy Hot Dog   ,   Comprar Hot Dog   
 BAIT2,Hot Dog,Hot Dog
-BUY_BAIT3,   Buy Gorgonzola   ,   Comprar Gorgonzola
+BUY_BAIT3,   Buy Gorgonzola   ,   Comprar Gorgonzola   
 BAIT3,Gorgonzola,Gorgonzola
-BUY_AUTOFISH,     Buy Windlass   ,     Comprar Molinete
-BUY_MONEYENGINE,     Hire Lackey   ,     Contratar Lacaio
-BUY_ROD,   Improve Rod   ,   Melhorar Vara
-BUY_ROPE,   Buy Rope   ,   Comprar Linha
+BUY_AUTOFISH,     Buy Windlass   ,     Comprar Molinete   
+BUY_MONEYENGINE,     Hire Lackey   ,     Contratar Lacaio   
+BUY_ROD,   Improve Rod   ,   Melhorar Vara   
+BUY_ROPE,   Buy Rope   ,   Comprar Linha   
 FISH,Fish!,Pescar!
-BUY_FREEDOM,     Buy Freedom   ,     Comprar Liberdade
+BUY_FREEDOM,     Buy Freedom   ,     Comprar Liberdade   
 STUFF,--STUFF--,--MUAMBAS--
 FISH_LOOT,--HAUL--,--PESCADOS--
 BAITS,--BAITS--,--ISCAS--
-NOURISH_1,  nourish x1  ,  nutrir x1
-NOURISH_10,  nourish x10  ,  nutrir x10
-NOURISH_100,  nourish x100  ,  nutrir x100
-SELL_1,  sell x1  ,  vender x1
-SELL_10,  sell x10  ,  vender x10
-SELL_100,  sell x100  ,  vender x100
+NOURISH_1,  nourish x1  ,  nutrir x1   
+NOURISH_10,  nourish x10  ,  nutrir x10   
+NOURISH_100,  nourish x100  ,  nutrir x100   
+SELL_1,  sell x1  ,  vender x1   
+SELL_10,  sell x10  ,  vender x10   
+SELL_100,  sell x100  ,  vender x100   
 LOOT1,Lambari,Lambari
 LOOT2,Crab,Carangueijo
 LOOT3,Shark,Tubarão

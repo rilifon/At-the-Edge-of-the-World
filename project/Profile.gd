@@ -7,6 +7,7 @@ const LANGUAGES = [
 
 
 var options = {
+	"locale": get_os_locale(),
 	"master_volume": 0.55,
 	"bgm_volume": 1.0,
 	"sfx_volume": 1.0,
@@ -21,13 +22,20 @@ var stats = {
 	"end2_done": false,
 }
 
+
+func get_os_locale():
+	var loc = OS.get_locale()
+	if get_locale_idx(loc):
+		return get_locale_idx(loc)
+	return 0
+
 func get_locale_idx(locale):
 	var idx = 0
 	for lang in LANGUAGES:
 		if lang.locale == locale:
 			return idx
 		idx += 1
-	push_error("Couldn't find given locale: " + str(locale))
+	return false
 
 
 func update_translation():
@@ -61,7 +69,8 @@ func set_save_data(data):
 	AudioManager.set_bus_volume(AudioManager.NARRATION_BUS, options.narration_volume)
 	
 	OS.window_fullscreen = options.fullscreen
-
+	
+	update_translation()
 
 func set_data(data, name, default_values):
 	if not data.has(name):
