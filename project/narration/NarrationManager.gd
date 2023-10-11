@@ -1,5 +1,7 @@
 extends CanvasLayer
 
+signal finished_scrambling
+
 const NARRATION_BUS = 3
 const MIN_TIMER_RANGE = 1
 const MAX_TIMER_RANGE = 1.1
@@ -7,22 +9,25 @@ const SCRAMBLE_DELAY = 1.0
 const AHAB_DELAY = .75
 const YOG_CUTOFF = 2.5
 const YOG_DIST_CUTOFF = 1.5
+const FADE_IN_SPEED = 6.0
+const FADE_OUT_SPEED = 3.0
 const NARRATIONS_PATH = "res://assets/audio/narration/dialogues/"
 const NarrationDB = preload("res://narration/NarrationDB.gd")
 const SCRAMBLE_CYPHER = [
-	"a̵̢͖̠͔̲̺̫̦̅́͊̅̈̈́̔̇͛̈́̆̄̚̕͝","b̷̨̛̛̼̝͎̼̝͉͍̥̓́̽̔̌͐̿̑͘͜͠","c̷̠̀̌","d̷̨̪͖̺͇̗̣͉̻́̍͠͝","e̸̜̣̫͎̬̞͑̅͗̌̔̊͛͠","f̴̲̝͊́̚","g̷͍͙̮̜̞̰̲͉̫̲̩̔͗̑̚","h̶͙͚̺̯͎̼͎̘̖̱͚͖̙̫͂͑̓","ì̶̢͖̘̗̘̮̭̗̭̐̈́̑̋̂̈́̈͌̍͛̔̔̚͝","j̴̰̅͌̇̑","k̷̹͍̺͙̪͊̀͂̊̔́","l̶̙̖̳̯̫̀̈́͌̑͌̋͛̐̈́̓͘͝", "m̶̧͙̺͉̱̄͒̀̔̃͗̉̓̌̂͑͂̚͘͝",
-	"n̶̰͐̒̾̆͋̓̓͝","ó̸̫͍̲̪̉̊͗̓̔̀͝","p̶̘̃̈͋͐̂̍͆̕","q̴̜͔̣̥͙̳̱̘̟̣͎̖̼̈́̓̾̅͆͐̐͋̾͋̔̓̑̒̊͜ͅ","r̶̡̦̰̦͂́̅̒̿͒̀̈́́̕̚͜","s̴̡͈̣͇̜̞̗͇͍̠̈́͜","t̴̯̥͌̎͆͆͂̀͑͛͒͗͒͘","u̸̡̥̝̫̰͖̙̰̗̻͒̈́̏̐̀̾̚͠͠","v̵̡̹̞̹̫͕͚͍͌̈̊͌̊̂̑̕","w̷͇͙̫̔̈́̄͐̅̈́́̔͑̀́̅͝͝͝","x̷̨̡̟̗̤̗̩͈̮̭̅ͅ","ỹ̴̛͉̞̑̍̽͜͝", "z̷̡̹̣͚̤̻̥̰̜͕̎̍̍̽̕͜",
+	"ä̫", "b̞̱̊͐", "c̈̀̇", "d́͗̃̂", "ẹ̀̌", "f̛̦", "g̉̇̃̏", "ḩ́̃̊̂", "ĭ̛̱̮̀̉̉", "j̨̋͛̆", "ķ̛̂̀", "ļ̤̂", "m̧̦̃̋̑",
+	"n̮̦̱̊̋","ỏ̮̋", "ṕ̛̦̆̂", "q̉̌̂", "r̮̱̂̆", "ș̑̏", "ţ̤̦̉̂̃̈", "ự̃̊", "v̨", "ẇ̏", "x̨̱̦̃̊̀̇̆", "ỷ̛̀̊", "z̦̮̈",
 ]
 
 onready var Player = $Player
 onready var Subtitle = $Subtitle
 
 var timer = 0.0
-var scramble_timer = 0.0
 var cur_stage = 0
 var seen_narrations
 var is_running
+var active_sub = false
 var DB
+var thread: Thread
 
 func _ready():
 	DB = NarrationDB.DB
@@ -38,7 +43,12 @@ func _process(dt):
 			timer = max(timer - dt, 0.0)
 			if timer <= 0.0:
 				trigger_narration()
-
+		if active_sub:
+			Subtitle.modulate.a = min(Subtitle.modulate.a + dt*FADE_IN_SPEED, 1.0)
+		else:
+			Subtitle.modulate.a = max(Subtitle.modulate.a - dt*FADE_OUT_SPEED, 0.0)
+			if Subtitle.modulate.a <= 0.0:
+				Subtitle.text = ""
 
 func get_data():
 	return seen_narrations
@@ -90,19 +100,22 @@ func start_narration(narration):
 	for dialogue in narration:
 		disable_effect()
 		
-		add_subtitle(tr(dialogue.text))
-		
 		var path = NARRATIONS_PATH + dialogue.voice
 		var dur = 0
 		if dialogue.cha == "ahab":
+			add_subtitle(tr(dialogue.text))
 			dur = dur + AHAB_DELAY
 		elif dialogue.cha == "yog":
 			if not Global.remove_distortion:
 				enable_effect()
-				apply_scramble()
+				apply_scramble(tr(dialogue.text))
+				yield(self, "finished_scrambling")
 				dur = dur - YOG_DIST_CUTOFF
+				if dialogue.has("dist_delay"):
+					dur += dialogue.dist_delay
 				path = path.replace(".wav", "_dist.wav")
 			else:
+				add_subtitle(tr(dialogue.text))
 				dur = dur - YOG_CUTOFF
 		
 		Player.stream = load(path)
@@ -116,19 +129,43 @@ func start_narration(narration):
 
 
 func add_subtitle(text):
+	active_sub = true
 	Subtitle.text = text
 
 
 func remove_subtitle():
-	Subtitle.text = ""
+	active_sub = false
 
 
-func apply_scramble():
+func apply_scramble(text):
+	yield(get_tree(), "idle_frame")
+	
+	thread = Thread.new()
+
+	var err = thread.start(self, "scramble_function", text)
+	if err != OK:
+		push_error("Failure when creating threads")
+		add_subtitle(scramble_function(text))
+		emit_signal("finished_scrambling")
+		return
+
+	
+	while not thread.is_active():
+		yield(get_tree(), "idle_frame")
+	while thread.is_alive():
+		yield(get_tree(), "idle_frame")
+	
+	add_subtitle(thread.wait_to_finish())
+	emit_signal("finished_scrambling")
+
+
+func scramble_function(text_to_dist):
 	var text = ""
-	for i in range(Subtitle.text.length()):
-		var c = Subtitle.text[i]
-		if c != " " and c != "," and c != ".":
+	for i in range(text_to_dist.length()):
+		var c = text_to_dist[i]
+		if c != " " and c != "," and c != "." and c != '"' and\
+		   c != "'" and c != "!" and c != "?":
 			text += SCRAMBLE_CYPHER[randi()%SCRAMBLE_CYPHER.size()]
 		else:
 			text += c
-	Subtitle.text = text
+	return text

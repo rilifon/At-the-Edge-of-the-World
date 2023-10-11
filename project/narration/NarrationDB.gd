@@ -6,7 +6,7 @@ const DB = [
 		#Dialogue 1
 		[
 			{"cha": "ahab", "text": "D1_1", "voice": "01/01.wav"},
-			{"cha": "yog", "text": "D1_2", "voice": "01/02.wav"},
+			{"cha": "yog", "text": "D1_2", "voice": "01/02.wav", "dist_delay": -0.3},
 			{"cha": "ahab", "text": "D1_3", "voice": "01/03.wav"},
 		],
 		#Dialogue 2
@@ -33,7 +33,7 @@ const DB = [
 		#Dialogue 6
 		[
 			{"cha": "ahab", "text": "D6_1", "voice": "06/01.wav"},
-			{"cha": "yog", "text": "D6_2", "voice": "06/02.wav"},
+			{"cha": "yog", "text": "D6_2", "voice": "06/02.wav", "dist_delay": 0.8},
 			{"cha": "ahab", "text": "D6_3", "voice": "06/03.wav"},
 		],
 	],
@@ -98,7 +98,7 @@ const DB = [
 		#Dialogue 16
 		[
 			{"cha": "ahab", "text": "D16_1", "voice": "16/01.wav"},
-			{"cha": "yog", "text": "D16_2", "voice": "16/02.wav"},
+			{"cha": "yog", "text": "D16_2", "voice": "16/02.wav", "dist_delay": 0.8},
 			{"cha": "ahab", "text": "D16_3", "voice": "16/03.wav"},
 		],
 		#Dialogue 17

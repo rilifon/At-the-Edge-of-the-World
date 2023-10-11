@@ -49,9 +49,6 @@ rect_min_size = Vector2( 170, 50 )
 mouse_filter = 2
 theme = ExtResource( 2 )
 script = ExtResource( 1 )
-__meta__ = {
-"_edit_use_anchors_": false
-}
 reward_resource = {
 "active": false,
 "amount": 0,
@@ -77,6 +74,11 @@ margin_bottom = 50.0
 rect_min_size = Vector2( 170, 50 )
 rect_pivot_offset = Vector2( 85, 25 )
 focus_mode = 0
+custom_colors/font_color_disabled = Color( 0, 0, 0, 1 )
+custom_colors/font_color_focus = Color( 0, 0, 0, 1 )
+custom_colors/font_color = Color( 0, 0, 0, 1 )
+custom_colors/font_color_hover = Color( 0, 0, 0, 1 )
+custom_colors/font_color_pressed = Color( 0, 0, 0, 1 )
 shortcut_in_tooltip = false
 enabled_focus_mode = 0
 
