@@ -86,7 +86,7 @@ const DB = [
 		[
 			{"cha": "ahab", "text": "D14_1", "voice": "14/01.wav"},
 			{"cha": "yog", "text": "D14_2", "voice": "14/02.wav"},
-			{"cha": "yog", "text": "D14_3", "voice": "14/03.wav"},
+			{"cha": "yog", "text": "D14_3", "voice": "14/03.wav", "dist_delay": 0.8},
 			{"cha": "ahab", "text": "D14_4", "voice": "14/04.wav"},
 		],
 		#Dialogue 15

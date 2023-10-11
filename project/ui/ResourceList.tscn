@@ -17,7 +17,7 @@ __meta__ = {
 
 [node name="FirstList" type="VBoxContainer" parent="HBoxContainer"]
 margin_right = 440.0
-margin_bottom = 500.0
+margin_bottom = 400.0
 rect_min_size = Vector2( 440, 0 )
 __meta__ = {
 "_edit_use_anchors_": false
@@ -26,8 +26,8 @@ __meta__ = {
 [node name="ScrollContainer" type="ScrollContainer" parent="HBoxContainer"]
 margin_left = 455.0
 margin_right = 955.0
-margin_bottom = 500.0
-rect_min_size = Vector2( 500, 500 )
+margin_bottom = 400.0
+rect_min_size = Vector2( 500, 400 )
 
 [node name="LootList" type="VBoxContainer" parent="HBoxContainer/ScrollContainer"]
 margin_right = 300.0

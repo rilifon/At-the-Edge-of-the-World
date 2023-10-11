@@ -1,9 +1,12 @@
 extends Node2D
 
+const CONTAINER_SIZE = 400
+
 onready var buttons = $Interface/ScrollContainer/Buttons
 onready var resource_list = $Interface/ResourceList
 onready var fera = $Fera
 onready var Settings = $Settings
+onready var ScrollCont = $Interface/ScrollContainer
 
 var player_data
 
@@ -141,6 +144,7 @@ func _on_level_up(level):
 		if button.level_unlocked <= cur_level:
 			button.show()
 	PaletteLayer.change_to(cur_level)
+	ScrollCont.rect_size.y = CONTAINER_SIZE
 
 
 func _on_SettingsButton_pressed():
