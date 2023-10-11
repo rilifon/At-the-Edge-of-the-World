@@ -12,7 +12,7 @@ var options = {
 	"sfx_volume": 1.0,
 	"narration_volume": 1.0,
 	"fullscreen": false,
-	"dummy_slider": 1.0,
+	"dummy_slider": .75,
 }
 
 var stats = {

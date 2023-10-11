@@ -100,9 +100,6 @@ margin_right = 171.0
 margin_bottom = 50.0
 rect_clip_content = true
 mouse_filter = 2
-__meta__ = {
-"_edit_use_anchors_": false
-}
 
 [node name="TextureRect" type="TextureRect" parent="Cooldown"]
 margin_right = 171.0

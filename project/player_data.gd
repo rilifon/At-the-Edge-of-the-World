@@ -31,7 +31,7 @@ var resources = [
 		"id": "line_length",
 		"name": "LINE_LENGTH",
 		"amount": 0,
-		"max": 19,
+		"max": ENUMS.line_length.size() - 1,
 		"gain_per_second": 0,
 		"suffix": "enum",
 		"suffix_plural": "enum",

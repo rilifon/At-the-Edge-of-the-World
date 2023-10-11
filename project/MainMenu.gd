@@ -56,6 +56,12 @@ func enable():
 	Exit.enable_button()
 	SettingsButton.enable_button()
 	ContinueGame.enable_button()
+	
+	if Global.USE_STEAM:
+		if Profile.get_stat("end1_done"):
+			Steam.set_achievement("ending_1")
+		if Profile.get_stat("end2_done"):
+			Steam.set_achievement("ending_2")
 
 
 func disable():
@@ -93,3 +99,10 @@ func _on_ContinueGame_acted(_self):
 	FileManager.continue_game = true
 	# warning-ignore:return_value_discarded
 	get_tree().change_scene("res://MainScene.tscn")
+
+
+func _on_ToggleDistortion_toggled(button_pressed):
+	if button_pressed:
+		AudioManager.play_sfx("toggle_dist_off")
+	else:
+		AudioManager.play_sfx("toggle_dist_on")

@@ -458,5 +458,6 @@ bus = "Narration"
 
 [connection signal="acted" from="Menu/Buttons/ContinueGame" to="." method="_on_ContinueGame_acted"]
 [connection signal="acted" from="Menu/Buttons/NewGame" to="." method="_on_NewGame_acted"]
+[connection signal="toggled" from="Menu/Buttons/NewGame/ToggleDistortion" to="." method="_on_ToggleDistortion_toggled"]
 [connection signal="acted" from="Menu/Buttons/Settings" to="." method="_on_Settings_acted"]
 [connection signal="acted" from="Menu/Buttons/Exit" to="." method="_on_Exit_acted"]
