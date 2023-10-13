@@ -1,8 +1,9 @@
-[gd_scene load_steps=6 format=2]
+[gd_scene load_steps=7 format=2]
 
 [ext_resource path="res://assets/fonts/Itim-Regular.ttf" type="DynamicFontData" id=1]
 [ext_resource path="res://SoundSetting.gd" type="Script" id=2]
 [ext_resource path="res://assets/images/buttons/g-clef.png" type="Texture" id=3]
+[ext_resource path="res://settings_theme.tres" type="Theme" id=4]
 
 [sub_resource type="DynamicFont" id=1]
 size = 24
@@ -59,6 +60,7 @@ rect_min_size = Vector2( 350, 0 )
 margin_right = 300.0
 margin_bottom = 50.0
 rect_min_size = Vector2( 300, 50 )
+theme = ExtResource( 4 )
 
 [node name="Label" type="Label" parent="VBoxContainer/HBoxContainer"]
 margin_left = 304.0

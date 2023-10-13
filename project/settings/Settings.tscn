@@ -1,5 +1,6 @@
-[gd_scene load_steps=17 format=2]
+[gd_scene load_steps=19 format=2]
 
+[ext_resource path="res://settings_theme.tres" type="Theme" id=1]
 [ext_resource path="res://settings/Settings.gd" type="Script" id=2]
 [ext_resource path="res://SoundSetting.tscn" type="PackedScene" id=3]
 [ext_resource path="res://Button.tscn" type="PackedScene" id=4]
@@ -10,6 +11,13 @@
 [ext_resource path="res://assets/audio/sfxs/settings/bw_03_ahab_Settings.wav" type="AudioStream" id=9]
 [ext_resource path="res://assets/fonts/Itim-Regular.ttf" type="DynamicFontData" id=10]
 [ext_resource path="res://assets/images/buttons/hearts.png" type="Texture" id=11]
+
+[sub_resource type="StyleBoxFlat" id=8]
+bg_color = Color( 0.839216, 0.839216, 0.839216, 1 )
+corner_radius_top_left = 9
+corner_radius_top_right = 9
+corner_radius_bottom_right = 9
+corner_radius_bottom_left = 9
 
 [sub_resource type="DynamicFont" id=5]
 size = 27
@@ -254,14 +262,38 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 color = Color( 0, 0, 0, 0.960784 )
 
-[node name="Drop" type="ColorRect" parent="."]
+[node name="Drop" type="PanelContainer" parent="."]
 anchor_right = 1.0
 anchor_bottom = 1.0
 margin_left = 434.0
 margin_top = 20.0
 margin_right = -446.0
 margin_bottom = -20.0
-color = Color( 1, 1, 1, 0.952941 )
+custom_styles/panel = SubResource( 8 )
+
+[node name="ButtonsContainer" type="HBoxContainer" parent="."]
+margin_left = 434.0
+margin_top = 616.0
+margin_right = 834.0
+margin_bottom = 666.0
+custom_constants/separation = 15
+alignment = 1
+
+[node name="Back" parent="ButtonsContainer" instance=ExtResource( 4 )]
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_left = 22.0
+margin_right = 192.0
+margin_bottom = 50.0
+text = "BACK"
+
+[node name="SaveQuit" parent="ButtonsContainer" instance=ExtResource( 4 )]
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_left = 207.0
+margin_right = 377.0
+margin_bottom = 50.0
+text = "SAVE_QUIT"
 
 [node name="VB" type="VBoxContainer" parent="."]
 anchor_left = 0.5
@@ -354,6 +386,7 @@ margin_right = 350.0
 margin_bottom = 459.0
 rect_min_size = Vector2( 0, 49 )
 focus_mode = 0
+theme = ExtResource( 1 )
 custom_colors/font_color_disabled = Color( 0, 0, 0, 1 )
 custom_colors/font_color_focus = Color( 0, 0, 0, 1 )
 custom_colors/font_color_hover_pressed = Color( 0, 0, 0, 1 )
@@ -380,48 +413,25 @@ text = "LANGUAGE"
 
 [node name="OptionButton" type="OptionButton" parent="VB/LanguageContainer"]
 margin_left = 170.0
-margin_right = 325.0
+margin_right = 328.0
 margin_bottom = 38.0
+theme = ExtResource( 1 )
 custom_fonts/font = SubResource( 7 )
 text = "KEY_NAME"
-
-[node name="ButtonsContainer" type="HBoxContainer" parent="."]
-margin_left = 434.0
-margin_top = 616.0
-margin_right = 834.0
-margin_bottom = 666.0
-custom_constants/separation = 15
-alignment = 1
-
-[node name="Back" parent="ButtonsContainer" instance=ExtResource( 4 )]
-anchor_right = 0.0
-anchor_bottom = 0.0
-margin_left = 22.0
-margin_right = 192.0
-margin_bottom = 50.0
-text = "BACK"
-
-[node name="SaveQuit" parent="ButtonsContainer" instance=ExtResource( 4 )]
-anchor_right = 0.0
-anchor_bottom = 0.0
-margin_left = 207.0
-margin_right = 377.0
-margin_bottom = 50.0
-text = "SAVE_QUIT"
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
 anims/RESET = SubResource( 2 )
 anims/disable = SubResource( 4 )
 anims/enable = SubResource( 3 )
 
+[connection signal="acted" from="ButtonsContainer/Back" to="." method="_on_Back_acted"]
+[connection signal="acted" from="ButtonsContainer/SaveQuit" to="." method="_on_SaveQuit_acted"]
 [connection signal="change_value" from="VB/MasterSound" to="." method="_on_Sound_change_value"]
 [connection signal="change_value" from="VB/BGMSound" to="." method="_on_Sound_change_value"]
 [connection signal="change_value" from="VB/SFXSound" to="." method="_on_Sound_change_value"]
 [connection signal="change_value" from="VB/NarrationSound" to="." method="_on_Sound_change_value"]
 [connection signal="toggled" from="VB/Fullscreen" to="." method="_on_FullScreen_toggled"]
 [connection signal="item_selected" from="VB/LanguageContainer/OptionButton" to="." method="_on_OptionButton_item_selected"]
-[connection signal="acted" from="ButtonsContainer/Back" to="." method="_on_Back_acted"]
-[connection signal="acted" from="ButtonsContainer/SaveQuit" to="." method="_on_SaveQuit_acted"]
 
 [editable path="VB/BGMSound"]
 [editable path="VB/SFXSound"]

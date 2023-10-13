@@ -1,0 +1,136 @@
+[gd_resource type="Theme" load_steps=23 format=2]
+
+[ext_resource path="res://ui/SmallFont.tres" type="DynamicFont" id=1]
+[ext_resource path="res://assets/images/settings/arrow.png" type="Texture" id=2]
+[ext_resource path="res://assets/images/settings/option_normal.png" type="Texture" id=3]
+[ext_resource path="res://assets/images/settings/option_hover.png" type="Texture" id=4]
+[ext_resource path="res://assets/images/settings/option_pressed.png" type="Texture" id=5]
+[ext_resource path="res://assets/images/settings/radio_unchecked.png" type="Texture" id=6]
+[ext_resource path="res://assets/images/settings/radio_checked.png" type="Texture" id=7]
+[ext_resource path="res://assets/images/settings/popup_panel.png" type="Texture" id=8]
+[ext_resource path="res://assets/images/settings/popup_hover.png" type="Texture" id=9]
+[ext_resource path="res://assets/images/settings/grabber.png" type="Texture" id=10]
+[ext_resource path="res://assets/images/settings/grabber_highlight.png" type="Texture" id=11]
+[ext_resource path="res://assets/images/settings/slider.png" type="Texture" id=12]
+[ext_resource path="res://assets/images/settings/checked.png" type="Texture" id=13]
+[ext_resource path="res://assets/images/settings/unchecked.png" type="Texture" id=14]
+
+[sub_resource type="StyleBoxEmpty" id=55]
+
+[sub_resource type="StyleBoxTexture" id=50]
+texture = ExtResource( 12 )
+region_rect = Rect2( 0, 0, 17, 12 )
+margin_left = 5.0
+margin_right = 5.0
+margin_top = 5.0
+margin_bottom = 5.0
+
+[sub_resource type="StyleBoxEmpty" id=29]
+
+[sub_resource type="StyleBoxTexture" id=27]
+content_margin_left = 6.0
+content_margin_right = 9.0
+content_margin_top = 3.0
+content_margin_bottom = 3.0
+texture = ExtResource( 4 )
+region_rect = Rect2( -1, -1, 73, 35 )
+margin_left = 7.0
+margin_right = 21.0
+margin_top = 5.0
+margin_bottom = 5.0
+expand_margin_left = 1.0
+expand_margin_right = 1.0
+expand_margin_top = 1.0
+expand_margin_bottom = 1.0
+
+[sub_resource type="StyleBoxTexture" id=21]
+content_margin_left = 6.0
+content_margin_right = 9.0
+content_margin_top = 3.0
+content_margin_bottom = 3.0
+texture = ExtResource( 3 )
+region_rect = Rect2( -1, -1, 73, 35 )
+margin_left = 7.0
+margin_right = 21.0
+margin_top = 5.0
+margin_bottom = 5.0
+expand_margin_left = 1.0
+expand_margin_right = 1.0
+expand_margin_top = 1.0
+expand_margin_bottom = 1.0
+
+[sub_resource type="StyleBoxTexture" id=28]
+content_margin_left = 6.0
+content_margin_right = 9.0
+content_margin_top = 3.0
+content_margin_bottom = 3.0
+texture = ExtResource( 5 )
+region_rect = Rect2( -1, -1, 73, 35 )
+margin_left = 7.0
+margin_right = 21.0
+margin_top = 5.0
+margin_bottom = 5.0
+expand_margin_left = 1.0
+expand_margin_right = 1.0
+expand_margin_top = 1.0
+expand_margin_bottom = 1.0
+
+[sub_resource type="StyleBoxTexture" id=32]
+texture = ExtResource( 9 )
+region_rect = Rect2( 0, 0, 16, 16 )
+margin_left = 6.0
+margin_right = 6.0
+margin_top = 6.0
+margin_bottom = 6.0
+expand_margin_left = 6.0
+expand_margin_right = 6.0
+expand_margin_top = 2.0
+expand_margin_bottom = 2.0
+
+[sub_resource type="StyleBoxTexture" id=39]
+texture = ExtResource( 8 )
+region_rect = Rect2( -3, -3, 84, 84 )
+margin_left = 11.0
+margin_right = 11.0
+margin_top = 11.0
+margin_bottom = 10.0
+expand_margin_left = 5.0
+expand_margin_right = 5.0
+expand_margin_top = 1.0
+expand_margin_bottom = 1.0
+
+[resource]
+default_font = ExtResource( 1 )
+CheckBox/icons/checked = ExtResource( 13 )
+CheckBox/icons/unchecked = ExtResource( 14 )
+CheckBox/styles/focus = SubResource( 55 )
+HSlider/icons/grabber = ExtResource( 10 )
+HSlider/icons/grabber_highlight = ExtResource( 11 )
+HSlider/styles/grabber_area = SubResource( 50 )
+HSlider/styles/grabber_area_highlight = SubResource( 50 )
+HSlider/styles/slider = SubResource( 50 )
+OptionButton/colors/font_color = Color( 0.88, 0.88, 0.88, 1 )
+OptionButton/colors/font_color_disabled = Color( 0.9, 0.9, 0.9, 0.2 )
+OptionButton/colors/font_color_focus = Color( 0.94, 0.94, 0.94, 1 )
+OptionButton/colors/font_color_hover = Color( 0.94, 0.94, 0.94, 1 )
+OptionButton/colors/font_color_pressed = Color( 1, 1, 1, 1 )
+OptionButton/constants/arrow_margin = 2
+OptionButton/constants/hseparation = 2
+OptionButton/fonts/font = ExtResource( 1 )
+OptionButton/icons/arrow = ExtResource( 2 )
+OptionButton/styles/disabled = null
+OptionButton/styles/focus = SubResource( 29 )
+OptionButton/styles/hover = SubResource( 27 )
+OptionButton/styles/normal = SubResource( 21 )
+OptionButton/styles/pressed = SubResource( 28 )
+PopupMenu/icons/checked = null
+PopupMenu/icons/radio_checked = ExtResource( 7 )
+PopupMenu/icons/radio_unchecked = ExtResource( 6 )
+PopupMenu/icons/submenu = null
+PopupMenu/icons/unchecked = null
+PopupMenu/styles/hover = SubResource( 32 )
+PopupMenu/styles/labeled_separator_left = null
+PopupMenu/styles/labeled_separator_right = null
+PopupMenu/styles/panel = SubResource( 39 )
+PopupMenu/styles/panel_disabled = null
+PopupMenu/styles/separator = null
