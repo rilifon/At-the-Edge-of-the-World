@@ -3,10 +3,12 @@ extends Node2D
 const CONTAINER_SIZE = 400
 
 onready var buttons = $Interface/ScrollContainer/Buttons
+onready var upper_buttons = $UpperButtons
 onready var resource_list = $Interface/ResourceList
 onready var fera = $Fera
 onready var Settings = $Settings
 onready var ScrollCont = $Interface/ScrollContainer
+onready var fishing_button = $UpperButtons/Fishing
 
 var player_data
 
@@ -26,7 +28,7 @@ func _ready():
 		FileManager.continue_game = false
 		FileManager.load_run()
 	
-	for button in buttons.get_children():
+	for button in buttons.get_children() + upper_buttons.get_children():
 		button.setup(player_data, self)
 		button.connect("acted", self, "_on_button_acted")
 		button.update_cost_text()
@@ -69,8 +71,8 @@ func _process(dt):
 		if resource.has("gain_per_second") and resource.gain_per_second > 0:
 			player_data.gain(resource.id, resource.gain_per_second*dt, false)
 	
-	if player_data.get_resource_amount("auto_fish") and not $Interface/ScrollContainer/Buttons/Fishing.on_cooldown:
-		$Interface/ScrollContainer/Buttons/Fishing.activate_button(true)
+	if player_data.get_resource_amount("auto_fish") and not fishing_button.on_cooldown:
+		fishing_button.activate_button(true)
 
 
 func get_selected_bait():
@@ -91,7 +93,7 @@ func get_save_data():
 
 func get_buttons_data():
 	var data = {}
-	for button in buttons.get_children():
+	for button in buttons.get_children() + upper_buttons.get_children():
 		data[button.id] = button.get_times_used()
 	return data
 
@@ -102,7 +104,7 @@ func set_save_data(data):
 	NarrationManager.set_data(data.narration_data)
 	Global.remove_distortion = data.remove_distortion
 	fera.set_data(cur_level, data.beast_data)
-	for button in buttons.get_children():
+	for button in buttons.get_children() + upper_buttons.get_children():
 		button.set_times_used(data.buttons_data[button.id])
 
 
@@ -140,7 +142,7 @@ func _on_player_sell(loot, value):
 func _on_level_up(level):
 	cur_level = level
 	NarrationManager.set_cur_stage(cur_level)
-	for button in buttons.get_children():
+	for button in buttons.get_children() + upper_buttons.get_children():
 		if button.level_unlocked <= cur_level:
 			button.show()
 	PaletteLayer.change_to(cur_level)

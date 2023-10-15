@@ -69,7 +69,7 @@ rect_clip_content = false
 
 [node name="Buttons" type="VBoxContainer" parent="Interface/ScrollContainer"]
 margin_right = 170.0
-margin_bottom = 715.0
+margin_bottom = 540.0
 theme = ExtResource( 4 )
 custom_constants/separation = 20
 alignment = 1
@@ -77,64 +77,11 @@ __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="Final" parent="Interface/ScrollContainer/Buttons" instance=ExtResource( 2 )]
+[node name="Rope" parent="Interface/ScrollContainer/Buttons" instance=ExtResource( 2 )]
 anchor_right = 0.0
 anchor_bottom = 0.0
 margin_right = 170.0
 margin_bottom = 50.0
-text = "BUY_FREEDOM"
-id = "buy_ending"
-level_unlocked = 4
-reward_resource = {
-"active": false,
-"amount": 1,
-"engine": {
-"active": false,
-"amount": 0.0,
-"type": ""
-},
-"type": "auto_fish"
-}
-cost = {
-"active": true,
-"base_cost": 666666,
-"exponential_progression": 1.2,
-"incremental_cost": 0,
-"times_used": 0,
-"type": "money"
-}
-
-[node name="Fishing" parent="Interface/ScrollContainer/Buttons" instance=ExtResource( 2 )]
-anchor_right = 0.0
-anchor_bottom = 0.0
-margin_top = 70.0
-margin_right = 170.0
-margin_bottom = 155.0
-rect_min_size = Vector2( 170, 85 )
-cooldown = 5.0
-text = "FISH"
-id = "fishing"
-reward_resource = {
-"active": false,
-"amount": 0,
-"type": ""
-}
-cost = {
-"active": true,
-"base_cost": 1,
-"exponential_progression": 1.0,
-"incremental_cost": 0,
-"times_used": 0,
-"type": "bait"
-}
-fake_cost = "ONE_BAIT"
-
-[node name="Rope" parent="Interface/ScrollContainer/Buttons" instance=ExtResource( 2 )]
-anchor_right = 0.0
-anchor_bottom = 0.0
-margin_top = 175.0
-margin_right = 170.0
-margin_bottom = 225.0
 text = "BUY_ROPE"
 id = "buy_rope"
 level_unlocked = 1
@@ -155,9 +102,9 @@ cost = {
 [node name="Rod Quality" parent="Interface/ScrollContainer/Buttons" instance=ExtResource( 2 )]
 anchor_right = 0.0
 anchor_bottom = 0.0
-margin_top = 245.0
+margin_top = 70.0
 margin_right = 170.0
-margin_bottom = 295.0
+margin_bottom = 120.0
 text = "BUY_ROD"
 id = "improve_rod"
 reward_resource = {
@@ -182,9 +129,9 @@ cost = {
 [node name="MoneyEngine" parent="Interface/ScrollContainer/Buttons" instance=ExtResource( 2 )]
 anchor_right = 0.0
 anchor_bottom = 0.0
-margin_top = 315.0
+margin_top = 140.0
 margin_right = 170.0
-margin_bottom = 365.0
+margin_bottom = 190.0
 text = "BUY_MONEYENGINE"
 id = "buy_money_engine"
 level_unlocked = 1
@@ -210,9 +157,9 @@ cost = {
 [node name="AutoFish" parent="Interface/ScrollContainer/Buttons" instance=ExtResource( 2 )]
 anchor_right = 0.0
 anchor_bottom = 0.0
-margin_top = 385.0
+margin_top = 210.0
 margin_right = 170.0
-margin_bottom = 435.0
+margin_bottom = 260.0
 text = "BUY_AUTOFISH"
 id = "buy_autofish"
 level_unlocked = 3
@@ -238,9 +185,9 @@ cost = {
 [node name="Bait1" parent="Interface/ScrollContainer/Buttons" instance=ExtResource( 2 )]
 anchor_right = 0.0
 anchor_bottom = 0.0
-margin_top = 455.0
+margin_top = 280.0
 margin_right = 170.0
-margin_bottom = 505.0
+margin_bottom = 330.0
 text = "BUY_BAIT1"
 id = "buy_bait1"
 reward_resource = {
@@ -260,9 +207,9 @@ cost = {
 [node name="Bait2" parent="Interface/ScrollContainer/Buttons" instance=ExtResource( 2 )]
 anchor_right = 0.0
 anchor_bottom = 0.0
-margin_top = 525.0
+margin_top = 350.0
 margin_right = 170.0
-margin_bottom = 575.0
+margin_bottom = 400.0
 text = "BUY_BAIT2"
 id = "buy_bait1"
 level_unlocked = 2
@@ -283,9 +230,9 @@ cost = {
 [node name="Bait3" parent="Interface/ScrollContainer/Buttons" instance=ExtResource( 2 )]
 anchor_right = 0.0
 anchor_bottom = 0.0
-margin_top = 595.0
+margin_top = 420.0
 margin_right = 170.0
-margin_bottom = 645.0
+margin_bottom = 470.0
 text = "BUY_BAIT3"
 id = "buy_bait1"
 level_unlocked = 3
@@ -306,9 +253,9 @@ cost = {
 [node name="Beg" parent="Interface/ScrollContainer/Buttons" instance=ExtResource( 2 )]
 anchor_right = 0.0
 anchor_bottom = 0.0
-margin_top = 665.0
+margin_top = 490.0
 margin_right = 170.0
-margin_bottom = 715.0
+margin_bottom = 540.0
 cooldown = 0.2
 text = "BEG"
 id = "fishing"
@@ -357,6 +304,67 @@ margin_top = -11.7726
 margin_right = 15.1361
 margin_bottom = -11.7726
 
+[node name="UpperButtons" type="HBoxContainer" parent="."]
+margin_left = 537.0
+margin_top = 47.0
+margin_right = 1127.0
+margin_bottom = 132.0
+custom_constants/separation = 40
+alignment = 1
+
+[node name="Fishing" parent="UpperButtons" instance=ExtResource( 2 )]
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_left = 105.0
+margin_right = 275.0
+margin_bottom = 85.0
+rect_min_size = Vector2( 170, 85 )
+cooldown = 5.0
+text = "FISH"
+id = "fishing"
+reward_resource = {
+"active": false,
+"amount": 0,
+"type": ""
+}
+cost = {
+"active": true,
+"base_cost": 1,
+"exponential_progression": 1.0,
+"incremental_cost": 0,
+"times_used": 0,
+"type": "bait"
+}
+fake_cost = "ONE_BAIT"
+
+[node name="Final" parent="UpperButtons" instance=ExtResource( 2 )]
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_left = 315.0
+margin_right = 485.0
+margin_bottom = 85.0
+text = "BUY_FREEDOM"
+id = "buy_ending"
+level_unlocked = 4
+reward_resource = {
+"active": false,
+"amount": 1,
+"engine": {
+"active": false,
+"amount": 0.0,
+"type": ""
+},
+"type": "auto_fish"
+}
+cost = {
+"active": true,
+"base_cost": 666666,
+"exponential_progression": 1.2,
+"incremental_cost": 0,
+"times_used": 0,
+"type": "money"
+}
+
 [node name="BGM" type="AudioStreamPlayer" parent="."]
 stream = ExtResource( 7 )
 autoplay = true
@@ -381,7 +389,7 @@ script = ExtResource( 11 )
 visible = false
 enable_quit = true
 
-[connection signal="no_bait_selected" from="Interface/ScrollContainer/Buttons/Fishing" to="." method="_on_Fishing_no_bait_selected"]
+[connection signal="no_bait_selected" from="UpperButtons/Fishing" to="." method="_on_Fishing_no_bait_selected"]
 [connection signal="mouse_entered" from="SettingsButton" to="." method="_on_SettingsButton_mouse_entered"]
 [connection signal="pressed" from="SettingsButton" to="." method="_on_SettingsButton_pressed"]
 
