@@ -1,4 +1,4 @@
-[gd_scene load_steps=19 format=2]
+[gd_scene load_steps=21 format=2]
 
 [ext_resource path="res://MainScene.gd" type="Script" id=1]
 [ext_resource path="res://Button.tscn" type="PackedScene" id=2]
@@ -10,6 +10,7 @@
 [ext_resource path="res://ParticleEmitter.tscn" type="PackedScene" id=8]
 [ext_resource path="res://assets/images/buttons/settings_icon.png" type="Texture" id=9]
 [ext_resource path="res://settings/Settings.tscn" type="PackedScene" id=10]
+[ext_resource path="res://ui/SettingsButton.gd" type="Script" id=11]
 
 [sub_resource type="Shader" id=5]
 code = "shader_type canvas_item;
@@ -39,17 +40,13 @@ use_mipmaps = true
 use_filter = true
 font_data = ExtResource( 6 )
 
-[sub_resource type="StyleBoxTexture" id=2]
-texture = ExtResource( 9 )
-region_rect = Rect2( 0, 0, 512, 512 )
+[sub_resource type="StyleBoxEmpty" id=10]
 
-[sub_resource type="StyleBoxTexture" id=3]
-texture = ExtResource( 9 )
-region_rect = Rect2( 0, 0, 512, 512 )
+[sub_resource type="StyleBoxEmpty" id=11]
 
-[sub_resource type="StyleBoxTexture" id=4]
-texture = ExtResource( 9 )
-region_rect = Rect2( 0, 0, 512, 512 )
+[sub_resource type="StyleBoxEmpty" id=12]
+
+[sub_resource type="StyleBoxEmpty" id=13]
 
 [node name="MainScene" type="Node2D"]
 script = ExtResource( 1 )
@@ -366,15 +363,19 @@ autoplay = true
 bus = "BGM"
 
 [node name="SettingsButton" type="Button" parent="."]
-margin_left = 1219.0
-margin_top = 8.0
-margin_right = 1269.0
-margin_bottom = 58.0
+margin_left = 1215.0
+margin_top = 14.0
+margin_right = 1266.0
+margin_bottom = 65.0
+rect_pivot_offset = Vector2( 25.5, 25.5 )
 focus_mode = 0
-custom_styles/hover = SubResource( 2 )
-custom_styles/pressed = SubResource( 3 )
-custom_styles/normal = SubResource( 4 )
+custom_styles/hover = SubResource( 10 )
+custom_styles/pressed = SubResource( 11 )
+custom_styles/focus = SubResource( 12 )
+custom_styles/normal = SubResource( 13 )
 enabled_focus_mode = 0
+icon = ExtResource( 9 )
+script = ExtResource( 11 )
 
 [node name="Settings" parent="." instance=ExtResource( 10 )]
 visible = false
