@@ -119,9 +119,10 @@ func start_cooldown():
 
 
 func maxed_out():
-	$Button.text = "OUT_OF_STOCK"
+	$SoldOutLabel.show()
+	$Button.self_modulate = Color(1, 1, 1, .5)
 	$Cost.text = ""
-	rect_min_size.y = $Button.rect_position.y + $Button.rect_size.y
+	rect_min_size.y = $Button.rect_position.y + $Button.rect_size.y + $SoldOutLabel.rect_size.y
 	disable = true
 
 
