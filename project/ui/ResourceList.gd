@@ -90,9 +90,9 @@ func set_resource_text(resource_object):
 		resource_object.show()
 	if resource_object is Button:
 		if resource.amount != 1:
-			resource_object.text = "                 %s: %d %s" % [tr(resource.name), resource.amount, tr(resource.suffix_plural)]
+			resource_object.text = " %s: %d %s" % [tr(resource.name), resource.amount, tr(resource.suffix_plural)]
 		else:
-			resource_object.text = "                 %s: %d %s" % [tr(resource.name), resource.amount, tr(resource.suffix)]
+			resource_object.text = " %s: %d %s" % [tr(resource.name), resource.amount, tr(resource.suffix)]
 	elif resource_object is Label:
 		if resource.suffix == "enum":
 			resource_object.text = "%s: %s" % [tr(resource.name), tr(player.ENUMS[resource_object.type][resource.amount])]

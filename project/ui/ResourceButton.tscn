@@ -1,17 +1,19 @@
-[gd_scene load_steps=4 format=2]
+[gd_scene load_steps=6 format=2]
 
 [ext_resource path="res://resource_button.tres" type="Theme" id=1]
 [ext_resource path="res://ui/ResourceButton.gd" type="Script" id=2]
+[ext_resource path="res://assets/images/settings/radio_checked.png" type="Texture" id=3]
+[ext_resource path="res://assets/images/settings/radio_unchecked.png" type="Texture" id=4]
 
 [sub_resource type="ButtonGroup" id=1]
 resource_name = "Bait"
 
-[node name="ResourceButton" type="Button"]
+[node name="ResourceButton" type="CheckBox"]
 margin_right = 211.0
 margin_bottom = 27.0
 theme = ExtResource( 1 )
-toggle_mode = true
+custom_icons/radio_checked = ExtResource( 3 )
+custom_icons/radio_unchecked = ExtResource( 4 )
 group = SubResource( 1 )
 text = "    banana: 15 unidades"
-align = 0
 script = ExtResource( 2 )
