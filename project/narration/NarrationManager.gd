@@ -12,7 +12,6 @@ const YOG_DIST_CUTOFF = 1.5
 const FADE_IN_SPEED = 6.0
 const FADE_OUT_SPEED = 3.0
 const NARRATIONS_PATH = "res://assets/audio/narration/dialogues/"
-const NarrationDB = preload("res://narration/NarrationDB.gd")
 const SCRAMBLE_CYPHER = [
 	"ä̫", "b̞̱̊͐", "c̈̀̇", "d́͗̃̂", "ẹ̀̌", "f̛̦", "g̉̇̃̏", "ḩ́̃̊̂", "ĭ̛̱̮̀̉̉", "j̨̋͛̆", "ķ̛̂̀", "ļ̤̂", "m̧̦̃̋̑",
 	"n̮̦̱̊̋","ỏ̮̋", "ṕ̛̦̆̂", "q̉̌̂", "r̮̱̂̆", "ș̑̏", "ţ̤̦̉̂̃̈", "ự̃̊", "v̨", "ẇ̏", "x̨̱̦̃̊̀̇̆", "ỷ̛̀̊", "z̦̮̈",
@@ -96,11 +95,13 @@ func trigger_narration():
 	trigger_narration()
 
 
-func start_narration(narration):
+func start_narration(narration, custom_path = false):
 	for dialogue in narration:
 		disable_effect()
 		
-		var path = NARRATIONS_PATH + dialogue.voice
+		var path = NARRATIONS_PATH if not custom_path else custom_path
+		path += dialogue.voice
+
 		var dur = 0
 		if dialogue.cha == "ahab":
 			add_subtitle(tr(dialogue.text))

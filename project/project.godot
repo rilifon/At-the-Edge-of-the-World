@@ -151,6 +151,7 @@ FishingManager="*res://FishingManager.gd"
 Steam="*res://addons/steam_api/steam.gd"
 LocalizationManager="*res://addons/localization_editor/LocalizationManager.gd"
 NarrationManager="*res://narration/NarrationManager.tscn"
+NarrationDB="*res://narration/NarrationDB.gd"
 FileManager="*res://FileManager.gd"
 Profile="*res://Profile.gd"
 

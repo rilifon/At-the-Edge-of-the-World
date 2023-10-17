@@ -26,8 +26,7 @@ const INTRO_5 = "INTRO_5"
 const INTRO_6 = "INTRO_6"
 const INTRO_7 = "INTRO_7"
 const SKIP_INTRO = "SKIP_INTRO"
-const END1_TEXT = "END1_TEXT"
-const END1 = "END1"
+const END_QUESTION = "END_QUESTION"
 const APPEASEMENT = "APPEASEMENT"
 const NO_BAIT = "NO_BAIT"
 const COST = "COST"
@@ -208,6 +207,24 @@ const D32_2 = "D32_2"
 const D32_3 = "D32_3"
 const D32_4 = "D32_4"
 const D32_5 = "D32_5"
+const END1_1 = "END1_1"
+const END1_2 = "END1_2"
+const END1_3 = "END1_3"
+const END1_4 = "END1_4"
+const END1_5 = "END1_5"
+const END1_6 = "END1_6"
+const END1_7 = "END1_7"
+const END1_FINAL = "END1_FINAL"
+const END2_1 = "END2_1"
+const END2_2 = "END2_2"
+const END2_3 = "END2_3"
+const END2_4 = "END2_4"
+const END2_5 = "END2_5"
+const END2_6 = "END2_6"
+const END2_7 = "END2_7"
+const END2_8 = "END2_8"
+const END2_9 = "END2_9"
+const END2_FINAL = "END2_FINAL"
 
 const KEYS = [
  "KEY_NAME",
@@ -233,8 +250,7 @@ const KEYS = [
  "INTRO_6",
  "INTRO_7",
  "SKIP_INTRO",
- "END1_TEXT",
- "END1",
+ "END_QUESTION",
  "APPEASEMENT",
  "NO_BAIT",
  "COST",
@@ -414,5 +430,23 @@ const KEYS = [
  "D32_2",
  "D32_3",
  "D32_4",
- "D32_5"
+ "D32_5",
+ "END1_1",
+ "END1_2",
+ "END1_3",
+ "END1_4",
+ "END1_5",
+ "END1_6",
+ "END1_7",
+ "END1_FINAL",
+ "END2_1",
+ "END2_2",
+ "END2_3",
+ "END2_4",
+ "END2_5",
+ "END2_6",
+ "END2_7",
+ "END2_8",
+ "END2_9",
+ "END2_FINAL"
 ]

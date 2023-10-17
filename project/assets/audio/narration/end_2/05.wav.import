@@ -2,12 +2,12 @@
 
 importer="wav"
 type="AudioStreamSample"
-path="res://.import/bw_04_ahab_Ending01.wav-7f43f36f1cb809c4e14cfbcc985e5bca.sample"
+path="res://.import/05.wav-5c32810412d5eadc0dc31837522895dd.sample"
 
 [deps]
 
-source_file="res://assets/audio/narration/end_1/bw_04_ahab_Ending01.wav"
-dest_files=[ "res://.import/bw_04_ahab_Ending01.wav-7f43f36f1cb809c4e14cfbcc985e5bca.sample" ]
+source_file="res://assets/audio/narration/end_2/05.wav"
+dest_files=[ "res://.import/05.wav-5c32810412d5eadc0dc31837522895dd.sample" ]
 
 [params]
 

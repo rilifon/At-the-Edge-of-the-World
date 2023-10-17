@@ -116,7 +116,8 @@ func _on_button_acted(button):
 		player_data.gain(loot, 1)
 	elif button.id == "buy_ending":
 # warning-ignore:return_value_discarded
-		get_tree().change_scene("res://Ending.tscn")
+		Global.which_ending = 1
+		get_tree().change_scene("res://EndingCutscene.tscn")
 
 
 func _on_Fishing_no_bait_selected():

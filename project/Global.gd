@@ -4,6 +4,7 @@ const VERSION = "1.0.0"
 
 var USE_STEAM = false
 var remove_distortion = false
+var which_ending = 1
 
 
 func _ready():
