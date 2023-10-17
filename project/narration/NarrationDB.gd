@@ -5,20 +5,20 @@ const ENDING_2_PATH = "res://assets/audio/narration/end_2/"
 const ENDING_1_FINAL_NARRATION = preload("res://assets/audio/narration/end_1/FinalNarration.wav")
 const ENDING_2_FINAL_NARRATION = preload("res://assets/audio/narration/end_2/FinalNarration.wav")
 const ENDING_1 = [
-	{"cha": "ahab", "text": "END1_1", "voice": "01.wav"},
+	{"cha": "ahab", "text": "END1_1", "voice": "01.wav", "delay": .9},
 	{"cha": "yog", "text": "END1_2", "voice": "02.wav"},
 	{"cha": "yog", "text": "END1_3", "voice": "03.wav","dist_delay": -0.3},
-	{"cha": "ahab", "text": "END1_4", "voice": "04.wav"},
+	{"cha": "ahab", "text": "END1_4", "voice": "04.wav", "delay": .5},
 	{"cha": "yog", "text": "END1_5", "voice": "05.wav","dist_delay": 0.6},
 	{"cha": "ahab", "text": "END1_6", "voice": "06.wav"},
 	{"cha": "yog", "text": "END1_7", "voice": "07.wav"},
 ]
 const ENDING_2_1 = [
-	{"cha": "ahab", "text": "END2_1", "voice": "01.wav"},
+	{"cha": "ahab", "text": "END2_1", "voice": "01.wav", "delay": 1.0},
 	{"cha": "yog", "text": "END2_2", "voice": "02.wav"},
-	{"cha": "yog", "text": "END2_3", "voice": "03.wav"},
-	{"cha": "ahab", "text": "END2_4", "voice": "04.wav"},
-	{"cha": "yog", "text": "END2_5", "voice": "05.wav"},
+	{"cha": "yog", "text": "END2_3", "voice": "03.wav","dist_delay": -0.3},
+	{"cha": "ahab", "text": "END2_4", "voice": "04.wav", "delay": .6},
+	{"cha": "yog", "text": "END2_5", "voice": "05.wav","dist_delay": 0.6},
 ]
 const ENDING_2_2 = [
 	{"cha": "yog", "text": "END2_6", "voice": "06.wav"},

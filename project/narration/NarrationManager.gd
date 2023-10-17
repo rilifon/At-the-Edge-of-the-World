@@ -42,12 +42,12 @@ func _process(dt):
 			timer = max(timer - dt, 0.0)
 			if timer <= 0.0:
 				trigger_narration()
-		if active_sub:
-			Subtitle.modulate.a = min(Subtitle.modulate.a + dt*FADE_IN_SPEED, 1.0)
-		else:
-			Subtitle.modulate.a = max(Subtitle.modulate.a - dt*FADE_OUT_SPEED, 0.0)
-			if Subtitle.modulate.a <= 0.0:
-				Subtitle.text = ""
+	if active_sub:
+		Subtitle.modulate.a = min(Subtitle.modulate.a + dt*FADE_IN_SPEED, 1.0)
+	else:
+		Subtitle.modulate.a = max(Subtitle.modulate.a - dt*FADE_OUT_SPEED, 0.0)
+		if Subtitle.modulate.a <= 0.0:
+			Subtitle.text = ""
 
 func get_data():
 	return seen_narrations
@@ -118,6 +118,9 @@ func start_narration(narration, custom_path = false):
 			else:
 				add_subtitle(tr(dialogue.text))
 				dur = dur - YOG_CUTOFF
+		
+		if dialogue.has("delay"):
+			dur += dialogue.delay
 		
 		Player.stream = load(path)
 		dur += Player.stream.get_length()

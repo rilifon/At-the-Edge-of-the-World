@@ -24,6 +24,8 @@ export var cost = {
 	"exponential_progression": 1.2
 }
 export var fake_cost = ""
+export var disable_click_sfx := false
+export var disable_hover_sfx := false
 
 signal acted
 signal no_bait_selected
@@ -57,6 +59,10 @@ func setup(player_ref, main_ref):
 	player = player_ref
 	main = main_ref
 	update_cost_text()
+
+
+func set_text(new_text):
+	$Button.text = new_text
 
 
 func get_times_used():
@@ -156,7 +162,8 @@ func activate_button(auto_use:= false):
 						error()
 					return
 	if not auto_use:
-		AudioManager.play_sfx("click_button")
+		if not disable_click_sfx:
+			AudioManager.play_sfx("click_button")
 	cost.times_used += 1
 	update_cost_text()
 	if cooldown and not on_cooldown:
@@ -185,7 +192,8 @@ func _on_Button_pressed():
 func _on_Button_mouse_entered():
 	if not $Button.disabled:
 		hovered = true
-		AudioManager.play_sfx("hover_button")
+		if not disable_hover_sfx:
+			AudioManager.play_sfx("hover_button")
 
 
 func _on_Button_mouse_exited():

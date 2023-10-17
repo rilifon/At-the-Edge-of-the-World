@@ -12,6 +12,12 @@ export(Array, Array, Color) var palettes = [
 	[Color("#3e232c"), Color("#edf6d6")], #Pixel ink - lospec
 	[Color("#29161d"), Color("#fa9495")], #Gato Roboto Chewed Gum - lospec
 	[Color.red, Color.black],
+	[Color("#2b0000"), Color("#dbdbdb")],
+	[Color("#370000"), Color("#aaaaaa")],
+	[Color("#440000"), Color("#101010")],
+	[Color("#500000"), Color("#080808")],
+	[Color("#600000"), Color("#020202")],
+	[Color.red, Color.black],
 ]
 export var transition_duration := .5
 

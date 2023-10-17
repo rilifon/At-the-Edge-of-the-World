@@ -12,7 +12,7 @@
 [ext_resource path="res://settings/Settings.tscn" type="PackedScene" id=10]
 [ext_resource path="res://ui/SettingsButton.gd" type="Script" id=11]
 
-[sub_resource type="Shader" id=5]
+[sub_resource type="Shader" id=14]
 code = "shader_type canvas_item;
 
 void fragment(){
@@ -21,7 +21,7 @@ void fragment(){
 
 [sub_resource type="ShaderMaterial" id=6]
 render_priority = 2
-shader = SubResource( 5 )
+shader = SubResource( 14 )
 
 [sub_resource type="Shader" id=7]
 code = "shader_type canvas_item;

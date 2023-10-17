@@ -22,6 +22,20 @@ INTRO_5,"My family was gone, I couldn't support them anymore","Minha família se
 INTRO_6,But that doesn't mean I'm alone,Mas isso não significa que eu esteja sozinho
 INTRO_7,And I need to feed her...,E eu preciso alimentá-la...
 SKIP_INTRO,Hold to skip intro,Segure para pular introdução
+CONSUME1,    CONSUME    ,    CONSUMIR    
+CONSUME2,    C O N S U M E    ,    C O N S U M I R    
+CONSUME3,    C̴ ̶O̷ ̸N̷ ̷S̴ ̶U̷ ̸M̸ ̶E̶     ,    C̸ ̵O̷ ̴N̷ ̶S̴ ̴U̴ ̴M̷ ̵I̴ ̷R̵    
+CONSUME4,    C̷̨͕̥͇̠͇̬̯̱͛̆̈̋̀̋̍͘͜ ̶̧̨̟̫̼̹͖̬̣̫̦̰̯̌͆̓͜Ò̷̫͖͖̣̈̅̊͋̓̀͘ ̸̙͎̩̣͚̍̅̊̔̈́̔̊̀͌͗̒͝ͅÑ̶̨̥͖̥̖̱̍̆̓̎̈͑̓̊̀͗̌ ̴̧̯̮͇̠͙̪̱͉͖̀̀̇́̀͌̈́͠ͅS̴̬̭̦̲̳̪͉̬̟͖͛̀̄̇͂̾͘͘ͅ ̷̣͖͙̟̙̱̞̟͓͓̊͛͋̓̀͆̄̏͋̒̕͝Ú̶͔̩̹̤̣̍ ̶̳͇͊̀͛͌̅̇̈́̂͠͠M̷̪̹͓̲̰͎̪̀̐͊̔̈́̇̉̔́̕̕̚͝ ̸̟̰̗̦̙͙͖̿̿E̸̡̖͓͆̽̒͌̂̍̍͊̐͐̌̈́̕͝     ,    C̴̢̡̧̭̤̖͈͙͚̬̳͓̥͎̟̍͂̌͐̕͝ ̵̨͙̥̳̺̖̯̹͍̯̭͍̻̫̲̔O̴̧̧̰̮̦̘͚̝̯̗̥͉͚͗̑̀ ̵̢̦̮͈̠̖̺̜̍͂̊̔̏͛͘͜N̴̛͍͋̃͑̒̿̆̔͑͑͊̉̓̇̚ ̶̥̀̈́̎̊̈́̐́̏̒͌͊̕͝Ṣ̶̢͉̰̀͝ͅ ̸̨̢̛͔̝͔̮̱̀̏͊̈́̓̈́̓̆͝ͅU̷̯͈͍̮̝̖̖͙̮̔̐̏̾͗ ̸̤̹̅̋̕̕͝M̵͈̜̲̞̼̦̪̞̻̮̤̿͜ͅͅͅ ̴̢̠̹̠̮̺͛̈́̌̒́̀͗̇̋̆͘͠I̴̛̼̫͍̊̒͊͌̌̒́̀̿͝ ̴̢̢͖͉̬̩̝̼͖̫̜̼̤̳̈͂̃̆̓͛̚Ŗ̸͓̙̬̭͔̭̣̫͍̽͒̈́̌͊̽     
+MADE_BY,Imagineers,Imaginadores
+VOICED_BY,Loquacious,Loquaz
+MUSIC_BY,Music,Música
+MADE_IN,Made in,Feito em
+THANKS_FOR_PLAYING1,"Every journey comes to an end.
+See you in the next one.","Toda jornada chega a um fim.
+Nós vemos na próxima."
+THANKS_FOR_PLAYING2,"Every journey comes to an end.
+Thanks for being part of ours.","Toda jornada chega a um fim.
+Obrigado por fazer parte da nossa."
 END_QUESTION,The End?,O Fim?
 APPEASEMENT,Appeasement,Apaziguamento
 NO_BAIT,Select a bait to fish!,Selecione alguma isca para pescar!
@@ -204,18 +218,18 @@ D32_3,A place where the ethereal currents of destiny intertwined the threads of 
 D32_4,"And, in peculiar fashion, a chronicle of the amicable bond formed between a humble fisherman and an otherworldly cosmic entity.","E, de forma peculiar, uma crônica do vínculo amigável formado entre um humilde pescador e uma entidade cósmica sobrenatural."
 D32_5,"Heh well, that's a tale I'll be proud to tell, friend.","Bem, essa é uma história que terei orgulho de contar, amigo."
 END1_1,I guess this is it huh?,"Bom, acho que é isso, né?"
-END1_2,"Fear not human, for the end is inevitable, and thine flame would be devoured, if not by me, then by the cosmos.","Não tema humano, pois o fim é inevitável, e sua chama seria engolida, se não por mim, então pelos cosmos."
-END1_3,Be glad that you took part in something far greater than your human existence could ever fathom.,Sinta-se afortunado por ter participado de algo muito maior do que sua existência humana poderia imaginar.
-END1_4,Haha yeah... But it was fun right? Did you enjoy our time together?,Haha é... Mas foi divertido né? Você gostou do nosso tempo juntos?
-END1_5,".......Yes, it was quite pleasant at times.",".......Sim, foi bastante agradável em inúmeras ocasiões."
+END1_2,"Fear not human, for the end is inevitable, and thine flame would be devoured, if not by me, then by the cosmos.","Não tema humano, pois o fim é inevitável, e tua chama seria engolida, se não por mim, então pelos cosmos."
+END1_3,Be glad that you took part in something far greater than your human existence could ever fathom.,Sinta-se afortunado por ter participado de algo muito maior do que sua existência humana poderia sequer imaginar.
+END1_4,Haha yeah... But it was fun right? Did you... enjoy our time together?,Haha é... Mas foi divertido né? Você... gostou do nosso tempo juntos?
+END1_5,".......Yes, it was quite... pleasant at times.",".......Sim, foi bastante... agradável em inúmeras ocasiões."
 END1_6,Yeah... I'll miss you buddy. Take care.,"É... vou sentir sua falta, amigo. Se cuida."
 END1_7,...Goodbye Ahab. Your efforts won't be forgotten during my reign.,...Adeus Ahab. Seus esforços não serão esquecidos durante meu reinado.
 END1_FINAL,"Finally sated, the beast bids farewell to its wearied host...","Finalmente saciada, a fera se despede de seu cansado hospedeiro..."
 END2_1,I guess this is it huh?,"Bom, acho que é isso, né?"
-END2_2,"Fear not human, for the end is inevitable, and thine flame would be devoured, if not by me, then by the cosmos.","Não tema humano, pois o fim é inevitável, e sua chama seria engolida, se não por mim, então pelos cosmos."
-END2_3,Be glad that you took part in something far greater than your human existence could ever fathom.,Sinta-se afortunado por ter participado de algo muito maior do que sua existência humana poderia imaginar.
-END2_4,Haha yeah... But it was fun right? Did you enjoy our time together?,Haha é... Mas foi divertido né? Você gostou do nosso tempo juntos?
-END2_5,".......Yes, it was quite pleasant at times.",".......Sim, foi bastante agradável em inúmeras ocasiões."
+END2_2,"Fear not human, for the end is inevitable, and thine flame would be devoured, if not by me, then by the cosmos.","Não tema humano, pois o fim é inevitável, e tua chama seria engolida, se não por mim, então pelos cosmos."
+END2_3,Be glad that you took part in something far greater than your human existence could ever fathom.,Sinta-se afortunado por ter participado de algo muito maior do que sua existência humana poderia sequer imaginar.
+END2_4,Haha yeah... But it was fun right? Did you... enjoy our time together?,Haha é... Mas foi divertido né? Você... gostou do nosso tempo juntos?
+END2_5,".......Yes, it was quite... pleasant at times.",".......Sim, foi bastante... agradável em inúmeras ocasiões."
 END2_6,...Unless... I don't know... We could stick together a bit longer...,...A menos que... sei lá... Poderíamos ficar juntos um pouquinho mais...
 END2_7,"Oh, really? But don't you have to ""devour the Earth"" or something?",Sério? Mas você não precisa “devorar a Terra” ou algo do tipo?
 END2_8,I could devour a few more crabs before that... I'm not in a hurry.,Eu poderia devorar mais alguns caranguejos antes disso... não estou com pressa.
