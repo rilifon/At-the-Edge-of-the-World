@@ -8,9 +8,9 @@ const LANGUAGES = [
 
 var options = {
 	"locale": get_os_locale(),
-	"master_volume": 0.55,
-	"bgm_volume": 1.0,
-	"sfx_volume": 1.0,
+	"master_volume": 0.7,
+	"bgm_volume": 0.75,
+	"sfx_volume": 0.8,
 	"narration_volume": 1.0,
 	"fullscreen": false,
 	"dummy_slider": .75,

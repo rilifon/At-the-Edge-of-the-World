@@ -112,7 +112,7 @@ const DB = [
 		[
 			{"cha": "ahab", "text": "D14_1", "voice": "14/01.wav"},
 			{"cha": "yog", "text": "D14_2", "voice": "14/02.wav"},
-			{"cha": "yog", "text": "D14_3", "voice": "14/03.wav", "dist_delay": 0.8},
+			{"cha": "yog", "text": "D14_3", "voice": "14/03.wav", "dist_delay": 0.5},
 			{"cha": "ahab", "text": "D14_4", "voice": "14/04.wav"},
 		],
 		#Dialogue 15
@@ -145,7 +145,7 @@ const DB = [
 		[
 			{"cha": "ahab", "text": "D19_1", "voice": "19/01.wav"},
 			{"cha": "yog", "text": "D19_2", "voice": "19/02.wav"},
-			{"cha": "yog", "text": "D19_3", "voice": "19/03.wav"},
+			{"cha": "yog", "text": "D19_3", "voice": "19/03.wav", "dist_delay": -0.8},
 			{"cha": "ahab", "text": "D19_4", "voice": "19/04.wav"},
 		],
 		#Dialogue 20
@@ -174,9 +174,9 @@ const DB = [
 		],
 		#Dialogue 24
 		[
-			{"cha": "yog", "text": "D24_1", "voice": "24/01.wav"},
+			{"cha": "yog", "text": "D24_1", "voice": "24/01.wav", "dist_delay": 0.2},
 			{"cha": "ahab", "text": "D24_2", "voice": "24/02.wav"},
-			{"cha": "yog", "text": "D24_3", "voice": "24/03.wav"},
+			{"cha": "yog", "text": "D24_3", "voice": "24/03.wav", "dist_delay": 0.2},
 			{"cha": "ahab", "text": "D24_4", "voice": "24/04.wav"},
 			{"cha": "yog", "text": "D24_5", "voice": "24/05.wav"},
 			{"cha": "ahab", "text": "D24_6", "voice": "24/06.wav"},
@@ -186,7 +186,7 @@ const DB = [
 	[
 		#Dialogue 25
 		[
-			{"cha": "yog", "text": "D25_1", "voice": "25/01.wav"},
+			{"cha": "yog", "text": "D25_1", "voice": "25/01.wav", "dist_delay": 0.2},
 			{"cha": "ahab", "text": "D25_2", "voice": "25/02.wav"},
 			{"cha": "yog", "text": "D25_3", "voice": "25/03.wav"},
 			{"cha": "ahab", "text": "D25_4", "voice": "25/04.wav"},
@@ -212,13 +212,13 @@ const DB = [
 		[
 			{"cha": "ahab", "text": "D29_1", "voice": "29/01.wav"},
 			{"cha": "yog", "text": "D29_2", "voice": "29/02.wav"},
-			{"cha": "yog", "text": "D29_3", "voice": "29/03.wav"},
+			{"cha": "yog", "text": "D29_3", "voice": "29/03.wav", "dist_delay": 0.2},
 			{"cha": "ahab", "text": "D29_4", "voice": "29/04.wav"},
 		],
 		#Dialogue 30
 		[
 			{"cha": "ahab", "text": "D30_1", "voice": "30/01.wav"},
-			{"cha": "yog", "text": "D30_2", "voice": "30/02.wav"},
+			{"cha": "yog", "text": "D30_2", "voice": "30/02.wav", "dist_delay": 0.3},
 			{"cha": "ahab", "text": "D30_3", "voice": "30/03.wav"},
 		],
 		#Dialogue 31
