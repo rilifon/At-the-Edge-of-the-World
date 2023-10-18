@@ -34,10 +34,13 @@ var cam_shake_strength = 0.0
 
 func _ready():
 	Profile.set_stat("times_completed", Profile.get_stat("times_completed") + 1)
+	NarrationManager.is_running = false
+	NarrationManager.stop_narration()
 	
+	yield(get_tree(), "idle_frame")
 	
 	reset_glitch_effects()
-	Global.remove_distortion = false
+	Global.remove_distortion = true
 	PaletteLayer.change_to(0)
 	if Global.which_ending == 1:
 		Profile.set_stat("end1_done", true)

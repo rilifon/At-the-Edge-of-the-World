@@ -668,7 +668,7 @@ tracks/6/keys = {
 "times": PoolRealArray( 0, 54.5, 62.9, 65.2 ),
 "transitions": PoolRealArray( 1, 1, 1, 1 ),
 "update": 0,
-"values": [ -10.0, -10.0, -40.0, -80.0 ]
+"values": [ 0.0, 0.0, -40.0, -80.0 ]
 }
 tracks/7/type = "value"
 tracks/7/path = NodePath("Hidder:visible")
@@ -993,8 +993,8 @@ anims/end1_final = SubResource( 16 )
 anims/ending1 = SubResource( 12 )
 
 [node name="BGM" type="AudioStreamPlayer" parent="."]
-stream = ExtResource( 29 )
-volume_db = -30.0
+stream = ExtResource( 25 )
+volume_db = -0.972477
 bus = "BGM"
 
 [node name="RightHidder" type="ColorRect" parent="."]

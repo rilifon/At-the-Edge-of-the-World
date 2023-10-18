@@ -27,6 +27,8 @@ var is_running
 var active_sub = false
 var DB
 var thread: Thread
+var active_narration = false
+var yield_state = null
 
 func _ready():
 	DB = NarrationDB.DB
@@ -48,6 +50,7 @@ func _process(dt):
 		Subtitle.modulate.a = max(Subtitle.modulate.a - dt*FADE_OUT_SPEED, 0.0)
 		if Subtitle.modulate.a <= 0.0:
 			Subtitle.text = ""
+
 
 func get_data():
 	return seen_narrations
@@ -88,7 +91,7 @@ func trigger_narration():
 				new_idx += 1#randi()%DB[i].size()
 			#Found an unseen narration
 			seen_narrations[i].append(new_idx)
-			start_narration(DB[i][new_idx])
+			yield_state = start_narration(DB[i][new_idx])
 			return
 	#Not any new narrations, clearing the whole thing and starting over
 	reset_seen_narrations()
@@ -96,6 +99,7 @@ func trigger_narration():
 
 
 func start_narration(narration, custom_path = false):
+	active_narration = true
 	for dialogue in narration:
 		disable_effect()
 		
@@ -110,7 +114,12 @@ func start_narration(narration, custom_path = false):
 			if not Global.remove_distortion:
 				enable_effect()
 				apply_scramble(tr(dialogue.text))
-				yield(self, "finished_scrambling")
+				var abort_narration = yield(self, "finished_scrambling")
+				if abort_narration:
+					active_narration = false
+					yield_state = null
+					return
+				print("more after")
 				dur = dur - YOG_DIST_CUTOFF
 				if dialogue.has("dist_delay"):
 					dur += dialogue.dist_delay
@@ -126,8 +135,15 @@ func start_narration(narration, custom_path = false):
 		dur += Player.stream.get_length()
 		Player.play()
 		
-		yield(get_tree().create_timer(dur), "timeout")
-		
+		var abort_narration = yield(get_tree().create_timer(dur), "timeout")
+		if abort_narration:
+			active_narration = false
+			yield_state = null
+			return
+		print("after")
+	
+	yield_state = null
+	active_narration = false
 	remove_subtitle()
 	new_timer()
 
@@ -139,6 +155,14 @@ func add_subtitle(text):
 
 func remove_subtitle():
 	active_sub = false
+
+
+func stop_narration():
+	if active_narration:
+		Player.stop()
+		remove_subtitle()
+		if yield_state and yield_state.is_valid():
+			yield_state.resume(true)
 
 
 func apply_scramble(text):
