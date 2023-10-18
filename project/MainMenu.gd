@@ -86,7 +86,7 @@ func _on_NewGame_acted(_self):
 	FileManager.delete_run_file()
 	Global.remove_distortion = ToggleDistorion.pressed
 	# warning-ignore:return_value_discarded
-	get_tree().change_scene("res://MainScene.tscn")
+	TransitionManager.change_scene("res://MainScene.tscn")
 
 
 func _on_Exit_acted(_self):
@@ -100,7 +100,7 @@ func _on_Settings_acted(_self):
 func _on_ContinueGame_acted(_self):
 	FileManager.continue_game = true
 	# warning-ignore:return_value_discarded
-	get_tree().change_scene("res://MainScene.tscn")
+	TransitionManager.change_scene("res://MainScene.tscn")
 
 
 func _on_ToggleDistortion_toggled(button_pressed):

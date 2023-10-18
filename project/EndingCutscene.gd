@@ -33,12 +33,17 @@ var consume = 0
 var cam_shake_strength = 0.0
 
 func _ready():
+	Profile.set_stat("times_completed", Profile.get_stat("times_completed") + 1)
+	
+	
 	reset_glitch_effects()
 	Global.remove_distortion = false
 	PaletteLayer.change_to(0)
 	if Global.which_ending == 1:
+		Profile.set_stat("end1_done", true)
 		AnimPlayer.play("ending1")
 	elif Global.which_ending == 2:
+		Profile.set_stat("end2_done", true)
 		AnimPlayer.play("ending2")
 	else:
 		push_error("Not a valid ending: " + str(Global.which_ending))
@@ -83,9 +88,15 @@ func apply_glitch_values(power, rate, speed, color_rate):
 
 
 func finish():
+	if Global.USE_STEAM:
+		if Global.which_ending == 1:
+			Steam.set_achievement("ending_1")
+		elif Global.which_ending == 2:
+			Steam.set_achievement("ending_2")
+	
 	NarrationManager.disable_effect()
 # warning-ignore:return_value_discarded
-	get_tree().change_scene("res://MainMenu.tscn")
+	TransitionManager.change_scene("res://MainMenu.tscn")
 
 
 func _on_Kill_acted(_self):

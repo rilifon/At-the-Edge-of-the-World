@@ -19,7 +19,7 @@ shader_param/bg_color = Color( 0, 0, 0, 1 )
 shader_param/fg_color = Color( 1, 1, 1, 1 )
 
 [node name="PaletteLayer" type="CanvasLayer"]
-layer = 2
+layer = 3
 script = ExtResource( 1 )
 
 [node name="ShaderRect" type="ColorRect" parent="."]

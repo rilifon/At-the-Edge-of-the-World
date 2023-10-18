@@ -154,6 +154,7 @@ NarrationManager="*res://narration/NarrationManager.tscn"
 NarrationDB="*res://narration/NarrationDB.gd"
 FileManager="*res://FileManager.gd"
 Profile="*res://Profile.gd"
+TransitionManager="*res://TransitionManager.tscn"
 
 [display]
 
