@@ -29,7 +29,7 @@
 [ext_resource path="res://assets/images/intro/fera_2.png" type="Texture" id=27]
 [ext_resource path="res://assets/images/intro/fera_1.png" type="Texture" id=28]
 [ext_resource path="res://assets/audio/bgm/end1_final.mp3" type="AudioStream" id=29]
-[ext_resource path="res://icon.png" type="Texture" id=30]
+[ext_resource path="res://assets/images/icon/godot_logo.png" type="Texture" id=30]
 [ext_resource path="res://assets/images/intro/ahab_2.png" type="Texture" id=31]
 [ext_resource path="res://assets/images/intro/ahab_1.png" type="Texture" id=32]
 [ext_resource path="res://assets/audio/narration/end_1/FinalNarration.wav" type="AudioStream" id=33]
@@ -331,7 +331,7 @@ tracks/16/keys = {
 
 [sub_resource type="Animation" id=16]
 resource_name = "end1_final"
-length = 60.0
+length = 53.2
 tracks/0/type = "value"
 tracks/0/path = NodePath("Scroller:modulate")
 tracks/0/interp = 1
@@ -399,7 +399,7 @@ tracks/5/loop_wrap = true
 tracks/5/imported = false
 tracks/5/enabled = true
 tracks/5/keys = {
-"times": PoolRealArray( 0, 2.5, 5.9, 13.6, 17.8 ),
+"times": PoolRealArray( 0, 2.5, 5.9, 13.6, 18.4 ),
 "transitions": PoolRealArray( 1, 1, 1, 1, 1 ),
 "update": 0,
 "values": [ Color( 1, 1, 1, 0 ), Color( 1, 1, 1, 0 ), Color( 1, 1, 1, 1 ), Color( 1, 1, 1, 1 ), Color( 1, 1, 1, 0 ) ]
@@ -411,7 +411,7 @@ tracks/6/loop_wrap = true
 tracks/6/imported = false
 tracks/6/enabled = true
 tracks/6/keys = {
-"times": PoolRealArray( 4.9 ),
+"times": PoolRealArray( 5.5 ),
 "transitions": PoolRealArray( 1 ),
 "update": 1,
 "values": [ ExtResource( 33 ) ]
@@ -423,7 +423,7 @@ tracks/7/loop_wrap = true
 tracks/7/imported = false
 tracks/7/enabled = true
 tracks/7/keys = {
-"times": PoolRealArray( 4.8 ),
+"times": PoolRealArray( 5.6 ),
 "transitions": PoolRealArray( 1 ),
 "update": 1,
 "values": [ true ]
@@ -435,7 +435,7 @@ tracks/8/loop_wrap = true
 tracks/8/imported = false
 tracks/8/enabled = true
 tracks/8/keys = {
-"times": PoolRealArray( 0, 4.9, 5.5, 13.6, 17.8 ),
+"times": PoolRealArray( 0, 5.1, 6.9, 13.6, 18.4 ),
 "transitions": PoolRealArray( 1, 1, 1, 1, 1 ),
 "update": 0,
 "values": [ Color( 1, 1, 1, 0 ), Color( 1, 1, 1, 0 ), Color( 1, 1, 1, 1 ), Color( 1, 1, 1, 1 ), Color( 1, 1, 1, 0 ) ]
@@ -447,7 +447,7 @@ tracks/9/loop_wrap = true
 tracks/9/imported = false
 tracks/9/enabled = true
 tracks/9/keys = {
-"times": PoolRealArray( 0, 11.3, 12.9, 17.9, 20.9 ),
+"times": PoolRealArray( 0, 11.6, 13.5, 17.9, 20.9 ),
 "transitions": PoolRealArray( 1, 1, 1, 1, 1 ),
 "update": 0,
 "values": [ Color( 1, 1, 1, 0 ), Color( 1, 1, 1, 0 ), Color( 1, 1, 1, 1 ), Color( 1, 1, 1, 1 ), Color( 1, 1, 1, 0 ) ]
@@ -459,7 +459,7 @@ tracks/10/loop_wrap = true
 tracks/10/imported = false
 tracks/10/enabled = true
 tracks/10/keys = {
-"times": PoolRealArray( 0, 20.9, 39 ),
+"times": PoolRealArray( 0, 25.3, 44.5 ),
 "transitions": PoolRealArray( 1, 1, 1 ),
 "update": 0,
 "values": [ Vector2( 0, 1042 ), Vector2( 0, 1042 ), Vector2( 0, -1600 ) ]
@@ -471,7 +471,7 @@ tracks/11/loop_wrap = true
 tracks/11/imported = false
 tracks/11/enabled = true
 tracks/11/keys = {
-"times": PoolRealArray( 0, 37.6, 42.5, 50.7, 56.2 ),
+"times": PoolRealArray( 0, 43.7, 47.8, 50.6, 53.1 ),
 "transitions": PoolRealArray( 1, 1, 1, 1, 1 ),
 "update": 0,
 "values": [ Color( 1, 1, 1, 0 ), Color( 1, 1, 1, 0 ), Color( 1, 1, 1, 1 ), Color( 1, 1, 1, 1 ), Color( 1, 1, 1, 0 ) ]
@@ -483,7 +483,7 @@ tracks/12/loop_wrap = true
 tracks/12/imported = false
 tracks/12/enabled = true
 tracks/12/keys = {
-"times": PoolRealArray( 0, 37.8 ),
+"times": PoolRealArray( 0, 42.7 ),
 "transitions": PoolRealArray( 1, 1 ),
 "update": 1,
 "values": [ false, true ]
@@ -495,10 +495,10 @@ tracks/13/loop_wrap = true
 tracks/13/imported = false
 tracks/13/enabled = true
 tracks/13/keys = {
-"times": PoolRealArray( 37.9 ),
+"times": PoolRealArray( 42.7 ),
 "transitions": PoolRealArray( 1 ),
 "update": 0,
-"values": [ Vector2( 423, 411 ) ]
+"values": [ Vector2( 423, 450 ) ]
 }
 tracks/14/type = "method"
 tracks/14/path = NodePath(".")
@@ -507,7 +507,7 @@ tracks/14/loop_wrap = true
 tracks/14/imported = false
 tracks/14/enabled = true
 tracks/14/keys = {
-"times": PoolRealArray( 1.5, 58.5 ),
+"times": PoolRealArray( 1.5, 53.3 ),
 "transitions": PoolRealArray( 1, 1 ),
 "values": [ {
 "args": [  ],
@@ -548,10 +548,10 @@ tracks/17/loop_wrap = true
 tracks/17/imported = false
 tracks/17/enabled = true
 tracks/17/keys = {
-"times": PoolRealArray( 0 ),
-"transitions": PoolRealArray( 1 ),
+"times": PoolRealArray( 0, 46.3, 52.9 ),
+"transitions": PoolRealArray( 1, 1, 1 ),
 "update": 0,
-"values": [ 0.0 ]
+"values": [ 0.0, 0.0, -30.0 ]
 }
 tracks/18/type = "value"
 tracks/18/path = NodePath("Thanks:text")
@@ -750,8 +750,10 @@ animations = [ {
 "speed": 5.0
 } ]
 
-[sub_resource type="DynamicFont" id=18]
-size = 50
+[sub_resource type="DynamicFont" id=32]
+size = 46
+use_mipmaps = true
+use_filter = true
 font_data = ExtResource( 26 )
 
 [sub_resource type="DynamicFont" id=19]
@@ -763,7 +765,7 @@ size = 100
 font_data = ExtResource( 26 )
 
 [sub_resource type="DynamicFont" id=21]
-size = 71
+size = 80
 use_mipmaps = true
 use_filter = true
 font_data = ExtResource( 26 )
@@ -775,7 +777,7 @@ use_filter = true
 font_data = ExtResource( 26 )
 
 [sub_resource type="DynamicFont" id=23]
-size = 71
+size = 80
 use_mipmaps = true
 use_filter = true
 font_data = ExtResource( 26 )
@@ -880,90 +882,99 @@ current = true
 [node name="Ahab" type="AnimatedSprite" parent="Scroller"]
 position = Vector2( 615, 222 )
 frames = SubResource( 1 )
+frame = 1
 playing = true
 
 [node name="Moon" type="AnimatedSprite" parent="Scroller"]
 position = Vector2( 984, -430 )
 frames = SubResource( 2 )
+frame = 1
 playing = true
 
 [node name="Planet" type="AnimatedSprite" parent="Scroller"]
 position = Vector2( 672, -936 )
 frames = SubResource( 3 )
+frame = 1
 playing = true
 
 [node name="Star1" type="AnimatedSprite" parent="Scroller"]
 position = Vector2( 199, -656 )
 frames = SubResource( 4 )
+frame = 1
 playing = true
 
 [node name="Star2" type="AnimatedSprite" parent="Scroller"]
 position = Vector2( 1146, -75 )
 frames = SubResource( 5 )
-frame = 1
 playing = true
 
 [node name="Star3" type="AnimatedSprite" parent="Scroller"]
 position = Vector2( 186, -207 )
 frames = SubResource( 6 )
+frame = 1
 playing = true
 
 [node name="Star4" type="AnimatedSprite" parent="Scroller"]
 position = Vector2( 588, -157 )
 frames = SubResource( 7 )
+frame = 1
 playing = true
 
 [node name="Star5" type="AnimatedSprite" parent="Scroller"]
 position = Vector2( 170, 98 )
 frames = SubResource( 8 )
+frame = 1
 playing = true
 
 [node name="Star6" type="AnimatedSprite" parent="Scroller"]
 position = Vector2( 1121, 267 )
 frames = SubResource( 9 )
-frame = 1
 playing = true
 
 [node name="Star7" type="AnimatedSprite" parent="Scroller"]
 position = Vector2( 453, -683 )
 frames = SubResource( 10 )
+frame = 1
 playing = true
 
 [node name="Star8" type="AnimatedSprite" parent="Scroller"]
 position = Vector2( 1082, -776 )
 frames = SubResource( 11 )
+frame = 1
 playing = true
 
 [node name="Star9" type="AnimatedSprite" parent="Scroller"]
 position = Vector2( 334, -935 )
 frames = SubResource( 6 )
+frame = 1
 playing = true
 
 [node name="Star10" type="AnimatedSprite" parent="Scroller"]
 position = Vector2( 81, -1020 )
 frames = SubResource( 7 )
+frame = 1
 playing = true
 
 [node name="Star11" type="AnimatedSprite" parent="Scroller"]
 position = Vector2( 957, -1018 )
 frames = SubResource( 8 )
+frame = 1
 playing = true
 
 [node name="Star12" type="AnimatedSprite" parent="Scroller"]
 position = Vector2( 109, -729 )
 frames = SubResource( 9 )
-frame = 1
 playing = true
 
 [node name="Star13" type="AnimatedSprite" parent="Scroller"]
 position = Vector2( 930, 52 )
 frames = SubResource( 10 )
+frame = 1
 playing = true
 
 [node name="Star14" type="AnimatedSprite" parent="Scroller"]
 position = Vector2( 615, -404 )
 frames = SubResource( 11 )
-frame = 1
 playing = true
 
 [node name="Kill" parent="." instance=ExtResource( 24 )]
@@ -983,6 +994,7 @@ anims/ending1 = SubResource( 12 )
 
 [node name="BGM" type="AudioStreamPlayer" parent="."]
 stream = ExtResource( 29 )
+volume_db = -30.0
 bus = "BGM"
 
 [node name="RightHidder" type="ColorRect" parent="."]
@@ -1005,20 +1017,21 @@ rect_rotation = -90.0
 
 [node name="AnimatedSprite" type="AnimatedSprite" parent="EndingFinal"]
 modulate = Color( 1, 1, 1, 0 )
-position = Vector2( 640, 420 )
+position = Vector2( 640, 427 )
 scale = Vector2( 0.85, 0.85 )
 frames = SubResource( 17 )
+frame = 1
 playing = true
 
 [node name="Label" type="Label" parent="EndingFinal"]
 modulate = Color( 1, 1, 1, 0 )
 anchor_right = 1.0
 margin_left = 20.0
-margin_top = 20.0
+margin_top = 12.0
 margin_right = 1260.0
-margin_bottom = 150.0
+margin_bottom = 142.0
 custom_colors/font_color = Color( 0, 0, 0, 1 )
-custom_fonts/font = SubResource( 18 )
+custom_fonts/font = SubResource( 32 )
 text = "END1_FINAL"
 align = 1
 autowrap = true
@@ -1091,8 +1104,7 @@ custom_colors/font_color = Color( 0, 0, 0, 1 )
 custom_colors/font_outline_modulate = Color( 0, 0, 0, 1 )
 custom_colors/font_color_shadow = Color( 0, 0, 0, 1 )
 custom_fonts/font = SubResource( 23 )
-text = "VOICED_BY
-"
+text = "VOICED_BY"
 align = 1
 
 [node name="Taneko" type="Label" parent="Credits"]
@@ -1103,7 +1115,7 @@ custom_colors/font_color = Color( 0, 0, 0, 1 )
 custom_colors/font_outline_modulate = Color( 0, 0, 0, 1 )
 custom_colors/font_color_shadow = Color( 0, 0, 0, 1 )
 custom_fonts/font = SubResource( 24 )
-text = "Taneko"
+text = "Gabriel Taneko"
 align = 1
 
 [node name="MusicBy" type="Label" parent="Credits"]
@@ -1143,14 +1155,13 @@ align = 1
 
 [node name="Godot" type="Sprite" parent="Credits"]
 position = Vector2( 644, 1278 )
-scale = Vector2( 3, 3 )
 texture = ExtResource( 30 )
 
 [node name="Thanks" type="Label" parent="."]
 margin_left = -2.0
-margin_top = 97.0
+margin_top = 37.0
 margin_right = 1278.0
-margin_bottom = 203.0
+margin_bottom = 143.0
 custom_colors/font_color = Color( 0, 0, 0, 1 )
 custom_colors/font_outline_modulate = Color( 0, 0, 0, 1 )
 custom_colors/font_color_shadow = Color( 0, 0, 0, 1 )
@@ -1167,12 +1178,19 @@ playing = true
 
 [node name="Hidder" type="ColorRect" parent="."]
 visible = false
-margin_left = 8.0
-margin_top = 229.0
-margin_right = 508.0
-margin_bottom = 829.0
+margin_left = 15.0
+margin_top = 192.0
+margin_right = 505.0
+margin_bottom = 537.0
+
+[node name="Hidder" type="ColorRect" parent="Hidder"]
+margin_left = -19.0
+margin_top = 322.0
+margin_right = 481.0
+margin_bottom = 642.0
 
 [node name="GlitchEffect" type="ColorRect" parent="."]
+visible = false
 material = SubResource( 29 )
 anchor_right = 1.0
 anchor_bottom = 1.0

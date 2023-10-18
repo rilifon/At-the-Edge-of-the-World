@@ -56,7 +56,7 @@ func has_sfx(name: String):
 	return SFXS.has(name)
 
 
-func play_sfx(name: String, override_pitch = false):
+func play_sfx(name: String, override_pitch = false, use_reverb = false):
 	if not SFXS.has(name):
 		push_error("Not a valid sfx name: " + name)
 		assert(false)
@@ -76,7 +76,11 @@ func play_sfx(name: String, override_pitch = false):
 	else:
 		player.pitch_scale = sfx.base_pitch
 	player.stream.random_pitch = 1.0 + sfx.random_pitch_var
-
+	
+	if use_reverb:
+		AudioServer.set_bus_effect_enabled(SFX_BUS, 0, true)
+	else:
+		AudioServer.set_bus_effect_enabled(SFX_BUS, 0, false)
 	player.play()
 
 
