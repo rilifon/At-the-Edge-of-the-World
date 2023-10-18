@@ -38,6 +38,7 @@ Thanks for being part of ours.","Toda jornada chega a um fim.
 Obrigado por fazer parte da nossa."
 END_QUESTION,The End?,O Fim?
 APPEASEMENT,Appeasement,Apaziguamento
+MAX,Culminating,Culminante
 NO_BAIT,Select a bait to fish!,Selecione alguma isca para pescar!
 COST,cost,custo
 ONE_BAIT,1 Bait,1 Isca
@@ -68,7 +69,8 @@ BUY_MONEYENGINE,     Hire Lackey   ,     Contratar Lacaio
 BUY_ROD,   Improve Rod   ,   Melhorar Vara   
 BUY_ROPE,   Buy Rope   ,   Comprar Linha   
 FISH,Fish!,Pescar!
-BUY_FREEDOM,     Buy Freedom   ,     Comprar Liberdade   
+BUY_FREEDOM,     Buy Freedom     ,     Comprar Liberdade     
+BUY_FREEDOM2,    Find Peace     ,     Encontrar Liberdade     
 STUFF,--STUFF--,--MUAMBAS--
 FISH_LOOT,--HAUL--,--PESCADOS--
 BAITS,--BAITS--,--ISCAS--

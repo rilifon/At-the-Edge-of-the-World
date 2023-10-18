@@ -31,6 +31,7 @@ func set_data(new_level, value):
 	bar.value = value
 	if level == MAX_LEVEL:
 		max_label.show()
+		bar.value = bar.max_value
 	
 
 func feed(loot, amount):

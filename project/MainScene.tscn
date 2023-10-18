@@ -354,11 +354,40 @@ reward_resource = {
 "amount": 0.0,
 "type": ""
 },
-"type": "auto_fish"
+"type": "buy_ending"
 }
 cost = {
 "active": true,
-"base_cost": 666666,
+"base_cost": 999999,
+"exponential_progression": 1.2,
+"incremental_cost": 0,
+"times_used": 0,
+"type": "money"
+}
+
+[node name="Final2" parent="UpperButtons" instance=ExtResource( 2 )]
+visible = false
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_left = 420.0
+margin_right = 590.0
+margin_bottom = 85.0
+text = "BUY_FREEDOM2"
+id = "buy_ending2"
+level_unlocked = 4
+reward_resource = {
+"active": false,
+"amount": 1,
+"engine": {
+"active": false,
+"amount": 0.0,
+"type": ""
+},
+"type": "buy_ending2"
+}
+cost = {
+"active": true,
+"base_cost": 1,
 "exponential_progression": 1.2,
 "incremental_cost": 0,
 "times_used": 0,

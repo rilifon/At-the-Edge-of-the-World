@@ -22,6 +22,8 @@ func setup(player_data):
 	var loot_mode = false
 	for resource in player.resources:
 		var resource_id = resource.id
+		if resource_id == "buy_ending" or resource_id == "buy_ending2":
+			continue
 		if not loot_mode:
 			if resource_id == "loot":
 				loot_mode = true

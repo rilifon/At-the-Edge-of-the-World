@@ -57,6 +57,20 @@ var resources = [
 		"suffix_plural": "AUTO_FISH_SUFFIX_PLURAL",
 		"showing": false
 	},
+	{
+		"id": "buy_ending",
+		"name": "",
+		"amount": 0,
+		"gain_per_second": 0,
+		"showing": false
+	},
+	{
+		"id": "buy_ending2",
+		"name": "",
+		"amount": 0,
+		"gain_per_second": 0,
+		"showing": false
+	},
 ]
 
 func init():

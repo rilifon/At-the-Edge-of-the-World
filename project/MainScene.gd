@@ -34,6 +34,8 @@ func _ready():
 		button.update_cost_text()
 		if button.level_unlocked > cur_level:
 			button.hide()
+		elif button.id == "buy_ending2" and not is_secret_ending_unlocked():
+			button.hide()
 		if button.reward_resource.type:
 			var data = player_data.get_resource(button.reward_resource.type)
 			if data and data.has("max") and data.max <= data.amount:
@@ -108,6 +110,16 @@ func set_save_data(data):
 		button.set_times_used(data.buttons_data[button.id])
 
 
+func is_secret_ending_unlocked():
+	return false
+
+
+func show_secret_ending_button():
+	for button in upper_buttons:
+		if button.id == "buy_ending2":
+			button.show()
+
+
 func _on_button_acted(button):
 	if button.id == "fishing":
 		AudioManager.play_sfx("fishing")
@@ -117,6 +129,10 @@ func _on_button_acted(button):
 	elif button.id == "buy_ending":
 # warning-ignore:return_value_discarded
 		Global.which_ending = 1
+		TransitionManager.change_scene("res://EndingCutscene.tscn")
+	elif button.id == "buy_ending2":
+# warning-ignore:return_value_discarded
+		Global.which_ending = 2
 		TransitionManager.change_scene("res://EndingCutscene.tscn")
 
 
@@ -146,6 +162,8 @@ func _on_level_up(level):
 	for button in buttons.get_children() + upper_buttons.get_children():
 		if button.level_unlocked <= cur_level:
 			button.show()
+		if button.id == "buy_ending2" and not is_secret_ending_unlocked():
+			button.hide()
 	PaletteLayer.change_to(cur_level)
 	ScrollCont.rect_size.y = CONTAINER_SIZE
 

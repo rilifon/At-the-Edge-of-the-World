@@ -52,6 +52,11 @@ func _process(delta):
 		skip_box.modulate.a = lerp(skip_box.modulate.a, 0, .1)
 
 
+func _input(event):
+	if event.is_action_pressed("debug1"):
+		ToggleDistorion.visible = true
+
+
 func enable():
 	NewGame.enable_button()
 	Exit.enable_button()
