@@ -137,7 +137,7 @@ tracks/0/keys = {
 "values": [ Vector2( 640, 360 ) ]
 }
 tracks/1/type = "value"
-tracks/1/path = NodePath("Camera2D:zoom")
+tracks/1/path = NodePath("Kill:visible")
 tracks/1/interp = 1
 tracks/1/loop_wrap = true
 tracks/1/imported = false
@@ -146,10 +146,10 @@ tracks/1/keys = {
 "times": PoolRealArray( 0 ),
 "transitions": PoolRealArray( 1 ),
 "update": 0,
-"values": [ Vector2( 1, 1 ) ]
+"values": [ false ]
 }
 tracks/2/type = "value"
-tracks/2/path = NodePath("Kill:visible")
+tracks/2/path = NodePath("Kill:modulate")
 tracks/2/interp = 1
 tracks/2/loop_wrap = true
 tracks/2/imported = false
@@ -158,10 +158,10 @@ tracks/2/keys = {
 "times": PoolRealArray( 0 ),
 "transitions": PoolRealArray( 1 ),
 "update": 0,
-"values": [ false ]
+"values": [ Color( 1, 1, 1, 1 ) ]
 }
 tracks/3/type = "value"
-tracks/3/path = NodePath("Kill:modulate")
+tracks/3/path = NodePath("Scroller:modulate")
 tracks/3/interp = 1
 tracks/3/loop_wrap = true
 tracks/3/imported = false
@@ -173,7 +173,7 @@ tracks/3/keys = {
 "values": [ Color( 1, 1, 1, 1 ) ]
 }
 tracks/4/type = "value"
-tracks/4/path = NodePath("Camera2D:current")
+tracks/4/path = NodePath("EndingFinal/AnimatedSprite:modulate")
 tracks/4/interp = 1
 tracks/4/loop_wrap = true
 tracks/4/imported = false
@@ -182,10 +182,10 @@ tracks/4/keys = {
 "times": PoolRealArray( 0 ),
 "transitions": PoolRealArray( 1 ),
 "update": 0,
-"values": [ true ]
+"values": [ Color( 1, 1, 1, 0 ) ]
 }
 tracks/5/type = "value"
-tracks/5/path = NodePath("Scroller:modulate")
+tracks/5/path = NodePath("EndingFinal/Label:modulate")
 tracks/5/interp = 1
 tracks/5/loop_wrap = true
 tracks/5/imported = false
@@ -194,10 +194,10 @@ tracks/5/keys = {
 "times": PoolRealArray( 0 ),
 "transitions": PoolRealArray( 1 ),
 "update": 0,
-"values": [ Color( 1, 1, 1, 1 ) ]
+"values": [ Color( 1, 1, 1, 0 ) ]
 }
 tracks/6/type = "value"
-tracks/6/path = NodePath("EndingFinal/AnimatedSprite:modulate")
+tracks/6/path = NodePath("EndingFinal/Label2:modulate")
 tracks/6/interp = 1
 tracks/6/loop_wrap = true
 tracks/6/imported = false
@@ -209,7 +209,7 @@ tracks/6/keys = {
 "values": [ Color( 1, 1, 1, 0 ) ]
 }
 tracks/7/type = "value"
-tracks/7/path = NodePath("EndingFinal/Label:modulate")
+tracks/7/path = NodePath("Credits:rect_position")
 tracks/7/interp = 1
 tracks/7/loop_wrap = true
 tracks/7/imported = false
@@ -218,10 +218,10 @@ tracks/7/keys = {
 "times": PoolRealArray( 0 ),
 "transitions": PoolRealArray( 1 ),
 "update": 0,
-"values": [ Color( 1, 1, 1, 0 ) ]
+"values": [ Vector2( 0, 1042 ) ]
 }
 tracks/8/type = "value"
-tracks/8/path = NodePath("EndingFinal/Label2:modulate")
+tracks/8/path = NodePath("Thanks:modulate")
 tracks/8/interp = 1
 tracks/8/loop_wrap = true
 tracks/8/imported = false
@@ -230,10 +230,10 @@ tracks/8/keys = {
 "times": PoolRealArray( 0 ),
 "transitions": PoolRealArray( 1 ),
 "update": 0,
-"values": [ Color( 1, 1, 1, 0 ) ]
+"values": [ Color( 1, 1, 1, 1 ) ]
 }
 tracks/9/type = "value"
-tracks/9/path = NodePath("Credits:rect_position")
+tracks/9/path = NodePath("Thanks/Ahab:position")
 tracks/9/interp = 1
 tracks/9/loop_wrap = true
 tracks/9/imported = false
@@ -242,10 +242,10 @@ tracks/9/keys = {
 "times": PoolRealArray( 0 ),
 "transitions": PoolRealArray( 1 ),
 "update": 0,
-"values": [ Vector2( 0, 1042 ) ]
+"values": [ Vector2( 423, 411 ) ]
 }
 tracks/10/type = "value"
-tracks/10/path = NodePath("Thanks:modulate")
+tracks/10/path = NodePath("Credits:modulate")
 tracks/10/interp = 1
 tracks/10/loop_wrap = true
 tracks/10/imported = false
@@ -254,10 +254,10 @@ tracks/10/keys = {
 "times": PoolRealArray( 0 ),
 "transitions": PoolRealArray( 1 ),
 "update": 0,
-"values": [ Color( 1, 1, 1, 1 ) ]
+"values": [ Color( 1, 1, 1, 0 ) ]
 }
 tracks/11/type = "value"
-tracks/11/path = NodePath("Thanks/Ahab:position")
+tracks/11/path = NodePath("EndingFinal/Label:text")
 tracks/11/interp = 1
 tracks/11/loop_wrap = true
 tracks/11/imported = false
@@ -266,10 +266,10 @@ tracks/11/keys = {
 "times": PoolRealArray( 0 ),
 "transitions": PoolRealArray( 1 ),
 "update": 0,
-"values": [ Vector2( 423, 411 ) ]
+"values": [ "END1_FINAL" ]
 }
 tracks/12/type = "value"
-tracks/12/path = NodePath("Credits:modulate")
+tracks/12/path = NodePath("Thanks:text")
 tracks/12/interp = 1
 tracks/12/loop_wrap = true
 tracks/12/imported = false
@@ -278,39 +278,15 @@ tracks/12/keys = {
 "times": PoolRealArray( 0 ),
 "transitions": PoolRealArray( 1 ),
 "update": 0,
-"values": [ Color( 1, 1, 1, 0 ) ]
+"values": [ "THANKS_FOR_PLAYING1" ]
 }
 tracks/13/type = "value"
-tracks/13/path = NodePath("EndingFinal/Label:text")
+tracks/13/path = NodePath("BGM:playing")
 tracks/13/interp = 1
 tracks/13/loop_wrap = true
 tracks/13/imported = false
 tracks/13/enabled = true
 tracks/13/keys = {
-"times": PoolRealArray( 0 ),
-"transitions": PoolRealArray( 1 ),
-"update": 0,
-"values": [ "END1_FINAL" ]
-}
-tracks/14/type = "value"
-tracks/14/path = NodePath("Thanks:text")
-tracks/14/interp = 1
-tracks/14/loop_wrap = true
-tracks/14/imported = false
-tracks/14/enabled = true
-tracks/14/keys = {
-"times": PoolRealArray( 0 ),
-"transitions": PoolRealArray( 1 ),
-"update": 0,
-"values": [ "THANKS_FOR_PLAYING1" ]
-}
-tracks/15/type = "value"
-tracks/15/path = NodePath("BGM:playing")
-tracks/15/interp = 1
-tracks/15/loop_wrap = true
-tracks/15/imported = false
-tracks/15/enabled = true
-tracks/15/keys = {
 "times": PoolRealArray( 0 ),
 "transitions": PoolRealArray( 1 ),
 "update": 0,
@@ -345,19 +321,19 @@ tracks/1/keys = {
 "values": [ Vector2( 640, -680 ), Vector2( 640, -680 ), Vector2( 640, 360 ) ]
 }
 tracks/2/type = "value"
-tracks/2/path = NodePath("Camera2D:zoom")
+tracks/2/path = NodePath("BGM:stream")
 tracks/2/interp = 1
 tracks/2/loop_wrap = true
 tracks/2/imported = false
 tracks/2/enabled = true
 tracks/2/keys = {
-"times": PoolRealArray( 0, 1.6, 1.7 ),
-"transitions": PoolRealArray( 1, 1, 1 ),
-"update": 0,
-"values": [ Vector2( 1.1, 1 ), Vector2( 1.1, 1 ), Vector2( 1, 1 ) ]
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 1,
+"values": [ ExtResource( 29 ) ]
 }
 tracks/3/type = "value"
-tracks/3/path = NodePath("BGM:stream")
+tracks/3/path = NodePath("BGM:playing")
 tracks/3/interp = 1
 tracks/3/loop_wrap = true
 tracks/3/imported = false
@@ -366,123 +342,111 @@ tracks/3/keys = {
 "times": PoolRealArray( 0 ),
 "transitions": PoolRealArray( 1 ),
 "update": 1,
-"values": [ ExtResource( 29 ) ]
+"values": [ true ]
 }
 tracks/4/type = "value"
-tracks/4/path = NodePath("BGM:playing")
+tracks/4/path = NodePath("EndingFinal/AnimatedSprite:modulate")
 tracks/4/interp = 1
 tracks/4/loop_wrap = true
 tracks/4/imported = false
 tracks/4/enabled = true
 tracks/4/keys = {
-"times": PoolRealArray( 0 ),
-"transitions": PoolRealArray( 1 ),
-"update": 1,
-"values": [ true ]
-}
-tracks/5/type = "value"
-tracks/5/path = NodePath("EndingFinal/AnimatedSprite:modulate")
-tracks/5/interp = 1
-tracks/5/loop_wrap = true
-tracks/5/imported = false
-tracks/5/enabled = true
-tracks/5/keys = {
 "times": PoolRealArray( 0, 2.5, 5.9, 13.6, 18.4 ),
 "transitions": PoolRealArray( 1, 1, 1, 1, 1 ),
 "update": 0,
 "values": [ Color( 1, 1, 1, 0 ), Color( 1, 1, 1, 0 ), Color( 1, 1, 1, 1 ), Color( 1, 1, 1, 1 ), Color( 1, 1, 1, 0 ) ]
 }
-tracks/6/type = "value"
-tracks/6/path = NodePath("EndingFinal/Narration:stream")
-tracks/6/interp = 1
-tracks/6/loop_wrap = true
-tracks/6/imported = false
-tracks/6/enabled = true
-tracks/6/keys = {
+tracks/5/type = "value"
+tracks/5/path = NodePath("EndingFinal/Narration:stream")
+tracks/5/interp = 1
+tracks/5/loop_wrap = true
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/keys = {
 "times": PoolRealArray( 5.5 ),
 "transitions": PoolRealArray( 1 ),
 "update": 1,
 "values": [ ExtResource( 33 ) ]
 }
-tracks/7/type = "value"
-tracks/7/path = NodePath("EndingFinal/Narration:playing")
-tracks/7/interp = 1
-tracks/7/loop_wrap = true
-tracks/7/imported = false
-tracks/7/enabled = true
-tracks/7/keys = {
+tracks/6/type = "value"
+tracks/6/path = NodePath("EndingFinal/Narration:playing")
+tracks/6/interp = 1
+tracks/6/loop_wrap = true
+tracks/6/imported = false
+tracks/6/enabled = true
+tracks/6/keys = {
 "times": PoolRealArray( 5.6 ),
 "transitions": PoolRealArray( 1 ),
 "update": 1,
 "values": [ true ]
 }
-tracks/8/type = "value"
-tracks/8/path = NodePath("EndingFinal/Label:modulate")
-tracks/8/interp = 1
-tracks/8/loop_wrap = true
-tracks/8/imported = false
-tracks/8/enabled = true
-tracks/8/keys = {
+tracks/7/type = "value"
+tracks/7/path = NodePath("EndingFinal/Label:modulate")
+tracks/7/interp = 1
+tracks/7/loop_wrap = true
+tracks/7/imported = false
+tracks/7/enabled = true
+tracks/7/keys = {
 "times": PoolRealArray( 0, 5.1, 6.9, 13.6, 18.4 ),
 "transitions": PoolRealArray( 1, 1, 1, 1, 1 ),
 "update": 0,
 "values": [ Color( 1, 1, 1, 0 ), Color( 1, 1, 1, 0 ), Color( 1, 1, 1, 1 ), Color( 1, 1, 1, 1 ), Color( 1, 1, 1, 0 ) ]
 }
-tracks/9/type = "value"
-tracks/9/path = NodePath("EndingFinal/Label2:modulate")
-tracks/9/interp = 1
-tracks/9/loop_wrap = true
-tracks/9/imported = false
-tracks/9/enabled = true
-tracks/9/keys = {
+tracks/8/type = "value"
+tracks/8/path = NodePath("EndingFinal/Label2:modulate")
+tracks/8/interp = 1
+tracks/8/loop_wrap = true
+tracks/8/imported = false
+tracks/8/enabled = true
+tracks/8/keys = {
 "times": PoolRealArray( 0, 11.6, 13.5, 17.9, 20.9 ),
 "transitions": PoolRealArray( 1, 1, 1, 1, 1 ),
 "update": 0,
 "values": [ Color( 1, 1, 1, 0 ), Color( 1, 1, 1, 0 ), Color( 1, 1, 1, 1 ), Color( 1, 1, 1, 1 ), Color( 1, 1, 1, 0 ) ]
 }
-tracks/10/type = "value"
-tracks/10/path = NodePath("Credits:rect_position")
-tracks/10/interp = 1
-tracks/10/loop_wrap = true
-tracks/10/imported = false
-tracks/10/enabled = true
-tracks/10/keys = {
+tracks/9/type = "value"
+tracks/9/path = NodePath("Credits:rect_position")
+tracks/9/interp = 1
+tracks/9/loop_wrap = true
+tracks/9/imported = false
+tracks/9/enabled = true
+tracks/9/keys = {
 "times": PoolRealArray( 0, 25.3, 44.5 ),
 "transitions": PoolRealArray( 1, 1, 1 ),
 "update": 0,
 "values": [ Vector2( 0, 1042 ), Vector2( 0, 1042 ), Vector2( 0, -1600 ) ]
 }
-tracks/11/type = "value"
-tracks/11/path = NodePath("Thanks:modulate")
-tracks/11/interp = 1
-tracks/11/loop_wrap = true
-tracks/11/imported = false
-tracks/11/enabled = true
-tracks/11/keys = {
+tracks/10/type = "value"
+tracks/10/path = NodePath("Thanks:modulate")
+tracks/10/interp = 1
+tracks/10/loop_wrap = true
+tracks/10/imported = false
+tracks/10/enabled = true
+tracks/10/keys = {
 "times": PoolRealArray( 0, 43.7, 47.8, 50.6, 53.1 ),
 "transitions": PoolRealArray( 1, 1, 1, 1, 1 ),
 "update": 0,
 "values": [ Color( 1, 1, 1, 0 ), Color( 1, 1, 1, 0 ), Color( 1, 1, 1, 1 ), Color( 1, 1, 1, 1 ), Color( 1, 1, 1, 0 ) ]
 }
-tracks/12/type = "value"
-tracks/12/path = NodePath("Thanks/Ahab:position")
-tracks/12/interp = 1
-tracks/12/loop_wrap = true
-tracks/12/imported = false
-tracks/12/enabled = true
-tracks/12/keys = {
+tracks/11/type = "value"
+tracks/11/path = NodePath("Thanks/Ahab:position")
+tracks/11/interp = 1
+tracks/11/loop_wrap = true
+tracks/11/imported = false
+tracks/11/enabled = true
+tracks/11/keys = {
 "times": PoolRealArray( 42.7 ),
 "transitions": PoolRealArray( 1 ),
 "update": 0,
 "values": [ Vector2( 423, 450 ) ]
 }
-tracks/13/type = "method"
-tracks/13/path = NodePath(".")
-tracks/13/interp = 1
-tracks/13/loop_wrap = true
-tracks/13/imported = false
-tracks/13/enabled = true
-tracks/13/keys = {
+tracks/12/type = "method"
+tracks/12/path = NodePath(".")
+tracks/12/interp = 1
+tracks/12/loop_wrap = true
+tracks/12/imported = false
+tracks/12/enabled = true
+tracks/12/keys = {
 "times": PoolRealArray( 1.5, 53.3 ),
 "transitions": PoolRealArray( 1, 1 ),
 "values": [ {
@@ -493,61 +457,61 @@ tracks/13/keys = {
 "method": "finish"
 } ]
 }
-tracks/14/type = "value"
-tracks/14/path = NodePath("Credits:modulate")
-tracks/14/interp = 1
-tracks/14/loop_wrap = true
-tracks/14/imported = false
-tracks/14/enabled = true
-tracks/14/keys = {
+tracks/13/type = "value"
+tracks/13/path = NodePath("Credits:modulate")
+tracks/13/interp = 1
+tracks/13/loop_wrap = true
+tracks/13/imported = false
+tracks/13/enabled = true
+tracks/13/keys = {
 "times": PoolRealArray( 0, 15.3, 16.1 ),
 "transitions": PoolRealArray( 1, 1, 1 ),
 "update": 0,
 "values": [ Color( 1, 1, 1, 0 ), Color( 1, 1, 1, 0 ), Color( 1, 1, 1, 1 ) ]
 }
-tracks/15/type = "value"
-tracks/15/path = NodePath("EndingFinal/Label:text")
-tracks/15/interp = 1
-tracks/15/loop_wrap = true
-tracks/15/imported = false
-tracks/15/enabled = true
-tracks/15/keys = {
+tracks/14/type = "value"
+tracks/14/path = NodePath("EndingFinal/Label:text")
+tracks/14/interp = 1
+tracks/14/loop_wrap = true
+tracks/14/imported = false
+tracks/14/enabled = true
+tracks/14/keys = {
 "times": PoolRealArray( 0 ),
 "transitions": PoolRealArray( 1 ),
 "update": 1,
 "values": [ "END1_FINAL" ]
 }
-tracks/16/type = "value"
-tracks/16/path = NodePath("BGM:volume_db")
-tracks/16/interp = 1
-tracks/16/loop_wrap = true
-tracks/16/imported = false
-tracks/16/enabled = true
-tracks/16/keys = {
+tracks/15/type = "value"
+tracks/15/path = NodePath("BGM:volume_db")
+tracks/15/interp = 1
+tracks/15/loop_wrap = true
+tracks/15/imported = false
+tracks/15/enabled = true
+tracks/15/keys = {
 "times": PoolRealArray( 0, 46.3, 52.9 ),
 "transitions": PoolRealArray( 1, 1, 1 ),
 "update": 0,
 "values": [ 0.0, 0.0, -30.0 ]
 }
-tracks/17/type = "value"
-tracks/17/path = NodePath("Thanks:text")
-tracks/17/interp = 1
-tracks/17/loop_wrap = true
-tracks/17/imported = false
-tracks/17/enabled = true
-tracks/17/keys = {
+tracks/16/type = "value"
+tracks/16/path = NodePath("Thanks:text")
+tracks/16/interp = 1
+tracks/16/loop_wrap = true
+tracks/16/imported = false
+tracks/16/enabled = true
+tracks/16/keys = {
 "times": PoolRealArray( 0 ),
 "transitions": PoolRealArray( 1 ),
 "update": 1,
 "values": [ "THANKS_FOR_PLAYING1" ]
 }
-tracks/18/type = "value"
-tracks/18/path = NodePath("Kill:modulate")
-tracks/18/interp = 1
-tracks/18/loop_wrap = true
-tracks/18/imported = false
-tracks/18/enabled = true
-tracks/18/keys = {
+tracks/17/type = "value"
+tracks/17/path = NodePath("Kill:modulate")
+tracks/17/interp = 1
+tracks/17/loop_wrap = true
+tracks/17/imported = false
+tracks/17/enabled = true
+tracks/17/keys = {
 "times": PoolRealArray( 0, 1.6 ),
 "transitions": PoolRealArray( 1, 1 ),
 "update": 0,
@@ -576,54 +540,54 @@ tracks/0/keys = {
 }
 tracks/1/type = "value"
 tracks/1/path = NodePath("Camera2D:position")
-tracks/1/interp = 1
+tracks/1/interp = 2
 tracks/1/loop_wrap = true
 tracks/1/imported = false
 tracks/1/enabled = true
 tracks/1/keys = {
-"times": PoolRealArray( 0, 41.6, 54.6 ),
-"transitions": PoolRealArray( 1, 1, 1 ),
+"times": PoolRealArray( 0, 54.6 ),
+"transitions": PoolRealArray( 0.5, 1 ),
 "update": 0,
-"values": [ Vector2( 640, 360 ), Vector2( 640, 360 ), Vector2( 640, -680 ) ]
+"values": [ Vector2( 640, 1080 ), Vector2( 640, -680 ) ]
 }
 tracks/2/type = "value"
-tracks/2/path = NodePath("Camera2D:zoom")
+tracks/2/path = NodePath("Kill:visible")
 tracks/2/interp = 1
 tracks/2/loop_wrap = true
 tracks/2/imported = false
 tracks/2/enabled = true
 tracks/2/keys = {
-"times": PoolRealArray( 0, 0.6, 12.5, 16.2, 38.2, 41.6, 54.6 ),
-"transitions": PoolRealArray( 1, 1, 1, 1, 1, 1, 1 ),
-"update": 0,
-"values": [ Vector2( 1.15, 1.15 ), Vector2( 1.15, 1.15 ), Vector2( 1, 1 ), Vector2( 1, 1 ), Vector2( 2.4, 2.2 ), Vector2( 2.4, 2.2 ), Vector2( 1.1, 1 ) ]
-}
-tracks/3/type = "value"
-tracks/3/path = NodePath("Kill:visible")
-tracks/3/interp = 1
-tracks/3/loop_wrap = true
-tracks/3/imported = false
-tracks/3/enabled = true
-tracks/3/keys = {
 "times": PoolRealArray( 0, 56.7 ),
 "transitions": PoolRealArray( 1, 1 ),
 "update": 1,
 "values": [ false, true ]
 }
-tracks/4/type = "value"
-tracks/4/path = NodePath("Kill:modulate")
-tracks/4/interp = 2
-tracks/4/loop_wrap = true
-tracks/4/imported = false
-tracks/4/enabled = true
-tracks/4/keys = {
+tracks/3/type = "value"
+tracks/3/path = NodePath("Kill:modulate")
+tracks/3/interp = 2
+tracks/3/loop_wrap = true
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/keys = {
 "times": PoolRealArray( 56.7, 60.2 ),
 "transitions": PoolRealArray( 1, 1 ),
 "update": 0,
 "values": [ Color( 1, 1, 1, 0 ), Color( 1, 1, 1, 1 ) ]
 }
+tracks/4/type = "value"
+tracks/4/path = NodePath("BGM:volume_db")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/keys = {
+"times": PoolRealArray( 0, 54.5, 62.9, 65.2 ),
+"transitions": PoolRealArray( 1, 1, 1, 1 ),
+"update": 0,
+"values": [ 0.0, 0.0, -40.0, -80.0 ]
+}
 tracks/5/type = "value"
-tracks/5/path = NodePath("Camera2D:current")
+tracks/5/path = NodePath("Thanks:modulate")
 tracks/5/interp = 1
 tracks/5/loop_wrap = true
 tracks/5/imported = false
@@ -631,23 +595,23 @@ tracks/5/enabled = true
 tracks/5/keys = {
 "times": PoolRealArray( 0 ),
 "transitions": PoolRealArray( 1 ),
-"update": 1,
-"values": [ true ]
+"update": 0,
+"values": [ Color( 1, 1, 1, 0 ) ]
 }
 tracks/6/type = "value"
-tracks/6/path = NodePath("BGM:volume_db")
+tracks/6/path = NodePath("Credits:modulate")
 tracks/6/interp = 1
 tracks/6/loop_wrap = true
 tracks/6/imported = false
 tracks/6/enabled = true
 tracks/6/keys = {
-"times": PoolRealArray( 0, 54.5, 62.9, 65.2 ),
-"transitions": PoolRealArray( 1, 1, 1, 1 ),
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
 "update": 0,
-"values": [ 0.0, 0.0, -40.0, -80.0 ]
+"values": [ Color( 1, 1, 1, 0 ) ]
 }
 tracks/7/type = "value"
-tracks/7/path = NodePath("Thanks:modulate")
+tracks/7/path = NodePath("BGM:stream")
 tracks/7/interp = 1
 tracks/7/loop_wrap = true
 tracks/7/imported = false
@@ -655,40 +619,16 @@ tracks/7/enabled = true
 tracks/7/keys = {
 "times": PoolRealArray( 0 ),
 "transitions": PoolRealArray( 1 ),
-"update": 0,
-"values": [ Color( 1, 1, 1, 0 ) ]
+"update": 1,
+"values": [ ExtResource( 25 ) ]
 }
 tracks/8/type = "value"
-tracks/8/path = NodePath("Credits:modulate")
+tracks/8/path = NodePath("BGM:playing")
 tracks/8/interp = 1
 tracks/8/loop_wrap = true
 tracks/8/imported = false
 tracks/8/enabled = true
 tracks/8/keys = {
-"times": PoolRealArray( 0 ),
-"transitions": PoolRealArray( 1 ),
-"update": 0,
-"values": [ Color( 1, 1, 1, 0 ) ]
-}
-tracks/9/type = "value"
-tracks/9/path = NodePath("BGM:stream")
-tracks/9/interp = 1
-tracks/9/loop_wrap = true
-tracks/9/imported = false
-tracks/9/enabled = true
-tracks/9/keys = {
-"times": PoolRealArray( 0 ),
-"transitions": PoolRealArray( 1 ),
-"update": 1,
-"values": [ ExtResource( 25 ) ]
-}
-tracks/10/type = "value"
-tracks/10/path = NodePath("BGM:playing")
-tracks/10/interp = 1
-tracks/10/loop_wrap = true
-tracks/10/imported = false
-tracks/10/enabled = true
-tracks/10/keys = {
 "times": PoolRealArray( 0, 65.1 ),
 "transitions": PoolRealArray( 1, 1 ),
 "update": 1,
@@ -860,90 +800,99 @@ current = true
 [node name="Ahab" type="AnimatedSprite" parent="Scroller"]
 position = Vector2( 615, 222 )
 frames = SubResource( 1 )
+frame = 1
 playing = true
 
 [node name="Moon" type="AnimatedSprite" parent="Scroller"]
 position = Vector2( 984, -430 )
 frames = SubResource( 2 )
+frame = 1
 playing = true
 
 [node name="Planet" type="AnimatedSprite" parent="Scroller"]
 position = Vector2( 672, -936 )
 frames = SubResource( 3 )
+frame = 1
 playing = true
 
 [node name="Star1" type="AnimatedSprite" parent="Scroller"]
 position = Vector2( 199, -656 )
 frames = SubResource( 4 )
+frame = 1
 playing = true
 
 [node name="Star2" type="AnimatedSprite" parent="Scroller"]
 position = Vector2( 1146, -75 )
 frames = SubResource( 5 )
-frame = 1
 playing = true
 
 [node name="Star3" type="AnimatedSprite" parent="Scroller"]
 position = Vector2( 186, -207 )
 frames = SubResource( 6 )
+frame = 1
 playing = true
 
 [node name="Star4" type="AnimatedSprite" parent="Scroller"]
 position = Vector2( 588, -157 )
 frames = SubResource( 7 )
+frame = 1
 playing = true
 
 [node name="Star5" type="AnimatedSprite" parent="Scroller"]
 position = Vector2( 170, 98 )
 frames = SubResource( 8 )
+frame = 1
 playing = true
 
 [node name="Star6" type="AnimatedSprite" parent="Scroller"]
 position = Vector2( 1121, 267 )
 frames = SubResource( 9 )
-frame = 1
 playing = true
 
 [node name="Star7" type="AnimatedSprite" parent="Scroller"]
 position = Vector2( 453, -683 )
 frames = SubResource( 10 )
+frame = 1
 playing = true
 
 [node name="Star8" type="AnimatedSprite" parent="Scroller"]
 position = Vector2( 1082, -776 )
 frames = SubResource( 11 )
+frame = 1
 playing = true
 
 [node name="Star9" type="AnimatedSprite" parent="Scroller"]
 position = Vector2( 334, -935 )
 frames = SubResource( 6 )
+frame = 1
 playing = true
 
 [node name="Star10" type="AnimatedSprite" parent="Scroller"]
 position = Vector2( 81, -1020 )
 frames = SubResource( 7 )
+frame = 1
 playing = true
 
 [node name="Star11" type="AnimatedSprite" parent="Scroller"]
 position = Vector2( 957, -1018 )
 frames = SubResource( 8 )
+frame = 1
 playing = true
 
 [node name="Star12" type="AnimatedSprite" parent="Scroller"]
 position = Vector2( 109, -729 )
 frames = SubResource( 9 )
-frame = 1
 playing = true
 
 [node name="Star13" type="AnimatedSprite" parent="Scroller"]
 position = Vector2( 930, 52 )
 frames = SubResource( 10 )
+frame = 1
 playing = true
 
 [node name="Star14" type="AnimatedSprite" parent="Scroller"]
 position = Vector2( 615, -404 )
 frames = SubResource( 11 )
-frame = 1
 playing = true
 
 [node name="Kill" parent="." instance=ExtResource( 24 )]
@@ -962,8 +911,7 @@ anims/end1_final = SubResource( 16 )
 anims/ending1 = SubResource( 12 )
 
 [node name="BGM" type="AudioStreamPlayer" parent="."]
-stream = ExtResource( 25 )
-volume_db = -0.972477
+stream = ExtResource( 29 )
 bus = "BGM"
 
 [node name="RightHidder" type="ColorRect" parent="."]
@@ -989,6 +937,7 @@ modulate = Color( 1, 1, 1, 0 )
 position = Vector2( 640, 427 )
 scale = Vector2( 0.85, 0.85 )
 frames = SubResource( 17 )
+frame = 1
 playing = true
 
 [node name="Label" type="Label" parent="EndingFinal"]
@@ -1142,6 +1091,7 @@ autowrap = true
 material = SubResource( 37 )
 position = Vector2( 423, 411 )
 frames = SubResource( 27 )
+frame = 1
 playing = true
 
 [node name="GlitchEffect" type="ColorRect" parent="."]
