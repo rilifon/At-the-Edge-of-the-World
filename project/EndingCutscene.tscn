@@ -1,4 +1,4 @@
-[gd_scene load_steps=63 format=2]
+[gd_scene load_steps=65 format=2]
 
 [ext_resource path="res://assets/images/ending/ahab_end_2.png" type="Texture" id=1]
 [ext_resource path="res://assets/images/ending/ahab_end_1.png" type="Texture" id=2]
@@ -30,8 +30,8 @@
 [ext_resource path="res://assets/images/intro/fera_1.png" type="Texture" id=28]
 [ext_resource path="res://assets/audio/bgm/end1_final.mp3" type="AudioStream" id=29]
 [ext_resource path="res://assets/images/icon/godot_logo.png" type="Texture" id=30]
-[ext_resource path="res://assets/images/intro/ahab_2.png" type="Texture" id=31]
-[ext_resource path="res://assets/images/intro/ahab_1.png" type="Texture" id=32]
+[ext_resource path="res://assets/images/intro/ahab_1.png" type="Texture" id=31]
+[ext_resource path="res://assets/images/intro/ahab_2.png" type="Texture" id=32]
 [ext_resource path="res://assets/audio/narration/end_1/FinalNarration.wav" type="AudioStream" id=33]
 
 [sub_resource type="SpriteFrames" id=1]
@@ -257,7 +257,7 @@ tracks/10/keys = {
 "values": [ Color( 1, 1, 1, 1 ) ]
 }
 tracks/11/type = "value"
-tracks/11/path = NodePath("Hidder:visible")
+tracks/11/path = NodePath("Thanks/Ahab:position")
 tracks/11/interp = 1
 tracks/11/loop_wrap = true
 tracks/11/imported = false
@@ -266,10 +266,10 @@ tracks/11/keys = {
 "times": PoolRealArray( 0 ),
 "transitions": PoolRealArray( 1 ),
 "update": 0,
-"values": [ false ]
+"values": [ Vector2( 423, 411 ) ]
 }
 tracks/12/type = "value"
-tracks/12/path = NodePath("Thanks/Ahab:position")
+tracks/12/path = NodePath("Credits:modulate")
 tracks/12/interp = 1
 tracks/12/loop_wrap = true
 tracks/12/imported = false
@@ -278,10 +278,10 @@ tracks/12/keys = {
 "times": PoolRealArray( 0 ),
 "transitions": PoolRealArray( 1 ),
 "update": 0,
-"values": [ Vector2( 423, 411 ) ]
+"values": [ Color( 1, 1, 1, 0 ) ]
 }
 tracks/13/type = "value"
-tracks/13/path = NodePath("Credits:modulate")
+tracks/13/path = NodePath("EndingFinal/Label:text")
 tracks/13/interp = 1
 tracks/13/loop_wrap = true
 tracks/13/imported = false
@@ -290,10 +290,10 @@ tracks/13/keys = {
 "times": PoolRealArray( 0 ),
 "transitions": PoolRealArray( 1 ),
 "update": 0,
-"values": [ Color( 1, 1, 1, 0 ) ]
+"values": [ "END1_FINAL" ]
 }
 tracks/14/type = "value"
-tracks/14/path = NodePath("EndingFinal/Label:text")
+tracks/14/path = NodePath("Thanks:text")
 tracks/14/interp = 1
 tracks/14/loop_wrap = true
 tracks/14/imported = false
@@ -302,27 +302,15 @@ tracks/14/keys = {
 "times": PoolRealArray( 0 ),
 "transitions": PoolRealArray( 1 ),
 "update": 0,
-"values": [ "END1_FINAL" ]
+"values": [ "THANKS_FOR_PLAYING1" ]
 }
 tracks/15/type = "value"
-tracks/15/path = NodePath("Thanks:text")
+tracks/15/path = NodePath("BGM:playing")
 tracks/15/interp = 1
 tracks/15/loop_wrap = true
 tracks/15/imported = false
 tracks/15/enabled = true
 tracks/15/keys = {
-"times": PoolRealArray( 0 ),
-"transitions": PoolRealArray( 1 ),
-"update": 0,
-"values": [ "THANKS_FOR_PLAYING1" ]
-}
-tracks/16/type = "value"
-tracks/16/path = NodePath("BGM:playing")
-tracks/16/interp = 1
-tracks/16/loop_wrap = true
-tracks/16/imported = false
-tracks/16/enabled = true
-tracks/16/keys = {
 "times": PoolRealArray( 0 ),
 "transitions": PoolRealArray( 1 ),
 "update": 0,
@@ -477,36 +465,24 @@ tracks/11/keys = {
 "values": [ Color( 1, 1, 1, 0 ), Color( 1, 1, 1, 0 ), Color( 1, 1, 1, 1 ), Color( 1, 1, 1, 1 ), Color( 1, 1, 1, 0 ) ]
 }
 tracks/12/type = "value"
-tracks/12/path = NodePath("Hidder:visible")
+tracks/12/path = NodePath("Thanks/Ahab:position")
 tracks/12/interp = 1
 tracks/12/loop_wrap = true
 tracks/12/imported = false
 tracks/12/enabled = true
 tracks/12/keys = {
-"times": PoolRealArray( 0, 42.7 ),
-"transitions": PoolRealArray( 1, 1 ),
-"update": 1,
-"values": [ false, true ]
-}
-tracks/13/type = "value"
-tracks/13/path = NodePath("Thanks/Ahab:position")
-tracks/13/interp = 1
-tracks/13/loop_wrap = true
-tracks/13/imported = false
-tracks/13/enabled = true
-tracks/13/keys = {
 "times": PoolRealArray( 42.7 ),
 "transitions": PoolRealArray( 1 ),
 "update": 0,
 "values": [ Vector2( 423, 450 ) ]
 }
-tracks/14/type = "method"
-tracks/14/path = NodePath(".")
-tracks/14/interp = 1
-tracks/14/loop_wrap = true
-tracks/14/imported = false
-tracks/14/enabled = true
-tracks/14/keys = {
+tracks/13/type = "method"
+tracks/13/path = NodePath(".")
+tracks/13/interp = 1
+tracks/13/loop_wrap = true
+tracks/13/imported = false
+tracks/13/enabled = true
+tracks/13/keys = {
 "times": PoolRealArray( 1.5, 53.3 ),
 "transitions": PoolRealArray( 1, 1 ),
 "values": [ {
@@ -517,61 +493,61 @@ tracks/14/keys = {
 "method": "finish"
 } ]
 }
-tracks/15/type = "value"
-tracks/15/path = NodePath("Credits:modulate")
-tracks/15/interp = 1
-tracks/15/loop_wrap = true
-tracks/15/imported = false
-tracks/15/enabled = true
-tracks/15/keys = {
+tracks/14/type = "value"
+tracks/14/path = NodePath("Credits:modulate")
+tracks/14/interp = 1
+tracks/14/loop_wrap = true
+tracks/14/imported = false
+tracks/14/enabled = true
+tracks/14/keys = {
 "times": PoolRealArray( 0, 15.3, 16.1 ),
 "transitions": PoolRealArray( 1, 1, 1 ),
 "update": 0,
 "values": [ Color( 1, 1, 1, 0 ), Color( 1, 1, 1, 0 ), Color( 1, 1, 1, 1 ) ]
 }
-tracks/16/type = "value"
-tracks/16/path = NodePath("EndingFinal/Label:text")
-tracks/16/interp = 1
-tracks/16/loop_wrap = true
-tracks/16/imported = false
-tracks/16/enabled = true
-tracks/16/keys = {
+tracks/15/type = "value"
+tracks/15/path = NodePath("EndingFinal/Label:text")
+tracks/15/interp = 1
+tracks/15/loop_wrap = true
+tracks/15/imported = false
+tracks/15/enabled = true
+tracks/15/keys = {
 "times": PoolRealArray( 0 ),
 "transitions": PoolRealArray( 1 ),
 "update": 1,
 "values": [ "END1_FINAL" ]
 }
-tracks/17/type = "value"
-tracks/17/path = NodePath("BGM:volume_db")
-tracks/17/interp = 1
-tracks/17/loop_wrap = true
-tracks/17/imported = false
-tracks/17/enabled = true
-tracks/17/keys = {
+tracks/16/type = "value"
+tracks/16/path = NodePath("BGM:volume_db")
+tracks/16/interp = 1
+tracks/16/loop_wrap = true
+tracks/16/imported = false
+tracks/16/enabled = true
+tracks/16/keys = {
 "times": PoolRealArray( 0, 46.3, 52.9 ),
 "transitions": PoolRealArray( 1, 1, 1 ),
 "update": 0,
 "values": [ 0.0, 0.0, -30.0 ]
 }
-tracks/18/type = "value"
-tracks/18/path = NodePath("Thanks:text")
-tracks/18/interp = 1
-tracks/18/loop_wrap = true
-tracks/18/imported = false
-tracks/18/enabled = true
-tracks/18/keys = {
+tracks/17/type = "value"
+tracks/17/path = NodePath("Thanks:text")
+tracks/17/interp = 1
+tracks/17/loop_wrap = true
+tracks/17/imported = false
+tracks/17/enabled = true
+tracks/17/keys = {
 "times": PoolRealArray( 0 ),
 "transitions": PoolRealArray( 1 ),
 "update": 1,
 "values": [ "THANKS_FOR_PLAYING1" ]
 }
-tracks/19/type = "value"
-tracks/19/path = NodePath("Kill:modulate")
-tracks/19/interp = 1
-tracks/19/loop_wrap = true
-tracks/19/imported = false
-tracks/19/enabled = true
-tracks/19/keys = {
+tracks/18/type = "value"
+tracks/18/path = NodePath("Kill:modulate")
+tracks/18/interp = 1
+tracks/18/loop_wrap = true
+tracks/18/imported = false
+tracks/18/enabled = true
+tracks/18/keys = {
 "times": PoolRealArray( 0, 1.6 ),
 "transitions": PoolRealArray( 1, 1 ),
 "update": 0,
@@ -671,7 +647,7 @@ tracks/6/keys = {
 "values": [ 0.0, 0.0, -40.0, -80.0 ]
 }
 tracks/7/type = "value"
-tracks/7/path = NodePath("Hidder:visible")
+tracks/7/path = NodePath("Thanks:modulate")
 tracks/7/interp = 1
 tracks/7/loop_wrap = true
 tracks/7/imported = false
@@ -679,11 +655,11 @@ tracks/7/enabled = true
 tracks/7/keys = {
 "times": PoolRealArray( 0 ),
 "transitions": PoolRealArray( 1 ),
-"update": 1,
-"values": [ false ]
+"update": 0,
+"values": [ Color( 1, 1, 1, 0 ) ]
 }
 tracks/8/type = "value"
-tracks/8/path = NodePath("Thanks:modulate")
+tracks/8/path = NodePath("Credits:modulate")
 tracks/8/interp = 1
 tracks/8/loop_wrap = true
 tracks/8/imported = false
@@ -695,7 +671,7 @@ tracks/8/keys = {
 "values": [ Color( 1, 1, 1, 0 ) ]
 }
 tracks/9/type = "value"
-tracks/9/path = NodePath("Credits:modulate")
+tracks/9/path = NodePath("BGM:stream")
 tracks/9/interp = 1
 tracks/9/loop_wrap = true
 tracks/9/imported = false
@@ -703,28 +679,16 @@ tracks/9/enabled = true
 tracks/9/keys = {
 "times": PoolRealArray( 0 ),
 "transitions": PoolRealArray( 1 ),
-"update": 0,
-"values": [ Color( 1, 1, 1, 0 ) ]
+"update": 1,
+"values": [ ExtResource( 25 ) ]
 }
 tracks/10/type = "value"
-tracks/10/path = NodePath("BGM:stream")
+tracks/10/path = NodePath("BGM:playing")
 tracks/10/interp = 1
 tracks/10/loop_wrap = true
 tracks/10/imported = false
 tracks/10/enabled = true
 tracks/10/keys = {
-"times": PoolRealArray( 0 ),
-"transitions": PoolRealArray( 1 ),
-"update": 1,
-"values": [ ExtResource( 25 ) ]
-}
-tracks/11/type = "value"
-tracks/11/path = NodePath("BGM:playing")
-tracks/11/interp = 1
-tracks/11/loop_wrap = true
-tracks/11/imported = false
-tracks/11/enabled = true
-tracks/11/keys = {
 "times": PoolRealArray( 0, 65.1 ),
 "transitions": PoolRealArray( 1, 1 ),
 "update": 1,
@@ -797,9 +761,23 @@ use_mipmaps = true
 use_filter = true
 font_data = SubResource( 30 )
 
+[sub_resource type="Shader" id=38]
+code = "shader_type canvas_item;
+
+void fragment() {
+	vec4 color = texture(TEXTURE, UV);
+	color.a *= smoothstep(.602, .606, UV.x);
+	color.a *= step(.9-UV.y*.5, UV.x);
+	COLOR = color;
+}
+"
+
+[sub_resource type="ShaderMaterial" id=37]
+shader = SubResource( 38 )
+
 [sub_resource type="SpriteFrames" id=27]
 animations = [ {
-"frames": [ ExtResource( 32 ), ExtResource( 31 ) ],
+"frames": [ ExtResource( 31 ), ExtResource( 32 ) ],
 "loop": true,
 "name": "default",
 "speed": 5.0
@@ -882,99 +860,90 @@ current = true
 [node name="Ahab" type="AnimatedSprite" parent="Scroller"]
 position = Vector2( 615, 222 )
 frames = SubResource( 1 )
-frame = 1
 playing = true
 
 [node name="Moon" type="AnimatedSprite" parent="Scroller"]
 position = Vector2( 984, -430 )
 frames = SubResource( 2 )
-frame = 1
 playing = true
 
 [node name="Planet" type="AnimatedSprite" parent="Scroller"]
 position = Vector2( 672, -936 )
 frames = SubResource( 3 )
-frame = 1
 playing = true
 
 [node name="Star1" type="AnimatedSprite" parent="Scroller"]
 position = Vector2( 199, -656 )
 frames = SubResource( 4 )
-frame = 1
 playing = true
 
 [node name="Star2" type="AnimatedSprite" parent="Scroller"]
 position = Vector2( 1146, -75 )
 frames = SubResource( 5 )
+frame = 1
 playing = true
 
 [node name="Star3" type="AnimatedSprite" parent="Scroller"]
 position = Vector2( 186, -207 )
 frames = SubResource( 6 )
-frame = 1
 playing = true
 
 [node name="Star4" type="AnimatedSprite" parent="Scroller"]
 position = Vector2( 588, -157 )
 frames = SubResource( 7 )
-frame = 1
 playing = true
 
 [node name="Star5" type="AnimatedSprite" parent="Scroller"]
 position = Vector2( 170, 98 )
 frames = SubResource( 8 )
-frame = 1
 playing = true
 
 [node name="Star6" type="AnimatedSprite" parent="Scroller"]
 position = Vector2( 1121, 267 )
 frames = SubResource( 9 )
+frame = 1
 playing = true
 
 [node name="Star7" type="AnimatedSprite" parent="Scroller"]
 position = Vector2( 453, -683 )
 frames = SubResource( 10 )
-frame = 1
 playing = true
 
 [node name="Star8" type="AnimatedSprite" parent="Scroller"]
 position = Vector2( 1082, -776 )
 frames = SubResource( 11 )
-frame = 1
 playing = true
 
 [node name="Star9" type="AnimatedSprite" parent="Scroller"]
 position = Vector2( 334, -935 )
 frames = SubResource( 6 )
-frame = 1
 playing = true
 
 [node name="Star10" type="AnimatedSprite" parent="Scroller"]
 position = Vector2( 81, -1020 )
 frames = SubResource( 7 )
-frame = 1
 playing = true
 
 [node name="Star11" type="AnimatedSprite" parent="Scroller"]
 position = Vector2( 957, -1018 )
 frames = SubResource( 8 )
-frame = 1
 playing = true
 
 [node name="Star12" type="AnimatedSprite" parent="Scroller"]
 position = Vector2( 109, -729 )
 frames = SubResource( 9 )
+frame = 1
 playing = true
 
 [node name="Star13" type="AnimatedSprite" parent="Scroller"]
 position = Vector2( 930, 52 )
 frames = SubResource( 10 )
-frame = 1
 playing = true
 
 [node name="Star14" type="AnimatedSprite" parent="Scroller"]
 position = Vector2( 615, -404 )
 frames = SubResource( 11 )
+frame = 1
 playing = true
 
 [node name="Kill" parent="." instance=ExtResource( 24 )]
@@ -1020,7 +989,6 @@ modulate = Color( 1, 1, 1, 0 )
 position = Vector2( 640, 427 )
 scale = Vector2( 0.85, 0.85 )
 frames = SubResource( 17 )
-frame = 1
 playing = true
 
 [node name="Label" type="Label" parent="EndingFinal"]
@@ -1171,23 +1139,10 @@ align = 1
 autowrap = true
 
 [node name="Ahab" type="AnimatedSprite" parent="Thanks"]
+material = SubResource( 37 )
 position = Vector2( 423, 411 )
 frames = SubResource( 27 )
-frame = 1
 playing = true
-
-[node name="Hidder" type="ColorRect" parent="."]
-visible = false
-margin_left = 15.0
-margin_top = 192.0
-margin_right = 505.0
-margin_bottom = 537.0
-
-[node name="Hidder" type="ColorRect" parent="Hidder"]
-margin_left = -19.0
-margin_top = 322.0
-margin_right = 481.0
-margin_bottom = 642.0
 
 [node name="GlitchEffect" type="ColorRect" parent="."]
 visible = false
