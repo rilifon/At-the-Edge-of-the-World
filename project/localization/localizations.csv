@@ -67,19 +67,15 @@ BAIT3,Gorgonzola,Gorgonzola
 BUY_AUTOFISH,     Buy Windlass   ,     Comprar Molinete   
 BUY_MONEYENGINE,     Hire Lackey   ,     Contratar Lacaio   
 BUY_ROD,   Improve Rod   ,   Melhorar Vara   
-BUY_ROPE,   Buy Rope   ,   Comprar Linha   
+BUY_ROPE,   Buy Line   ,   Comprar Linha   
 FISH,Fish!,Pescar!
 BUY_FREEDOM,     Buy Freedom     ,     Comprar Liberdade     
 BUY_FREEDOM2,    Find Peace     ,     Encontrar Liberdade     
 STUFF,--STUFF--,--MUAMBAS--
 FISH_LOOT,--HAUL--,--PESCADOS--
 BAITS,--BAITS--,--ISCAS--
-NOURISH_1,  nourish x1  ,  nutrir x1   
-NOURISH_10,  nourish x10  ,  nutrir x10   
-NOURISH_100,  nourish x100  ,  nutrir x100   
-SELL_1,  sell x1  ,  vender x1   
-SELL_10,  sell x10  ,  vender x10   
-SELL_100,  sell x100  ,  vender x100   
+NOURISH,Nourish,Nutrir
+SELL,Sell,Vender
 LOOT1,Lambari,Lambari
 LOOT2,Crab,Carangueijo
 LOOT3,Shark,Tubarão

@@ -1,0 +1,127 @@
+[gd_scene load_steps=7 format=2]
+
+[ext_resource path="res://general_theme.tres" type="Theme" id=1]
+[ext_resource path="res://ui/BigFont.tres" type="DynamicFont" id=2]
+[ext_resource path="res://ui/SmallFont.tres" type="DynamicFont" id=3]
+[ext_resource path="res://ui/LootMenuButton.gd" type="Script" id=4]
+[ext_resource path="res://ui/LootMenu.gd" type="Script" id=5]
+[ext_resource path="res://ui/SmallerFont.tres" type="DynamicFont" id=6]
+
+[node name="LootMenu" type="VBoxContainer"]
+margin_right = 40.0
+margin_bottom = 40.0
+size_flags_horizontal = 3
+theme = ExtResource( 1 )
+custom_constants/separation = 10
+script = ExtResource( 5 )
+
+[node name="VBoxContainer" type="VBoxContainer" parent="."]
+margin_right = 256.0
+margin_bottom = 52.0
+custom_constants/separation = -5
+
+[node name="LootLabel" type="Label" parent="VBoxContainer"]
+margin_right = 256.0
+margin_bottom = 37.0
+custom_colors/font_color = Color( 0, 0, 0, 1 )
+custom_fonts/font = ExtResource( 2 )
+text = "Lambari"
+
+[node name="PriceLabel" type="Label" parent="VBoxContainer"]
+margin_top = 32.0
+margin_right = 256.0
+margin_bottom = 52.0
+custom_colors/font_color = Color( 0, 0, 0, 1 )
+custom_fonts/font = ExtResource( 6 )
+text = "(9999 doletas)"
+
+[node name="SellMenu" type="HBoxContainer" parent="."]
+margin_top = 62.0
+margin_right = 256.0
+margin_bottom = 89.0
+rect_min_size = Vector2( 256, 0 )
+custom_constants/separation = 7
+
+[node name="Label" type="Label" parent="SellMenu"]
+margin_right = 100.0
+margin_bottom = 27.0
+rect_min_size = Vector2( 100, 0 )
+custom_colors/font_color = Color( 0, 0, 0, 1 )
+custom_fonts/font = ExtResource( 3 )
+text = "SELL"
+
+[node name="Sell1" type="Button" parent="SellMenu"]
+margin_left = 107.0
+margin_right = 138.0
+margin_bottom = 27.0
+focus_mode = 0
+enabled_focus_mode = 0
+text = " x1 "
+script = ExtResource( 4 )
+
+[node name="Sell10" type="Button" parent="SellMenu"]
+margin_left = 145.0
+margin_right = 190.0
+margin_bottom = 27.0
+focus_mode = 0
+enabled_focus_mode = 0
+text = " x10 "
+script = ExtResource( 4 )
+
+[node name="Sell100" type="Button" parent="SellMenu"]
+margin_left = 197.0
+margin_right = 256.0
+margin_bottom = 27.0
+focus_mode = 0
+enabled_focus_mode = 0
+text = " x100 "
+script = ExtResource( 4 )
+
+[node name="NourishMenu" type="HBoxContainer" parent="."]
+margin_top = 99.0
+margin_right = 256.0
+margin_bottom = 126.0
+rect_min_size = Vector2( 256, 0 )
+custom_constants/separation = 7
+
+[node name="Label" type="Label" parent="NourishMenu"]
+margin_right = 100.0
+margin_bottom = 27.0
+rect_min_size = Vector2( 100, 0 )
+custom_colors/font_color = Color( 0, 0, 0, 1 )
+custom_fonts/font = ExtResource( 3 )
+text = "NOURISH"
+
+[node name="Nourish1" type="Button" parent="NourishMenu"]
+margin_left = 107.0
+margin_right = 138.0
+margin_bottom = 27.0
+focus_mode = 0
+enabled_focus_mode = 0
+text = " x1 "
+script = ExtResource( 4 )
+
+[node name="Nourish10" type="Button" parent="NourishMenu"]
+margin_left = 145.0
+margin_right = 190.0
+margin_bottom = 27.0
+focus_mode = 0
+enabled_focus_mode = 0
+text = " x10 "
+script = ExtResource( 4 )
+
+[node name="Nourish100" type="Button" parent="NourishMenu"]
+margin_left = 197.0
+margin_right = 256.0
+margin_bottom = 27.0
+focus_mode = 0
+enabled_focus_mode = 0
+text = " x100 "
+script = ExtResource( 4 )
+
+[connection signal="pressed" from="SellMenu/Sell1" to="." method="_on_sell_pressed" binds= [ 1 ]]
+[connection signal="pressed" from="SellMenu/Sell10" to="." method="_on_sell_pressed" binds= [ 10 ]]
+[connection signal="pressed" from="SellMenu/Sell100" to="." method="_on_sell_pressed" binds= [ 100 ]]
+[connection signal="pressed" from="NourishMenu/Nourish1" to="." method="_on_nourish_pressed" binds= [ 1 ]]
+[connection signal="pressed" from="NourishMenu/Nourish10" to="." method="_on_nourish_pressed" binds= [ 10 ]]
+[connection signal="pressed" from="NourishMenu/Nourish100" to="." method="_on_nourish_pressed" binds= [ 100 ]]

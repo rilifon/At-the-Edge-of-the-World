@@ -74,12 +74,8 @@ const BUY_FREEDOM2 = "BUY_FREEDOM2"
 const STUFF = "STUFF"
 const FISH_LOOT = "FISH_LOOT"
 const BAITS = "BAITS"
-const NOURISH_1 = "NOURISH_1"
-const NOURISH_10 = "NOURISH_10"
-const NOURISH_100 = "NOURISH_100"
-const SELL_1 = "SELL_1"
-const SELL_10 = "SELL_10"
-const SELL_100 = "SELL_100"
+const NOURISH = "NOURISH"
+const SELL = "SELL"
 const LOOT1 = "LOOT1"
 const LOOT2 = "LOOT2"
 const LOOT3 = "LOOT3"
@@ -310,12 +306,8 @@ const KEYS = [
  "STUFF",
  "FISH_LOOT",
  "BAITS",
- "NOURISH_1",
- "NOURISH_10",
- "NOURISH_100",
- "SELL_1",
- "SELL_10",
- "SELL_100",
+ "NOURISH",
+ "SELL",
  "LOOT1",
  "LOOT2",
  "LOOT3",

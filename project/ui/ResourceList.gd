@@ -3,12 +3,38 @@ extends Control
 signal feed
 signal sell
 
+export(ButtonGroup) var loot_group: ButtonGroup
+
+onready var scroll_container = $HBoxContainer/LootContainer/LootTable/ScrollContainer
+onready var upper_gradient = $HBoxContainer/LootContainer/LootTable/UpperScrollGradient
+onready var lower_gradient = $HBoxContainer/LootContainer/LootTable/LowerScrollGradient
+onready var loot_container = $HBoxContainer/LootContainer/LootTable/ScrollContainer/GridContainer
+onready var loot_menu = $HBoxContainer/LootContainer/LootMenu
+
 const LABEL = preload("res://ui/ResourceLabel.tscn")
 const BUTTON = preload("res://ui/ResourceButton.tscn")
-const LOOT = preload("res://ui/LootButton.tscn")
+const LOOT = preload("res://ui/LootSelect.tscn")
 const BIG_FONT = preload("res://ui/BigFont.tres")
 
+var upper_alpha: int
+var lower_alpha: int
+var max_scroll: int
 var player = null
+var selected_loot: Button
+
+
+func _ready():
+# warning-ignore:return_value_discarded
+	loot_group.connect("pressed", self, "_on_loot_pressed")
+
+
+func _process(_delta):
+	max_scroll = loot_container.rect_size.y - scroll_container.rect_size.y
+	upper_alpha = 0 if scroll_container.scroll_vertical == 0 else 1
+	lower_alpha = 0 if scroll_container.scroll_vertical == max_scroll else 1
+	upper_gradient.modulate.a = lerp(upper_gradient.modulate.a, upper_alpha, .3)
+	lower_gradient.modulate.a = lerp(lower_gradient.modulate.a, lower_alpha, .3)
+
 
 func setup(player_data):
 	player = player_data
@@ -27,11 +53,7 @@ func setup(player_data):
 		if not loot_mode:
 			if resource_id == "loot":
 				loot_mode = true
-				var new_label = LABEL.instance()
-				new_label.text = "FISH_LOOT"
-				new_label.add_font_override("font", BIG_FONT)
-				new_label.type = false
-				$HBoxContainer/ScrollContainer/LootList.add_child(new_label)
+				$HBoxContainer/LootContainer/LootLabel.type = false
 			elif resource_id != "bait":
 				if not bait_mode:
 					var new_label = LABEL.instance()
@@ -58,10 +80,9 @@ func setup(player_data):
 				$HBoxContainer/FirstList.add_child(new_label)
 		else:
 			var new_loot = LOOT.instance()
-			$HBoxContainer/ScrollContainer/LootList.add_child(new_loot)
+			loot_container.add_child(new_loot)
 			new_loot.setup(resource_id)
-			new_loot.connect("feed", self, "_on_loot_feed")
-			new_loot.connect("sell", self, "_on_loot_sell")
+			new_loot.group = loot_group
 			if not resource.showing:
 				new_loot.hide()
 
@@ -72,18 +93,23 @@ func get_selected_bait():
 			return button.type
 	return null
 
+
 func update_resources():
 	for resource in $HBoxContainer/FirstList.get_children():
 		if resource.type:
 			set_resource_text(resource)
-	for resource in $HBoxContainer/ScrollContainer/LootList.get_children():
+	for resource in loot_container.get_children():
 		if resource.type:
 			update_loot_amount(resource)
 
 
 func update_loot_amount(resource_object):
-	var resource = player.get_resource(resource_object.type)
-	resource_object.set_amount(resource.amount)
+	var amount = player.get_resource(resource_object.type).amount
+	resource_object.set_amount(amount)
+	if selected_loot == resource_object:
+		loot_menu.update_amount(amount)
+		if amount > 0 and not selected_loot.pressed:
+			selected_loot.set_pressed_no_signal(true)
 
 
 func set_resource_text(resource_object):
@@ -107,15 +133,22 @@ func set_resource_text(resource_object):
 		resource_object.text += " (+%.2f/s)" % resource.gain_per_second
 
 
-func _on_loot_feed(loot, value):
-	emit_signal("feed", loot, value)
+func _on_loot_feed(value):
+	emit_signal("feed", selected_loot.type, value)
 
 
-func _on_loot_sell(loot, value):
-	emit_signal("sell", loot, value)
+func _on_loot_sell(value):
+	emit_signal("sell", selected_loot.type, value)
+
 
 func _on_button_pressed(button):
 	AudioManager.play_sfx("click_bait")
 	for other_button in $HBoxContainer/FirstList.get_children():
 		if other_button is Button and button != other_button:
 			other_button.pressed = false
+
+
+func _on_loot_pressed(button: Button):
+	selected_loot = button
+	loot_menu.set_loot(selected_loot)
+	loot_menu.show()

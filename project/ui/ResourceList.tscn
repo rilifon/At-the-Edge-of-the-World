@@ -1,11 +1,24 @@
-[gd_scene load_steps=2 format=2]
+[gd_scene load_steps=8 format=2]
 
 [ext_resource path="res://ui/ResourceList.gd" type="Script" id=1]
+[ext_resource path="res://ui/ResourceLabel.tscn" type="PackedScene" id=2]
+[ext_resource path="res://ui/BigFont.tres" type="DynamicFont" id=3]
+[ext_resource path="res://ui/LootMenu.tscn" type="PackedScene" id=4]
+
+[sub_resource type="ButtonGroup" id=1]
+resource_name = "Loot"
+
+[sub_resource type="Gradient" id=2]
+colors = PoolColorArray( 1, 1, 1, 1, 1, 1, 1, 0 )
+
+[sub_resource type="GradientTexture" id=3]
+gradient = SubResource( 2 )
 
 [node name="ResourceList" type="Control"]
 anchor_right = 1.0
 anchor_bottom = 1.0
 script = ExtResource( 1 )
+loot_group = SubResource( 1 )
 
 [node name="HBoxContainer" type="HBoxContainer" parent="."]
 margin_right = 40.0
@@ -13,22 +26,66 @@ margin_bottom = 40.0
 custom_constants/separation = 15
 
 [node name="FirstList" type="VBoxContainer" parent="HBoxContainer"]
-margin_right = 440.0
-margin_bottom = 400.0
-rect_min_size = Vector2( 440, 0 )
+margin_right = 400.0
+margin_bottom = 271.0
+rect_min_size = Vector2( 400, 0 )
 __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="ScrollContainer" type="ScrollContainer" parent="HBoxContainer"]
-margin_left = 455.0
-margin_right = 955.0
-margin_bottom = 400.0
-rect_min_size = Vector2( 500, 400 )
+[node name="LootContainer" type="VBoxContainer" parent="HBoxContainer"]
+margin_left = 415.0
+margin_right = 735.0
+margin_bottom = 271.0
 
-[node name="LootList" type="VBoxContainer" parent="HBoxContainer/ScrollContainer"]
+[node name="LootLabel" parent="HBoxContainer/LootContainer" instance=ExtResource( 2 )]
+margin_right = 320.0
+margin_bottom = 37.0
+custom_fonts/font = ExtResource( 3 )
+text = "FISH_LOOT"
+
+[node name="LootTable" type="Control" parent="HBoxContainer/LootContainer"]
+margin_top = 41.0
+margin_right = 320.0
+margin_bottom = 271.0
+rect_min_size = Vector2( 320, 230 )
+
+[node name="ScrollContainer" type="ScrollContainer" parent="HBoxContainer/LootContainer/LootTable"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+rect_min_size = Vector2( 320, 230 )
+follow_focus = true
+
+[node name="GridContainer" type="GridContainer" parent="HBoxContainer/LootContainer/LootTable/ScrollContainer"]
+columns = 3
+
+[node name="UpperScrollGradient" type="TextureRect" parent="HBoxContainer/LootContainer/LootTable"]
+margin_right = 40.0
+margin_bottom = 308.0
+rect_min_size = Vector2( 0, 308 )
+rect_rotation = -90.0
+rect_scale = Vector2( -1, 1 )
+mouse_filter = 2
+texture = SubResource( 3 )
+expand = true
+stretch_mode = 1
+
+[node name="LowerScrollGradient" type="TextureRect" parent="HBoxContainer/LootContainer/LootTable"]
+margin_top = 230.0
+margin_right = 40.0
+margin_bottom = 530.0
+rect_min_size = Vector2( 0, 308 )
+rect_rotation = -90.0
+mouse_filter = 2
+texture = SubResource( 3 )
+expand = true
+stretch_mode = 1
+
+[node name="LootMenu" parent="HBoxContainer/LootContainer" instance=ExtResource( 4 )]
+visible = false
+margin_top = 195.0
 margin_right = 300.0
-rect_min_size = Vector2( 300, 0 )
-__meta__ = {
-"_edit_use_anchors_": false
-}
+margin_bottom = 321.0
+
+[connection signal="loot_nourished" from="HBoxContainer/LootContainer/LootMenu" to="." method="_on_loot_feed"]
+[connection signal="loot_sold" from="HBoxContainer/LootContainer/LootMenu" to="." method="_on_loot_sell"]

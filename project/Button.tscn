@@ -4,6 +4,7 @@
 [ext_resource path="res://general_theme.tres" type="Theme" id=2]
 [ext_resource path="res://assets/images/buttons/button_disabled.png" type="Texture" id=3]
 [ext_resource path="res://assets/fonts/Itim-Regular.ttf" type="DynamicFontData" id=4]
+[ext_resource path="res://ui/SmallerFont.tres" type="DynamicFont" id=5]
 [ext_resource path="res://assets/images/buttons/button.png" type="Texture" id=6]
 
 [sub_resource type="DynamicFont" id=1]
@@ -40,11 +41,6 @@ tracks/0/keys = {
 "update": 0,
 "values": [ Vector2( 0, 65 ) ]
 }
-
-[sub_resource type="DynamicFont" id=5]
-use_mipmaps = true
-use_filter = true
-font_data = ExtResource( 4 )
 
 [sub_resource type="StyleBoxTexture" id=4]
 texture = ExtResource( 6 )
@@ -136,7 +132,7 @@ margin_right = 185.0
 margin_bottom = 65.9708
 grow_horizontal = 0
 custom_colors/font_color = Color( 0, 0, 0, 1 )
-custom_fonts/font = SubResource( 5 )
+custom_fonts/font = ExtResource( 5 )
 custom_styles/normal = SubResource( 4 )
 text = "OUT_OF_STOCK"
 

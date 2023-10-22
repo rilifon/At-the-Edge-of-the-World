@@ -1,4 +1,4 @@
-[gd_scene load_steps=21 format=2]
+[gd_scene load_steps=22 format=2]
 
 [ext_resource path="res://MainScene.gd" type="Script" id=1]
 [ext_resource path="res://Button.tscn" type="PackedScene" id=2]
@@ -11,6 +11,9 @@
 [ext_resource path="res://assets/images/buttons/settings_icon.png" type="Texture" id=9]
 [ext_resource path="res://settings/Settings.tscn" type="PackedScene" id=10]
 [ext_resource path="res://ui/SettingsButton.gd" type="Script" id=11]
+
+[sub_resource type="ButtonGroup" id=15]
+resource_name = "Loot"
 
 [sub_resource type="Shader" id=14]
 code = "shader_type canvas_item;
@@ -273,6 +276,7 @@ margin_left = 265.0
 margin_right = 265.0
 margin_bottom = 499.0
 mouse_filter = 1
+loot_group = SubResource( 15 )
 
 [node name="UpperHidder" type="ColorRect" parent="."]
 material = SubResource( 6 )
