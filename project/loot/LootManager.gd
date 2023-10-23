@@ -11,6 +11,8 @@ const LOOTS = [
 	preload("res://loot/loot8.tres"),
 	preload("res://loot/loot9.tres"),
 	preload("res://loot/loot10.tres"),
+	preload("res://loot/special_loot1.tres"),
+	preload("res://loot/special_loot2.tres"),
 ]
 
 func get_all_loots():

@@ -86,6 +86,8 @@ const LOOT7 = "LOOT7"
 const LOOT8 = "LOOT8"
 const LOOT9 = "LOOT9"
 const LOOT10 = "LOOT10"
+const SPECIALLOOT1 = "SPECIALLOOT1"
+const SPECIALLOOT2 = "SPECIALLOOT2"
 const RQ1 = "RQ1"
 const RQ2 = "RQ2"
 const RQ3 = "RQ3"
@@ -324,6 +326,8 @@ const KEYS = [
  "LOOT8",
  "LOOT9",
  "LOOT10",
+ "SPECIALLOOT1",
+ "SPECIALLOOT2",
  "RQ1",
  "RQ2",
  "RQ3",

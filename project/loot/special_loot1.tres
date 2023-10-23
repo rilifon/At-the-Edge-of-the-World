@@ -1,0 +1,14 @@
+[gd_resource type="Resource" load_steps=3 format=2]
+
+[ext_resource path="res://loot/loot.gd" type="Script" id=1]
+[ext_resource path="res://assets/images/loot/special-loot1.png" type="Texture" id=2]
+
+[resource]
+script = ExtResource( 1 )
+id = "special_loot_1"
+loot_name = "SPECIALLOOT1"
+image = ExtResource( 2 )
+fishing_chance = 0
+minimum_length = 999
+base_cost = -1
+feed_value = 1

@@ -5,6 +5,9 @@ func get_loot(bait, player_data):
 	var bait_data = BaitManager.get_bait_data(bait)
 	var loot_drops = []
 	var total_weight = 0
+	var special_loot = get_special_loot(bait, player_data)
+	if special_loot:
+		return special_loot.id
 	for loot in bait_data.loot_table:
 		var loot_data = LootManager.get_loot_data(loot)
 		if loot_data.minimum_length <= player_data.get_resource_amount("line_length"):
@@ -19,4 +22,8 @@ func get_loot(bait, player_data):
 			return loot.id
 	#Maybe add a "unlucky didnt catch anything" mechanic? ψ('_')>
 	assert(false, "Shouldn't get here")
+
+
+func get_special_loot(bait, player_data):
 	
+	return false

@@ -11,6 +11,7 @@ onready var ScrollCont = $Interface/ScrollContainer
 onready var fishing_button = $UpperButtons/Fishing
 
 var player_data
+var fed_special_loot = [false,false]
 
 var cur_level = 0
 
@@ -89,6 +90,8 @@ func get_save_data():
 		"beast_data": fera.get_data(),
 		"buttons_data": get_buttons_data(),
 		"remove_distortion": Global.remove_distortion,
+		"fed_special_loot1": fed_special_loot[0],
+		"fed_special_loot2": fed_special_loot[1],
 	}
 	return data
 
@@ -102,17 +105,18 @@ func get_buttons_data():
 
 func set_save_data(data):
 	cur_level = data.cur_level
+	fed_special_loot[0] = data.fed_special_loot1
+	fed_special_loot[1] = data.fed_special_loot2
 	player_data.set_save_data(data.player_data)
 	NarrationManager.set_data(data.narration_data)
 	Global.remove_distortion = data.remove_distortion
 	fera.set_data(cur_level, data.beast_data)
 	for button in buttons.get_children() + upper_buttons.get_children():
 		button.set_times_used(data.buttons_data[button.id])
-		
 
 
 func is_secret_ending_unlocked():
-	return false
+	return fed_special_loot[0] and fed_special_loot[1]
 
 
 func show_secret_ending_button():
