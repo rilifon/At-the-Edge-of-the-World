@@ -27,6 +27,7 @@ func get_data():
 
 func set_data(new_level, value):
 	level = new_level
+	current_value = value
 	bar.max_value = MAX_VALUES[level]
 	bar.value = value
 	if level == MAX_LEVEL:
