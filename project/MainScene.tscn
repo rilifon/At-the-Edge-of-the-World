@@ -58,15 +58,15 @@ script = ExtResource( 1 )
 
 [node name="Interface" type="HBoxContainer" parent="."]
 anchor_right = 200.0
-margin_left = 44.8731
-margin_top = 207.522
-margin_right = 394.873
-margin_bottom = 707.522
+margin_left = 45.0
+margin_top = 208.0
+margin_right = 310.0
+margin_bottom = 608.0
 custom_constants/separation = 15
 
 [node name="ScrollContainer" type="ScrollContainer" parent="Interface"]
 margin_right = 250.0
-margin_bottom = 499.0
+margin_bottom = 400.0
 rect_min_size = Vector2( 250, 400 )
 rect_clip_content = false
 
@@ -274,7 +274,7 @@ anchor_right = 0.0
 anchor_bottom = 0.0
 margin_left = 265.0
 margin_right = 265.0
-margin_bottom = 499.0
+margin_bottom = 400.0
 mouse_filter = 1
 loot_group = SubResource( 15 )
 
