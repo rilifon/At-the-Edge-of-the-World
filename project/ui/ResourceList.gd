@@ -85,6 +85,8 @@ func setup(player_data):
 			new_loot.group = loot_group
 			if not resource.showing:
 				new_loot.hide()
+			else:
+				new_loot.show()
 
 
 func get_selected_bait():
@@ -104,8 +106,11 @@ func update_resources():
 
 
 func update_loot_amount(resource_object):
-	var amount = player.get_resource(resource_object.type).amount
+	var resource = player.get_resource(resource_object.type)
+	var amount = resource.amount
 	resource_object.set_amount(amount)
+	if amount > 0:
+		resource.showing = true
 	if selected_loot == resource_object:
 		loot_menu.update_amount(amount)
 		if amount > 0 and not selected_loot.pressed:

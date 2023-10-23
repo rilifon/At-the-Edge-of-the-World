@@ -108,6 +108,7 @@ func set_save_data(data):
 	fera.set_data(cur_level, data.beast_data)
 	for button in buttons.get_children() + upper_buttons.get_children():
 		button.set_times_used(data.buttons_data[button.id])
+		
 
 
 func is_secret_ending_unlocked():
