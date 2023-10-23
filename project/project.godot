@@ -205,7 +205,7 @@ locale_filter=[ 1, [ "en", "pt_BR" ] ]
 [localization_editor]
 
 locales_path_to_file="res://localization/localizations.csv"
-translations_split_offset=240
+translations_split_offset=177
 
 [rendering]
 

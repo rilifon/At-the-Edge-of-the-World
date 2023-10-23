@@ -138,6 +138,12 @@ const DB = [
 			{"cha": "ahab", "text": "D18_1", "voice": "18/01.wav"},
 			{"cha": "ahab", "text": "D18_2", "voice": "18/02.wav"},
 		],
+		#Special Dialogue 2
+		[
+			{"cha": "yog", "text": "DS2_1", "voice": "sp_02/01.wav"},
+			{"cha": "yog", "text": "DS2_2", "voice": "sp_02/02.wav"},
+			{"cha": "ahab", "text": "DS2_3", "voice": "sp_02/03.wav"},
+		],
 	],
 	#Level 3
 	[
@@ -180,6 +186,12 @@ const DB = [
 			{"cha": "ahab", "text": "D24_4", "voice": "24/04.wav"},
 			{"cha": "yog", "text": "D24_5", "voice": "24/05.wav"},
 			{"cha": "ahab", "text": "D24_6", "voice": "24/06.wav"},
+		],
+		#Special Dialogue 1
+		[
+			{"cha": "yog", "text": "DS1_1", "voice": "sp_01/01.wav"},
+			{"cha": "yog", "text": "DS1_2", "voice": "sp_01/02.wav"},
+			{"cha": "ahab", "text": "DS1_3", "voice": "sp_01/03.wav"},
 		],
 	],
 	#Level 4

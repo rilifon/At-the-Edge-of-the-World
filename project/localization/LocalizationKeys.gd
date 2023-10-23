@@ -215,6 +215,12 @@ const D32_2 = "D32_2"
 const D32_3 = "D32_3"
 const D32_4 = "D32_4"
 const D32_5 = "D32_5"
+const DS1_1 = "DS1_1"
+const DS1_2 = "DS1_2"
+const DS1_3 = "DS1_3"
+const DS2_1 = "DS2_1"
+const DS2_2 = "DS2_2"
+const DS2_3 = "DS2_3"
 const END1_1 = "END1_1"
 const END1_2 = "END1_2"
 const END1_3 = "END1_3"
@@ -447,6 +453,12 @@ const KEYS = [
  "D32_3",
  "D32_4",
  "D32_5",
+ "DS1_1",
+ "DS1_2",
+ "DS1_3",
+ "DS2_1",
+ "DS2_2",
+ "DS2_3",
  "END1_1",
  "END1_2",
  "END1_3",
