@@ -119,7 +119,6 @@ func start_narration(narration, custom_path = false):
 					active_narration = false
 					yield_state = null
 					return
-				print("more after")
 				dur = dur - YOG_DIST_CUTOFF
 				if dialogue.has("dist_delay"):
 					dur += dialogue.dist_delay
@@ -140,7 +139,6 @@ func start_narration(narration, custom_path = false):
 			active_narration = false
 			yield_state = null
 			return
-		print("after")
 	
 	yield_state = null
 	active_narration = false

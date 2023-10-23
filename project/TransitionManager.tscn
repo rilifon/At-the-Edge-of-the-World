@@ -34,10 +34,10 @@ void fragment() {
 
 [sub_resource type="ShaderMaterial" id=5]
 shader = SubResource( 4 )
-shader_param/cutoff = 0.0
+shader_param/cutoff = 1.0
 shader_param/wave_size = 0.028
 shader_param/wave_frequency = 0.025
-shader_param/wave_speed = 7.799
+shader_param/wave_speed = 21.0
 shader_param/wave_foam_size = 0.031
 shader_param/foam_color = Color( 0, 0, 0, 0.784314 )
 

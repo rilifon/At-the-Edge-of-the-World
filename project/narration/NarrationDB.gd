@@ -32,7 +32,7 @@ const DB = [
 		#Dialogue 1
 		[
 			{"cha": "ahab", "text": "D1_1", "voice": "01/01.wav"},
-			{"cha": "yog", "text": "D1_2", "voice": "01/02.wav", "dist_delay": -0.3},
+			{"cha": "yog", "text": "D1_2", "voice": "01/02.wav", "delay": -0.5},
 			{"cha": "ahab", "text": "D1_3", "voice": "01/03.wav"},
 		],
 		#Dialogue 2
