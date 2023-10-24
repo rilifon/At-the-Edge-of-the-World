@@ -242,7 +242,9 @@ const END2_6 = "END2_6"
 const END2_7 = "END2_7"
 const END2_8 = "END2_8"
 const END2_9 = "END2_9"
-const END2_FINAL = "END2_FINAL"
+const END2_FINAL_1 = "END2_FINAL_1"
+const END2_FINAL_2 = "END2_FINAL_2"
+const END2_FINAL_3 = "END2_FINAL_3"
 
 const KEYS = [
  "KEY_NAME",
@@ -484,5 +486,7 @@ const KEYS = [
  "END2_7",
  "END2_8",
  "END2_9",
- "END2_FINAL"
+ "END2_FINAL_1",
+ "END2_FINAL_2",
+ "END2_FINAL_3"
 ]

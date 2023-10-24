@@ -33,14 +33,15 @@ var consume = 0
 var cam_shake_strength = 0.0
 
 func _ready():
+	$BGM.stop()
 	Profile.set_stat("times_completed", Profile.get_stat("times_completed") + 1)
 	NarrationManager.is_running = false
 	NarrationManager.stop_narration()
-	
 	yield(get_tree(), "idle_frame")
 	
 	reset_glitch_effects()
-	Global.remove_distortion = true
+#	Global.which_ending = 1
+#	Global.remove_distortion = true
 	PaletteLayer.change_to(0)
 	if Global.which_ending == 1:
 		Profile.set_stat("end1_done", true)
@@ -77,6 +78,8 @@ func start_narration(name):
 
 func end_narration():
 	NarrationManager.remove_subtitle()
+	if Global.which_ending == 2:
+		AnimPlayer.play("end2_final")
 
 
 func reset_glitch_effects():
@@ -98,7 +101,6 @@ func finish():
 			Steam.set_achievement("ending_2")
 	
 	NarrationManager.disable_effect()
-# warning-ignore:return_value_discarded
 	TransitionManager.change_scene("res://MainMenu.tscn")
 
 
