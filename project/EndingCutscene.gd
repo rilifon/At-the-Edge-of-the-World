@@ -41,7 +41,7 @@ func _ready():
 	
 	reset_glitch_effects()
 #	Global.which_ending = 1
-#	Global.remove_distortion = true
+	Global.remove_distortion = true
 	PaletteLayer.change_to(0)
 	if Global.which_ending == 1:
 		Profile.set_stat("end1_done", true)
@@ -107,12 +107,7 @@ func finish():
 func _on_Kill_acted(_self):
 	Kill.disable_button()
 	consume += 1
-	if consume == 2 or consume == 3:
-		Kill.set_text(tr("CONSUME2"))
-	elif consume == 4:
-		Kill.set_text(tr("CONSUME3"))
-	elif consume == 5:
-		Kill.set_text(tr("CONSUME4"))
+	Kill.set_text(tr("CONSUME"+ str(consume)))
 	PaletteLayer.change_to(consume + 5)
 	var data = GLITCH_VALUES[consume-1]
 	apply_glitch_values(data[0], data[1], data[2], data[3])

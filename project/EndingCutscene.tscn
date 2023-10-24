@@ -1247,90 +1247,99 @@ current = true
 [node name="Ahab" type="AnimatedSprite" parent="Scroller"]
 position = Vector2( 615, 222 )
 frames = SubResource( 1 )
+frame = 1
 playing = true
 
 [node name="Moon" type="AnimatedSprite" parent="Scroller"]
 position = Vector2( 984, -430 )
 frames = SubResource( 2 )
+frame = 1
 playing = true
 
 [node name="Planet" type="AnimatedSprite" parent="Scroller"]
 position = Vector2( 672, -936 )
 frames = SubResource( 3 )
+frame = 1
 playing = true
 
 [node name="Star1" type="AnimatedSprite" parent="Scroller"]
 position = Vector2( 199, -656 )
 frames = SubResource( 4 )
+frame = 1
 playing = true
 
 [node name="Star2" type="AnimatedSprite" parent="Scroller"]
 position = Vector2( 1146, -75 )
 frames = SubResource( 5 )
-frame = 1
 playing = true
 
 [node name="Star3" type="AnimatedSprite" parent="Scroller"]
 position = Vector2( 186, -207 )
 frames = SubResource( 6 )
+frame = 1
 playing = true
 
 [node name="Star4" type="AnimatedSprite" parent="Scroller"]
 position = Vector2( 588, -157 )
 frames = SubResource( 7 )
+frame = 1
 playing = true
 
 [node name="Star5" type="AnimatedSprite" parent="Scroller"]
 position = Vector2( 170, 98 )
 frames = SubResource( 8 )
+frame = 1
 playing = true
 
 [node name="Star6" type="AnimatedSprite" parent="Scroller"]
 position = Vector2( 1121, 267 )
 frames = SubResource( 9 )
-frame = 1
 playing = true
 
 [node name="Star7" type="AnimatedSprite" parent="Scroller"]
 position = Vector2( 453, -683 )
 frames = SubResource( 10 )
+frame = 1
 playing = true
 
 [node name="Star8" type="AnimatedSprite" parent="Scroller"]
 position = Vector2( 1082, -776 )
 frames = SubResource( 11 )
+frame = 1
 playing = true
 
 [node name="Star9" type="AnimatedSprite" parent="Scroller"]
 position = Vector2( 334, -935 )
 frames = SubResource( 6 )
+frame = 1
 playing = true
 
 [node name="Star10" type="AnimatedSprite" parent="Scroller"]
 position = Vector2( 81, -1020 )
 frames = SubResource( 7 )
+frame = 1
 playing = true
 
 [node name="Star11" type="AnimatedSprite" parent="Scroller"]
 position = Vector2( 957, -1018 )
 frames = SubResource( 8 )
+frame = 1
 playing = true
 
 [node name="Star12" type="AnimatedSprite" parent="Scroller"]
 position = Vector2( 109, -729 )
 frames = SubResource( 9 )
-frame = 1
 playing = true
 
 [node name="Star13" type="AnimatedSprite" parent="Scroller"]
 position = Vector2( 930, 52 )
 frames = SubResource( 10 )
+frame = 1
 playing = true
 
 [node name="Star14" type="AnimatedSprite" parent="Scroller"]
 position = Vector2( 615, -404 )
 frames = SubResource( 11 )
-frame = 1
 playing = true
 
 [node name="Kill" parent="." instance=ExtResource( 24 )]
@@ -1339,7 +1348,7 @@ margin_left = 551.0
 margin_top = -703.0
 margin_right = -559.0
 margin_bottom = -1373.0
-text = "CONSUME1"
+text = "CONSUME0"
 disable_click_sfx = true
 disable_hover_sfx = true
 
@@ -1378,6 +1387,7 @@ modulate = Color( 1, 1, 1, 0 )
 position = Vector2( 640, 427 )
 scale = Vector2( 0.85, 0.85 )
 frames = SubResource( 17 )
+frame = 1
 playing = true
 
 [node name="NarrationText" type="Label" parent="EndingFinal"]
@@ -1594,6 +1604,7 @@ autowrap = true
 material = SubResource( 37 )
 position = Vector2( 423, 411 )
 frames = SubResource( 27 )
+frame = 1
 playing = true
 
 [node name="GlitchEffect" type="ColorRect" parent="."]
