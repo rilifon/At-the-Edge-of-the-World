@@ -11,7 +11,10 @@ onready var ScrollCont = $Interface/ScrollContainer
 onready var fishing_button = $UpperButtons/Fishing
 
 var player_data
-var fed_special_loot = [false,false]
+var special_loot = [
+	{"fed": false, "received": false},
+	{"fed": false, "received": false},
+]
 
 var cur_level = 0
 
@@ -33,6 +36,7 @@ func _ready():
 		button.setup(player_data, self)
 		button.connect("acted", self, "_on_button_acted")
 		button.update_cost_text()
+		button.show()
 		if button.level_unlocked > cur_level:
 			button.hide()
 		elif button.id == "buy_ending2" and not is_secret_ending_unlocked():
@@ -90,8 +94,7 @@ func get_save_data():
 		"beast_data": fera.get_data(),
 		"buttons_data": get_buttons_data(),
 		"remove_distortion": Global.remove_distortion,
-		"fed_special_loot1": fed_special_loot[0],
-		"fed_special_loot2": fed_special_loot[1],
+		"special_loot": special_loot,
 	}
 	return data
 
@@ -105,8 +108,7 @@ func get_buttons_data():
 
 func set_save_data(data):
 	cur_level = data.cur_level
-	fed_special_loot[0] = data.fed_special_loot1
-	fed_special_loot[1] = data.fed_special_loot2
+	special_loot = data.special_loot
 	player_data.set_save_data(data.player_data)
 	NarrationManager.set_data(data.narration_data)
 	Global.remove_distortion = data.remove_distortion
@@ -116,11 +118,11 @@ func set_save_data(data):
 
 
 func is_secret_ending_unlocked():
-	return fed_special_loot[0] and fed_special_loot[1]
+	return special_loot[0].fed and special_loot[1].fed
 
 
 func show_secret_ending_button():
-	for button in upper_buttons:
+	for button in upper_buttons.get_children():
 		if button.id == "buy_ending2":
 			button.show()
 
@@ -129,7 +131,7 @@ func _on_button_acted(button):
 	if button.id == "fishing":
 		AudioManager.play_sfx("fishing")
 		var bait = resource_list.get_selected_bait()
-		var loot = FishingManager.get_loot(bait, player_data)
+		var loot = FishingManager.get_loot(bait, player_data, special_loot)
 		player_data.gain(loot, 1)
 	elif button.id == "buy_ending":
 		Global.which_ending = 1
@@ -151,7 +153,14 @@ func _on_Fishing_no_bait_selected():
 func _on_player_feed(loot, value):
 	player_data.spend(loot, value)
 	fera.feed(LootManager.get_loot_data(loot), value)
-
+	if loot == "special_loot_1":
+		special_loot[0].fed = true
+		AudioManager.play_sfx("fed_special_loot")
+	elif loot == "special_loot_2":
+		special_loot[1].fed = true
+		AudioManager.play_sfx("fed_special_loot")
+	if is_secret_ending_unlocked() and cur_level >= 4:
+		show_secret_ending_button()
 
 func _on_player_sell(loot, value):
 	player_data.spend(loot, value)
@@ -165,8 +174,8 @@ func _on_level_up(level):
 	for button in buttons.get_children() + upper_buttons.get_children():
 		if button.level_unlocked <= cur_level:
 			button.show()
-		if button.id == "buy_ending2" and not is_secret_ending_unlocked():
-			button.hide()
+			if button.id == "buy_ending2":
+				button.visibility = is_secret_ending_unlocked()
 	PaletteLayer.change_to(cur_level)
 	ScrollCont.rect_size.y = CONTAINER_SIZE
 

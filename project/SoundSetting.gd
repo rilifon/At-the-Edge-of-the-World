@@ -26,6 +26,7 @@ func set_value(value):
 	var was_dummy = dummy
 	dummy = true
 	ValueSlider.value = value
+	ValueLabel.text = "%d" % [value]
 	yield(get_tree(), "idle_frame")
 	dummy = was_dummy
 

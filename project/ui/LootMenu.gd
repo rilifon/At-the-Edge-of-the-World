@@ -5,6 +5,7 @@ signal loot_nourished(amount)
 
 onready var loot_label = $VBoxContainer/LootLabel
 onready var price_label = $VBoxContainer/PriceLabel
+onready var sell_menu = $SellMenu
 onready var sell1 = $SellMenu/Sell1
 onready var sell10 = $SellMenu/Sell10
 onready var sell100 = $SellMenu/Sell100
@@ -16,7 +17,15 @@ onready var nourish100 = $NourishMenu/Nourish100
 func set_loot(selected_loot):
 	update_amount(selected_loot.amount)
 	loot_label.text = selected_loot.loot_name
-	price_label.text = "(%d %s)" % [selected_loot.cost, tr("MONEY_SUFFIX_PLURAL")]
+	if selected_loot.cost >= 0 :
+		sell_menu.show()
+		if selected_loot.cost > 1:
+			price_label.text = "(%d %s)" % [selected_loot.cost, tr("MONEY_SUFFIX_PLURAL")]
+		else:
+			price_label.text = "(%d %s)" % [selected_loot.cost, tr("MONEY_SUFFIX")]
+	else:
+		sell_menu.hide()
+		price_label.text = tr("PRICELESS")
 
 
 func update_amount(amount: int):

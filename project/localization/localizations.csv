@@ -10,7 +10,7 @@ SFX_VOLUME,Sound Chirps,Barulhinhos
 NARRATION_VOLUME,Voice Amplitude,Amplitude Vocal
 FULLSCREEN,Toggle Fullscreen,Habilitar Tela Cheia
 LANGUAGE,Dialect,Dialeto
-DUMMY_SLIDER,Happiness,Felicidade
+HAPPINESS,Happiness,Felicidade
 BACK,Back,Voltar
 EXIT,Abandon,Abandonar
 SAVE_QUIT,Save and Quit,Salvar e Sair
@@ -75,12 +75,13 @@ BUY_ROD,   Improve Rod   ,   Melhorar Vara
 BUY_ROPE,   Buy Line   ,   Comprar Linha   
 FISH,Fish!,Pescar!
 BUY_FREEDOM,     Buy Freedom     ,     Comprar Liberdade     
-BUY_FREEDOM2,    Find Peace     ,     Encontrar Liberdade     
+BUY_FREEDOM2,    Find Peace     ,     Encontrar Paz     
 STUFF,--STUFF--,--MUAMBAS--
 FISH_LOOT,--HAUL--,--PESCADOS--
 BAITS,--BAITS--,--ISCAS--
 NOURISH,Nourish,Nutrir
 SELL,Sell,Vender
+PRICELESS,(Priceless),(Impagável)
 LOOT1,Lambari,Lambari
 LOOT2,Crab,Carangueijo
 LOOT3,Shark,Tubarão

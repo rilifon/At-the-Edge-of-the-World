@@ -309,18 +309,18 @@ margin_right = 15.1361
 margin_bottom = -11.7726
 
 [node name="UpperButtons" type="HBoxContainer" parent="."]
-margin_left = 537.0
+margin_left = 479.0
 margin_top = 47.0
-margin_right = 1127.0
+margin_right = 1157.0
 margin_bottom = 132.0
-custom_constants/separation = 40
+custom_constants/separation = 58
 alignment = 1
 
 [node name="Fishing" parent="UpperButtons" instance=ExtResource( 2 )]
 anchor_right = 0.0
 anchor_bottom = 0.0
-margin_left = 105.0
-margin_right = 275.0
+margin_left = 26.0
+margin_right = 196.0
 margin_bottom = 85.0
 rect_min_size = Vector2( 170, 85 )
 cooldown = 5.0
@@ -344,8 +344,8 @@ fake_cost = "ONE_BAIT"
 [node name="Final" parent="UpperButtons" instance=ExtResource( 2 )]
 anchor_right = 0.0
 anchor_bottom = 0.0
-margin_left = 315.0
-margin_right = 485.0
+margin_left = 254.0
+margin_right = 424.0
 margin_bottom = 85.0
 text = "BUY_FREEDOM"
 id = "buy_ending"
@@ -370,11 +370,10 @@ cost = {
 }
 
 [node name="Final2" parent="UpperButtons" instance=ExtResource( 2 )]
-visible = false
 anchor_right = 0.0
 anchor_bottom = 0.0
-margin_left = 420.0
-margin_right = 590.0
+margin_left = 482.0
+margin_right = 652.0
 margin_bottom = 85.0
 text = "BUY_FREEDOM2"
 id = "buy_ending2"
@@ -392,7 +391,7 @@ reward_resource = {
 cost = {
 "active": true,
 "base_cost": 1,
-"exponential_progression": 1.2,
+"exponential_progression": 1.0,
 "incremental_cost": 0,
 "times_used": 0,
 "type": "money"
@@ -430,4 +429,4 @@ enable_quit = true
 [editable path="Settings/VB/BGMSound"]
 [editable path="Settings/VB/SFXSound"]
 [editable path="Settings/VB/NarrationSound"]
-[editable path="Settings/VB/Dummy"]
+[editable path="Settings/VB/Happiness"]

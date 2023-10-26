@@ -79,6 +79,8 @@ cost = {
 [node name="Button" type="Button" parent="."]
 margin_right = 170.0
 margin_bottom = 50.0
+grow_horizontal = 2
+grow_vertical = 2
 rect_min_size = Vector2( 170, 50 )
 rect_pivot_offset = Vector2( 85, 25 )
 focus_mode = 0

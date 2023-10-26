@@ -62,7 +62,7 @@ script = ExtResource( 1 )
 material = SubResource( 5 )
 anchor_right = 1.0
 anchor_bottom = 1.0
-margin_right = 120.0
+margin_right = 190.0
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
 anims/transition_out = SubResource( 3 )

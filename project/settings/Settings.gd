@@ -15,7 +15,7 @@ onready var SoundSettings = {
 	"sfx": $VB/SFXSound,
 	"narration": $VB/NarrationSound,
 }
-onready var Dummy = $VB/Dummy
+onready var Happiness = $VB/Happiness
 onready var Fullscreen = $VB/Fullscreen
 onready var AnimPlayer = $AnimationPlayer
 onready var QuitButton = $ButtonsContainer/SaveQuit
@@ -45,7 +45,7 @@ func setup_values():
 	SoundSettings.bgm.set_value(Profile.get_option("bgm_volume")*100)
 	SoundSettings.sfx.set_value(Profile.get_option("sfx_volume")*100)
 	SoundSettings.narration.set_value(Profile.get_option("narration_volume")*100)
-	Dummy.set_value(Profile.get_option("dummy_slider")*100)
+	Happiness.set_value(Profile.get_option("happiness")*100)
 	Fullscreen.pressed = OS.window_fullscreen
 
 
@@ -64,7 +64,7 @@ func save_values():
 	Profile.set_option("bgm_volume", SoundSettings.bgm.get_value())
 	Profile.set_option("sfx_volume", SoundSettings.sfx.get_value())
 	Profile.set_option("narration_volume", SoundSettings.narration.get_value())
-	Profile.set_option("dummy_slider", Dummy.get_value())
+	Profile.set_option("happiness", Happiness.get_value())
 	Profile.set_option("fullscreen", OS.window_fullscreen)
 	FileManager.save_profile()
 
