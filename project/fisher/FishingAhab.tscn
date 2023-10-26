@@ -1,0 +1,59 @@
+[gd_scene load_steps=16 format=2]
+
+[ext_resource path="res://fisher/FishingAhab.gd" type="Script" id=1]
+[ext_resource path="res://assets/images/fishing/ahab_fishing_1.png" type="Texture" id=2]
+[ext_resource path="res://assets/images/fishing/ahab_fishing_2.png" type="Texture" id=3]
+[ext_resource path="res://fisher/FishSpawner.gd" type="Script" id=4]
+[ext_resource path="res://fisher/SpawnedFish.tscn" type="PackedScene" id=5]
+[ext_resource path="res://assets/images/fishing/yt_off_1.png" type="Texture" id=6]
+[ext_resource path="res://assets/images/fishing/yt_on_4.png" type="Texture" id=7]
+[ext_resource path="res://assets/images/fishing/yt_on_3.png" type="Texture" id=8]
+[ext_resource path="res://assets/images/fishing/yt_off_2.png" type="Texture" id=9]
+[ext_resource path="res://assets/images/fishing/yt_on_2.png" type="Texture" id=10]
+[ext_resource path="res://assets/images/fishing/yt_on_1.png" type="Texture" id=11]
+
+[sub_resource type="SpriteFrames" id=1]
+animations = [ {
+"frames": [ ExtResource( 2 ), ExtResource( 3 ) ],
+"loop": true,
+"name": "default",
+"speed": 5.0
+} ]
+
+[sub_resource type="SpriteFrames" id=4]
+animations = [ {
+"frames": [ ExtResource( 6 ), ExtResource( 9 ) ],
+"loop": true,
+"name": "off",
+"speed": 5.0
+}, {
+"frames": [ ExtResource( 11 ), ExtResource( 10 ), ExtResource( 8 ), ExtResource( 7 ) ],
+"loop": true,
+"name": "on",
+"speed": 5.0
+} ]
+
+[sub_resource type="Gradient" id=2]
+offsets = PoolRealArray( 0.621302, 1 )
+colors = PoolColorArray( 1, 1, 1, 1, 1, 1, 1, 0 )
+
+[sub_resource type="GradientTexture2D" id=3]
+gradient = SubResource( 2 )
+width = 160
+height = 128
+fill_from = Vector2( 1, 1 )
+
+[node name="FishingAhab" type="AnimatedSprite"]
+frames = SubResource( 1 )
+script = ExtResource( 1 )
+
+[node name="YogsuvianTranslator" type="AnimatedSprite" parent="."]
+position = Vector2( 55, -169 )
+frames = SubResource( 4 )
+animation = "off"
+
+[node name="FishSpawner" type="Sprite" parent="."]
+position = Vector2( -101, 182 )
+texture = SubResource( 3 )
+script = ExtResource( 4 )
+spawned_fish_scene = ExtResource( 5 )
