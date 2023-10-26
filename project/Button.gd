@@ -90,12 +90,17 @@ func update_cost_text():
 		$Cost.text = tr("COST") + ": %s" % [tr(fake_cost)]
 		rect_min_size.y = $Cost.rect_position.y + $Cost.rect_size.y
 	elif cost.active:
+		var amount = get_cost_amount()
 		var type_name
 		if cost.type != "bait":
 			type_name = player.get_resource_name(cost.type)
 		else:
 			type_name = "bait"
-		$Cost.text = tr("COST") + ": %d %s" % [get_cost_amount(), tr(type_name)]
+		if amount == 1:
+			type_name += "_SUFFIX"
+		else:
+			type_name += "_SUFFIX_PLURAL"
+		$Cost.text = tr("COST") + ": %d %s" % [amount, tr(type_name)]
 		rect_min_size.y = $Cost.rect_position.y + $Cost.rect_size.y
 	else:
 		$Cost.text = ""
