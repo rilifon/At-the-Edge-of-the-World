@@ -1,4 +1,4 @@
-[gd_scene load_steps=22 format=2]
+[gd_scene load_steps=23 format=2]
 
 [ext_resource path="res://MainScene.gd" type="Script" id=1]
 [ext_resource path="res://Button.tscn" type="PackedScene" id=2]
@@ -11,6 +11,7 @@
 [ext_resource path="res://assets/images/buttons/settings_icon.png" type="Texture" id=9]
 [ext_resource path="res://settings/Settings.tscn" type="PackedScene" id=10]
 [ext_resource path="res://ui/SettingsButton.gd" type="Script" id=11]
+[ext_resource path="res://fisher/FishingAhab.tscn" type="PackedScene" id=12]
 
 [sub_resource type="ButtonGroup" id=15]
 resource_name = "Loot"
@@ -420,6 +421,10 @@ script = ExtResource( 11 )
 [node name="Settings" parent="." instance=ExtResource( 10 )]
 visible = false
 enable_quit = true
+
+[node name="FishingAhab" parent="." instance=ExtResource( 12 )]
+show_behind_parent = true
+position = Vector2( 1181, 425 )
 
 [connection signal="no_bait_selected" from="UpperButtons/Fishing" to="." method="_on_Fishing_no_bait_selected"]
 [connection signal="mouse_entered" from="SettingsButton" to="." method="_on_SettingsButton_mouse_entered"]

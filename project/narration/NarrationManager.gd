@@ -1,6 +1,8 @@
 extends CanvasLayer
 
 signal finished_scrambling
+signal yog_dialog_started
+signal yog_dialog_finished
 
 const NARRATION_BUS = 3
 const MIN_TIMER_RANGE = 1
@@ -111,6 +113,7 @@ func start_narration(narration, custom_path = false):
 			add_subtitle(tr(dialogue.text))
 			dur = dur + AHAB_DELAY
 		elif dialogue.cha == "yog":
+			emit_signal("yog_dialog_started")
 			if not Global.remove_distortion:
 				enable_effect()
 				apply_scramble(tr(dialogue.text))
@@ -135,6 +138,10 @@ func start_narration(narration, custom_path = false):
 		Player.play()
 		
 		var abort_narration = yield(get_tree().create_timer(dur), "timeout")
+		
+		if dialogue.cha == "yog":
+			emit_signal("yog_dialog_finished")
+		
 		if abort_narration:
 			active_narration = false
 			yield_state = null

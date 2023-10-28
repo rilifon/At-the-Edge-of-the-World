@@ -9,6 +9,7 @@ onready var fera = $Fera
 onready var Settings = $Settings
 onready var ScrollCont = $Interface/ScrollContainer
 onready var fishing_button = $UpperButtons/Fishing
+onready var ahab = $FishingAhab
 
 var player_data
 var special_loot = [
@@ -57,6 +58,10 @@ func _ready():
 	PaletteLayer.change_to(cur_level)
 	NarrationManager.set_cur_stage(cur_level)
 	NarrationManager.is_running = true
+# warning-ignore:return_value_discarded
+	NarrationManager.connect("yog_dialog_started", self, "_on_yog_dialog_started")
+# warning-ignore:return_value_discarded
+	NarrationManager.connect("yog_dialog_finished", self, "_on_yog_dialog_finished")
 
 
 func _input(event):
@@ -133,6 +138,7 @@ func _on_button_acted(button):
 		var bait = resource_list.get_selected_bait()
 		var loot = FishingManager.get_loot(bait, player_data, special_loot)
 		player_data.gain(loot, 1)
+		ahab.fish(LootManager.get_loot_data(loot))
 	elif button.id == "buy_ending":
 		Global.which_ending = 1
 		TransitionManager.change_scene("res://EndingCutscene.tscn")
@@ -175,7 +181,7 @@ func _on_level_up(level):
 		if button.level_unlocked <= cur_level:
 			button.show()
 			if button.id == "buy_ending2":
-				button.visibility = is_secret_ending_unlocked()
+				button.visible = is_secret_ending_unlocked()
 	PaletteLayer.change_to(cur_level)
 	ScrollCont.rect_size.y = CONTAINER_SIZE
 
@@ -187,3 +193,13 @@ func _on_SettingsButton_pressed():
 
 func _on_SettingsButton_mouse_entered():
 	AudioManager.play_sfx("hover_button")
+
+
+func _on_yog_dialog_started():
+	if Global.remove_distortion:
+		ahab.set_translator_on(true)
+
+
+func _on_yog_dialog_finished():
+	if Global.remove_distortion:
+		ahab.set_translator_on(false)
