@@ -62,6 +62,8 @@ func _ready():
 	NarrationManager.connect("yog_dialog_started", self, "_on_yog_dialog_started")
 # warning-ignore:return_value_discarded
 	NarrationManager.connect("yog_dialog_finished", self, "_on_yog_dialog_finished")
+	
+	$Fera.update_special_loot_visibility(special_loot)
 
 
 func _input(event):
@@ -167,6 +169,8 @@ func _on_player_feed(loot, value):
 		AudioManager.play_sfx("fed_special_loot")
 	if is_secret_ending_unlocked() and cur_level >= 4:
 		show_secret_ending_button()
+	fera.update_special_loot_visibility(special_loot)
+
 
 func _on_player_sell(loot, value):
 	player_data.spend(loot, value)

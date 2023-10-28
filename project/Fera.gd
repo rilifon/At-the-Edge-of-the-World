@@ -4,6 +4,8 @@ signal leveled_up(level)
 
 onready var bar = $VBoxContainer/Bar
 onready var max_label = $VBoxContainer/Bar/MaxLabel
+onready var special_1 = $HBoxContainer/Special1
+onready var special_2 = $HBoxContainer/Special2
 
 const MAX_LEVEL = 4
 const MAX_VALUES = [40, 120, 250, 500, 1080]
@@ -65,3 +67,8 @@ func level_up():
 		bar.value = current_value
 	
 	emit_signal("leveled_up", level)
+
+
+func update_special_loot_visibility(special_loot):
+	special_1.visible = special_loot[0].fed
+	special_2.visible = special_loot[1].fed
