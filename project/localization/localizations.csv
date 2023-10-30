@@ -7,6 +7,8 @@ OPTIONS,  Choices  ,  Escolhas
 MASTER_VOLUME,Source of All Sound,Fonte de Todo Som
 BGM_VOLUME,Background Melodies,Melodia de Fundo
 SFX_VOLUME,Sound Chirps,Barulhinhos
+LAST_TIME_SAVED,Last time saved: ,Última vez salvo: 
+MINUTES_AGO,%d minute(s) ago,%d minuto(s) atrás
 NARRATION_VOLUME,Voice Amplitude,Amplitude Vocal
 FULLSCREEN,Toggle Fullscreen,Habilitar Tela Cheia
 LANGUAGE,Dialect,Dialeto

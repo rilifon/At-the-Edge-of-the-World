@@ -476,7 +476,7 @@ script = ExtResource( 11 )
 
 [node name="Settings" parent="." instance=ExtResource( 10 )]
 visible = false
-enable_quit = true
+run_mode = true
 
 [node name="FishingAhab" parent="." instance=ExtResource( 12 )]
 show_behind_parent = true

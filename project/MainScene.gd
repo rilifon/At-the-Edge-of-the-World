@@ -1,7 +1,7 @@
 extends Node2D
 
 const CONTAINER_SIZE = 400
-const AUTO_SAVE_DUR = 20
+const AUTO_SAVE_DUR = 120
 
 onready var buttons = $Interface/ScrollContainer/Buttons
 onready var upper_buttons = $UpperButtons
@@ -69,6 +69,8 @@ func _ready():
 	NarrationManager.connect("yog_dialog_finished", self, "_on_yog_dialog_finished")
 	
 	$Fera.update_special_loot_visibility(special_loot)
+	
+	FileManager.save_run()
 
 
 func _input(event):
@@ -106,6 +108,7 @@ func get_selected_bait():
 
 func get_save_data():
 	var data = {
+		"time": Time.get_datetime_dict_from_system(),
 		"cur_level": cur_level,
 		"player_data": player_data.get_save_data(),
 		"narration_data": NarrationManager.get_data(),

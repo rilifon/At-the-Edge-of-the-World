@@ -2,6 +2,7 @@ extends Node
 
 var run = null
 var continue_game = false
+var last_time_saved = false
 
 func _notification(what):
 	if what == MainLoop.NOTIFICATION_WM_QUIT_REQUEST:
@@ -84,6 +85,7 @@ func save_run():
 	if err != OK:
 		push_error("Error trying to open run file whilst saving:" + str(err))
 	var run_data = run.get_save_data()
+	last_time_saved = run_data.time
 	run_file.store_line(to_json(run_data))
 	run_file.close()
 
@@ -100,5 +102,6 @@ func load_run():
 	while run_file.get_position() < run_file.get_len():
 		var data = parse_json(run_file.get_line())
 		run.set_save_data(data)
+		last_time_saved = data.time
 		
 	run_file.close()

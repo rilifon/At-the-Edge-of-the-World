@@ -1,4 +1,4 @@
-[gd_scene load_steps=19 format=2]
+[gd_scene load_steps=20 format=2]
 
 [ext_resource path="res://settings_theme.tres" type="Theme" id=1]
 [ext_resource path="res://settings/Settings.gd" type="Script" id=2]
@@ -34,6 +34,12 @@ font_data = ExtResource( 10 )
 
 [sub_resource type="DynamicFont" id=7]
 size = 26
+use_mipmaps = true
+use_filter = true
+font_data = ExtResource( 10 )
+
+[sub_resource type="DynamicFont" id=9]
+size = 22
 use_mipmaps = true
 use_filter = true
 font_data = ExtResource( 10 )
@@ -99,6 +105,18 @@ tracks/4/keys = {
 "transitions": PoolRealArray( 1 ),
 "update": 0,
 "values": [ Color( 1, 1, 1, 1 ) ]
+}
+tracks/5/type = "value"
+tracks/5/path = NodePath("LastSavedLabel:modulate")
+tracks/5/interp = 1
+tracks/5/loop_wrap = true
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ Color( 1, 1, 1, 0 ) ]
 }
 
 [sub_resource type="Animation" id=4]
@@ -171,6 +189,18 @@ tracks/5/loop_wrap = true
 tracks/5/imported = false
 tracks/5/enabled = true
 tracks/5/keys = {
+"times": PoolRealArray( 0, 0.3 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ Color( 1, 1, 1, 1 ), Color( 1, 1, 1, 0 ) ]
+}
+tracks/6/type = "value"
+tracks/6/path = NodePath("LastSavedLabel:modulate")
+tracks/6/interp = 1
+tracks/6/loop_wrap = true
+tracks/6/imported = false
+tracks/6/enabled = true
+tracks/6/keys = {
 "times": PoolRealArray( 0, 0.3 ),
 "transitions": PoolRealArray( 1, 1 ),
 "update": 0,
@@ -252,9 +282,22 @@ tracks/5/keys = {
 "update": 0,
 "values": [ Color( 1, 1, 1, 0 ), Color( 1, 1, 1, 0 ), Color( 1, 1, 1, 1 ) ]
 }
+tracks/6/type = "value"
+tracks/6/path = NodePath("LastSavedLabel:modulate")
+tracks/6/interp = 1
+tracks/6/loop_wrap = true
+tracks/6/imported = false
+tracks/6/enabled = true
+tracks/6/keys = {
+"times": PoolRealArray( 0, 0.2, 0.4 ),
+"transitions": PoolRealArray( 1, 1, 1 ),
+"update": 0,
+"values": [ Color( 1, 1, 1, 0 ), Color( 1, 1, 1, 0 ), Color( 1, 1, 1, 1 ) ]
+}
 
 [node name="Settings" type="CanvasLayer"]
 layer = 2
+visible = false
 script = ExtResource( 2 )
 
 [node name="ColorRect" type="ColorRect" parent="."]
@@ -270,30 +313,6 @@ margin_top = 20.0
 margin_right = -446.0
 margin_bottom = -20.0
 custom_styles/panel = SubResource( 8 )
-
-[node name="ButtonsContainer" type="HBoxContainer" parent="."]
-margin_left = 434.0
-margin_top = 616.0
-margin_right = 834.0
-margin_bottom = 666.0
-custom_constants/separation = 15
-alignment = 1
-
-[node name="Back" parent="ButtonsContainer" instance=ExtResource( 4 )]
-anchor_right = 0.0
-anchor_bottom = 0.0
-margin_left = 22.0
-margin_right = 192.0
-margin_bottom = 50.0
-text = "BACK"
-
-[node name="SaveQuit" parent="ButtonsContainer" instance=ExtResource( 4 )]
-anchor_right = 0.0
-anchor_bottom = 0.0
-margin_left = 207.0
-margin_right = 377.0
-margin_bottom = 50.0
-text = "SAVE_QUIT"
 
 [node name="VB" type="VBoxContainer" parent="."]
 anchor_left = 0.5
@@ -419,19 +438,53 @@ theme = ExtResource( 1 )
 custom_fonts/font = SubResource( 7 )
 text = "KEY_NAME"
 
+[node name="ButtonsContainer" type="HBoxContainer" parent="."]
+margin_left = 434.0
+margin_top = 612.0
+margin_right = 834.0
+margin_bottom = 662.0
+custom_constants/separation = 15
+alignment = 1
+
+[node name="Back" parent="ButtonsContainer" instance=ExtResource( 4 )]
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_left = 22.0
+margin_right = 192.0
+margin_bottom = 50.0
+text = "BACK"
+
+[node name="SaveQuit" parent="ButtonsContainer" instance=ExtResource( 4 )]
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_left = 207.0
+margin_right = 377.0
+margin_bottom = 50.0
+text = "SAVE_QUIT"
+
+[node name="LastSavedLabel" type="Label" parent="."]
+modulate = Color( 1, 1, 1, 0 )
+margin_left = 442.0
+margin_top = 669.0
+margin_right = 832.0
+margin_bottom = 696.0
+custom_colors/font_color = Color( 0, 0, 0, 1 )
+custom_fonts/font = SubResource( 9 )
+text = "Last Time Saved: -"
+
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
 anims/RESET = SubResource( 2 )
 anims/disable = SubResource( 4 )
 anims/enable = SubResource( 3 )
 
-[connection signal="acted" from="ButtonsContainer/Back" to="." method="_on_Back_acted"]
-[connection signal="acted" from="ButtonsContainer/SaveQuit" to="." method="_on_SaveQuit_acted"]
 [connection signal="change_value" from="VB/MasterSound" to="." method="_on_Sound_change_value"]
 [connection signal="change_value" from="VB/BGMSound" to="." method="_on_Sound_change_value"]
 [connection signal="change_value" from="VB/SFXSound" to="." method="_on_Sound_change_value"]
 [connection signal="change_value" from="VB/NarrationSound" to="." method="_on_Sound_change_value"]
 [connection signal="toggled" from="VB/Fullscreen" to="." method="_on_FullScreen_toggled"]
 [connection signal="item_selected" from="VB/LanguageContainer/OptionButton" to="." method="_on_OptionButton_item_selected"]
+[connection signal="acted" from="ButtonsContainer/Back" to="." method="_on_Back_acted"]
+[connection signal="acted" from="ButtonsContainer/SaveQuit" to="." method="_on_SaveQuit_acted"]
 
 [editable path="VB/BGMSound"]
 [editable path="VB/SFXSound"]

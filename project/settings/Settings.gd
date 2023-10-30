@@ -20,21 +20,23 @@ onready var Fullscreen = $VB/Fullscreen
 onready var AnimPlayer = $AnimationPlayer
 onready var QuitButton = $ButtonsContainer/SaveQuit
 onready var LanguageOptions = $VB/LanguageContainer/OptionButton
+onready var LastSavedLabel = $LastSavedLabel
 
 export var active = false
-export var enable_quit := false
+export var run_mode := false
 
 
 func _ready():
 	hide()
-	QuitButton.visible = enable_quit
+	QuitButton.visible = run_mode
+	update_last_saved_label()
 	setup_languages()
 	setup_values()
 
 
 func enable():
 	AnimPlayer.play("enable")
-
+	update_last_saved_label()
 
 func disable():
 	AnimPlayer.play("disable")
@@ -67,6 +69,26 @@ func save_values():
 	Profile.set_option("happiness", Happiness.get_value())
 	Profile.set_option("fullscreen", OS.window_fullscreen)
 	FileManager.save_profile()
+
+
+func update_last_saved_label():
+	if run_mode:
+		LastSavedLabel.show()
+		LastSavedLabel.text = tr("LAST_TIME_SAVED")
+		if FileManager.last_time_saved:
+			LastSavedLabel.text += get_saved_time_diff()
+		else:
+			LastSavedLabel.text += "-"
+	else:
+		LastSavedLabel.hide()
+
+
+func get_saved_time_diff():
+	assert(FileManager.last_time_saved, "Doesn't have a valid last time saved to calculate diff")
+	var t1 = OS.get_unix_time_from_datetime (FileManager.last_time_saved)
+	var t2 = OS.get_unix_time_from_datetime (Time.get_datetime_dict_from_system())
+	var minutes = (t2-t1) / 60
+	return tr("MINUTES_AGO") % int(minutes)
 
 
 func _on_Sound_change_value(value, bus):
