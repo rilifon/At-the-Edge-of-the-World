@@ -100,6 +100,7 @@ func finish():
 		elif Global.which_ending == 2:
 			Steam.set_achievement("ending_2")
 	
+	FileManager.delete_run_file()
 	NarrationManager.disable_effect()
 	TransitionManager.change_scene("res://MainMenu.tscn")
 

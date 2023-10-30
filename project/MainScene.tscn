@@ -1,4 +1,4 @@
-[gd_scene load_steps=23 format=2]
+[gd_scene load_steps=26 format=2]
 
 [ext_resource path="res://MainScene.gd" type="Script" id=1]
 [ext_resource path="res://Button.tscn" type="PackedScene" id=2]
@@ -12,6 +12,7 @@
 [ext_resource path="res://settings/Settings.tscn" type="PackedScene" id=10]
 [ext_resource path="res://ui/SettingsButton.gd" type="Script" id=11]
 [ext_resource path="res://fisher/FishingAhab.tscn" type="PackedScene" id=12]
+[ext_resource path="res://assets/images/save.png" type="Texture" id=13]
 
 [sub_resource type="ButtonGroup" id=15]
 resource_name = "Loot"
@@ -51,6 +52,61 @@ font_data = ExtResource( 6 )
 [sub_resource type="StyleBoxEmpty" id=12]
 
 [sub_resource type="StyleBoxEmpty" id=13]
+
+[sub_resource type="Animation" id=16]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/path = NodePath(".:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ Vector2( 1248, 751 ) ]
+}
+tracks/1/type = "value"
+tracks/1/path = NodePath(".:modulate")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ Color( 1, 1, 1, 0 ) ]
+}
+
+[sub_resource type="Animation" id=17]
+resource_name = "save"
+length = 2.5
+tracks/0/type = "value"
+tracks/0/path = NodePath(".:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.7, 1.9 ),
+"transitions": PoolRealArray( 0.258816, 1, 1 ),
+"update": 0,
+"values": [ Vector2( 1314, 97 ), Vector2( 1240, 97 ), Vector2( 1240, 97 ) ]
+}
+tracks/1/type = "value"
+tracks/1/path = NodePath(".:modulate")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0, 0.7, 1.9, 2.5 ),
+"transitions": PoolRealArray( 1, 1, 1, 1 ),
+"update": 0,
+"values": [ Color( 1, 1, 1, 0 ), Color( 1, 1, 1, 1 ), Color( 1, 1, 1, 1 ), Color( 1, 1, 1, 0 ) ]
+}
 
 [node name="MainScene" type="Node2D"]
 script = ExtResource( 1 )
@@ -425,6 +481,16 @@ enable_quit = true
 [node name="FishingAhab" parent="." instance=ExtResource( 12 )]
 show_behind_parent = true
 position = Vector2( 1181, 425 )
+
+[node name="SavingIcon" type="Sprite" parent="."]
+modulate = Color( 1, 1, 1, 0 )
+position = Vector2( 1248, 751 )
+scale = Vector2( 0.1, 0.1 )
+texture = ExtResource( 13 )
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="SavingIcon"]
+anims/RESET = SubResource( 16 )
+anims/save = SubResource( 17 )
 
 [connection signal="no_bait_selected" from="UpperButtons/Fishing" to="." method="_on_Fishing_no_bait_selected"]
 [connection signal="mouse_entered" from="SettingsButton" to="." method="_on_SettingsButton_mouse_entered"]

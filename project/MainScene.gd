@@ -1,6 +1,7 @@
 extends Node2D
 
 const CONTAINER_SIZE = 400
+const AUTO_SAVE_DUR = 20
 
 onready var buttons = $Interface/ScrollContainer/Buttons
 onready var upper_buttons = $UpperButtons
@@ -10,6 +11,7 @@ onready var Settings = $Settings
 onready var ScrollCont = $Interface/ScrollContainer
 onready var fishing_button = $UpperButtons/Fishing
 onready var ahab = $FishingAhab
+onready var SaveAnim = $SavingIcon/AnimationPlayer
 
 var player_data
 var special_loot = [
@@ -17,10 +19,13 @@ var special_loot = [
 	{"fed": false, "received": false},
 ]
 
+var auto_save_timer = AUTO_SAVE_DUR
 var cur_level = 0
 
 
 func _ready():
+	auto_save_timer = AUTO_SAVE_DUR
+	
 	$NoBaitSelected.modulate.a = 0.0
 	
 	player_data = load("res://player_data.gd").new()
@@ -88,7 +93,13 @@ func _process(dt):
 	if player_data.get_resource_amount("auto_fish") and not fishing_button.on_cooldown:
 		fishing_button.activate_button(true)
 
-
+	auto_save_timer = max(auto_save_timer - dt, 0.0)
+	if auto_save_timer <= 0.0:
+		auto_save_timer = AUTO_SAVE_DUR
+		SaveAnim.play("save")
+		FileManager.save_run()
+		
+	
 func get_selected_bait():
 	return resource_list.get_selected_bait()
 

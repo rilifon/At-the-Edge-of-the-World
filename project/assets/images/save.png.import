@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/Save.png-fced8198acca78be733874b75dbc4836.stex"
+path="res://.import/save.png-fbda0e66d3c648c0bae5162f93ed897f.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://addons/localization_editor/icons/Save.png"
-dest_files=[ "res://.import/Save.png-fced8198acca78be733874b75dbc4836.stex" ]
+source_file="res://assets/images/save.png"
+dest_files=[ "res://.import/save.png-fbda0e66d3c648c0bae5162f93ed897f.stex" ]
 
 [params]
 
@@ -21,8 +21,8 @@ compress/bptc_ldr=0
 compress/normal_map=0
 flags/repeat=0
 flags/filter=true
-flags/mipmaps=true
-flags/anisotropic=true
+flags/mipmaps=false
+flags/anisotropic=false
 flags/srgb=2
 process/fix_alpha_border=true
 process/premult_alpha=false
